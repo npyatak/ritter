@@ -15,6 +15,7 @@ use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 
 use common\models\User;
+use common\models\Question;
 
 /**
  * Site controller
@@ -75,7 +76,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $questions = Question::find()/*->where(['stage_id' => $stage->id])*/->limit(1)->all();
+
+        return $this->render('index', [
+            'questions' => $questions,
+        ]);
     }
 
     public function actionLogout()

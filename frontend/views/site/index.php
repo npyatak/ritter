@@ -1,6 +1,8 @@
+<?php
+use yii\helpers\Url;
+?>
 
 <div class="test_block body_chocolate_inner active_block" id="test_block">
-    
     <div class="content_test wrap_inner_border">
         <!-- рамка -->
         <div class="inner_border">
@@ -15,63 +17,42 @@
                 <img src="/img/chocolate_1.png" alt="img">
             </div>
         </div>
-        <div class="test_item">
-            <p class="num">1 вопрос</p>
-            <p class="name">В Сан-Франциско множество пирсов. Один из них, пирс 39, богат необычными пассажирами. Какими?</p>
-            <div class="questions_wrap">
-                <!--
-                active - добавляется при активном элементе
-                error - добавляется если ответ ошибочный  
-                true -  подсвечивание правильного ответа когда выбран не правильный
-                active_true - добавляется когда выбран правильный ответ 
-                 -->
-                <div class="quest error">
-                    <p>
-                        <span>
-                            <i class="fa fa-check" aria-hidden="true"></i>
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </span>
-                        Морские львы
-                    </p>
-                </div>
-                <div class="quest">
-                    <p>
-                        <span>
-                            <i class="fa fa-check" aria-hidden="true"></i>
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </span>
-                        Бродячие кошки
-                    </p>
-                </div>
-                <div class="quest true">
-                    <p>
-                        <span>
-                            <i class="fa fa-check" aria-hidden="true"></i>
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </span>
-                        Черепахи
-                    </p>
-                </div>
-                <div class="quest active_true">
-                    <p>
-                        <span>
-                            <i class="fa fa-check" aria-hidden="true"></i>
-                            <i class="fa fa-times" aria-hidden="true"></i>
-                        </span>
-                        Бродячие псы
-                    </p>
-                </div>
-            </div>
-            <p class="quest_alert">Неверно. Но вы прекрасный игрок!</p>
-            <!-- questions_wrap -->
+        <?php if($questions):?>
+            <?php foreach($questions as $key => $q):?>
+                <div class="test_item">
+                    <p class="num"><?=$key+1;?> вопрос</p>
+                    <p class="name"><?=$q->text;?></p>
+                    <div class="questions_wrap">
+                        <!--
+                        active - добавляется при активном элементе
+                        error - добавляется если ответ ошибочный  
+                        true -  подсвечивание правильного ответа когда выбран не правильный
+                        active_true - добавляется когда выбран правильный ответ 
+                         -->
+                        <?php foreach ($q->answers as $a):?>
+                            <div class="quest">
+                                <p>
+                                    <span>
+                                        <i class="fa fa-check" aria-hidden="true"></i>
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </span>
+                                    <?=$a->text;?>
+                                </p>
+                            </div>
+                        <?php endforeach;?>
+                    </div>
+                    <p class="quest_alert">Неверно. Но вы прекрасный игрок!</p>
+                    <!-- questions_wrap -->
 
-            <!-- 
-            для открытия нужного блока , элемент на который мы кликаем должен иметь класс show_block
-            и атрибут data-id в котором прописывается id блока который будет открыт
-             -->
-            <button class="button_1 show_block" data-id="#autorization_block"><span>Ответить</span></button>
-        </div>
-        <!-- test_item -->
+                    <!-- 
+                    для открытия нужного блока , элемент на который мы кликаем должен иметь класс show_block
+                    и атрибут data-id в котором прописывается id блока который будет открыт
+                     -->
+                    <button class="button_1 show_block" data-id="#autorization_block"><span>Ответить</span></button>
+                </div>
+                <!-- test_item -->
+            <?php endforeach;?>
+        <?php endif;?>
 
         
 
