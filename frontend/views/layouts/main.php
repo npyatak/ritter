@@ -70,6 +70,11 @@ AppAsset::register($this);
             
         </div>
 
+
+
+
+
+
         <div class="body_chocolate_wrap">
             <!-- плавающий фон  -->
             <div class="background_choco type_1">
@@ -79,16 +84,7 @@ AppAsset::register($this);
                 <img class="right img_2" src="/img/chocolate_bg_1_2.png" alt="img">
             </div>
             <div class="body_chocolate">    
-                <!-- плавающий фон  -->
-                <div class="background_choco type_1">
-                    <img class="left img_1" src="/img/chocolate_bg_4_1.jpg" alt="img">
-                    <img class="left img_2" src="/img/chocolate_bg_4_1.png" alt="img">
-                    <img class="right img_1" src="/img/chocolate_bg_4_2.jpg" alt="img">
-                    <img class="right img_2" src="/img/chocolate_bg_4_2.png" alt="img">
-                </div>
-                <div class="body_chocolate">    
-                    <?= $content ?>
-                </div>
+                <?= $content ?>
             </div>
         </div>
 
