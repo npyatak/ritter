@@ -2,25 +2,104 @@
 function footer_bottom() {
 	if($("footer").is(".footer_main")){ 
 		var footer_h = $(".footer_main").outerHeight();
-		$(".wrapper").css("padding-bottom", footer_h);
+		
+		// если на главной, иначе
+		if($("div").is(".video_section")){
+			$(".video_section").css("padding-bottom", footer_h)
+			$(".wrapper").css("padding-bottom", 0);	
+		}else{
+			$(".wrapper").css("padding-bottom", footer_h);
+		}
+		
 	}
 }
 // Прижимаем футер к низу страницы
 function header_top() {
 	var header_h = $(".main_header").outerHeight();
+	// var footer_h = $(".footer_main").outerHeight();
 	$(".body_chocolate").css("min-height", $(window).height() - header_h);
-	// alert(header_h);
 }
 // Выполняем при загрузке и при ресайзе
 $(document).ready(function(){
 	function onResize(){
 		// footer_bottom(); // функция кот. выполняется
 		header_top(); 
-		// setTimeout(function(){}, 200);
 		footer_bottom();
+
 	}onResize();
 	$(window).resize(onResize);
 });
+
+
+
+
+
+
+// слайдер на главной
+$(function(){
+	if($("div").is(".main_slider")){
+		var slider = $('.main_slider');
+		// setTimeout(function(){
+		function slider_init(){
+			
+			slider.slick({
+				prevArrow: '<i class="fa fa-chevron-left" aria-hidden="true"></i>',
+				nextArrow: '<i class="fa fa-chevron-right" aria-hidden="true"></i>',
+				dots: true,
+				adaptiveHeight: true,
+				infinite: true,
+				speed: 500,
+				fade: true,
+				cssEase: 'linear',
+				appendDots: $(".dots_1"),
+				appendArrows: $(".nav_1"),
+				autoplay: true,
+				autoplaySpeed: 3000,
+				slidesToShow: 1,
+	  			slidesToScroll: 1,
+	  			// pauseOnDotsHover: false,
+	  			pauseOnHover: false,
+	  			pauseOnFocus: false,
+
+			});
+			
+		}
+		slider_init();
+
+
+		$(window).resize(function(){
+			chanche_control();
+
+			// обновляем слайдер
+			slider.slick('destroy');
+			slider_init();
+		});
+
+		// меняем позицию контроллов
+		function chanche_control(){
+			var cur = $("[data-slick-index='0']");
+			var content_height = cur.children(".item_inner").children(".slide_content").outerHeight();
+			// console.log(content_height);
+			control_position(content_height);
+		}chanche_control();
+		  
+
+		slider.on('afterChange', function(event, slick, currentSlide, nextSlide) {
+		    // console.log($(slide.$slides.get(index)).attr('class'))
+		    cur = $("[data-slick-index='" +currentSlide+ "']");
+		    content_height = cur.children(".item_inner").children(".slide_content").outerHeight();
+		    // console.log(cur);
+		    control_position(content_height);
+		});   
+
+
+		function control_position(content_height){
+			$(".slider_controll").css("top", content_height-25)
+		}
+
+	}//if
+
+});//$(function(){
 
 
 
@@ -50,6 +129,10 @@ function parallaxIt(e, target, movement) {
 	});
 }
 
+
+
+
+
 // функция для открытия всплывающей формы
 function show_popup(form_number){
 	$("[data-flag="+form_number+"]").css("display","inline-block");
@@ -67,8 +150,6 @@ function close_popup(){
 		$("body").css('overflow-y','auto'); 
 		$(".popup_bg .popup_block").css("display","none");
 		$(".popup_bg").dequeue(); //должно применяться к тому же элементу что и .queue
-		// $(".popup_form").css("display","none");
-		//$("[data-form-ident="+form_number+"]").css("display","none"); заменил на верхнее если что пробуем этот вариант
 	}); 
 };
 
@@ -160,3 +241,19 @@ $(".close_burger").on("click", function() {
   	$("body").removeClass("no_scroll");
   });
 });
+
+
+
+// слайдер блоков на главной
+$(function() {
+	if($("div").is(".section_scroll")){
+		$.scrollify({
+		  section : ".section_scroll",
+		  scrollSpeed: 800,
+		  overflowScroll: true,
+		  // scrollbars: false,
+		  // easing: "easeOutExpo",
+		});
+	}
+});
+
