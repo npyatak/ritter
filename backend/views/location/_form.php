@@ -14,15 +14,18 @@ use common\models\UserTest;
     <?php $form = ActiveForm::begin(); ?>
  
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
+            <?= $form->field($model, 'name')->textInput() ?>
+        </div>
+        <div class="col-sm-4">
             <?= $form->field($model, 'title')->textInput() ?>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <?= $form->field($model, 'subtitle')->textInput() ?>
         </div>
     </div>
 
-    <?= $form->field($model, 'text')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'text')->textarea(['rows' => 5]) ?>
 
     <div class="row">
         <div class="col-sm-4">
@@ -41,7 +44,16 @@ use common\models\UserTest;
             <?= $form->field($model, 'video')->textInput() ?>
         </div>
         <div class="col-sm-6">
+            <?= $form->field($model, 'video_title')->textInput() ?>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
             <?= $form->field($model, 'video2')->textInput() ?>
+        </div>
+        <div class="col-sm-6">
+            <?= $form->field($model, 'video_title2')->textInput() ?>
         </div>
     </div>
 

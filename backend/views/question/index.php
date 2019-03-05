@@ -21,9 +21,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'columns' => [
-                ['class' => 'yii\grid\SerialColumn'],
                 'id',
-                'text',  
+                
+                [
+                    'attribute' => 'text',
+                    'contentOptions' => [
+                        'style' => 'width:600px; white-space: normal;'
+                    ],
+                ],
                 [
                     'attribute' => 'stage_id',
                     'format' => 'raw',
@@ -36,9 +41,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'location_id',
                     'format' => 'raw',
                     'value' => function($data) {
-                        return $data->location_id ? $data->location->title : '';
+                        return $data->location_id ? $data->location->name : '';
                     },
-                    'filter' => Html::activeDropDownList($searchModel, 'location_id', ArrayHelper::map(\common\models\Location::find()->all(), 'id', 'title'), ['prompt'=>''])
+                    'filter' => Html::activeDropDownList($searchModel, 'location_id', ArrayHelper::map(\common\models\Location::find()->all(), 'id', 'name'), ['prompt'=>''])
                 ], 
                 [
                     'attribute' => 'status',
@@ -48,14 +53,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     },
                     'filter' => Html::activeDropDownList($searchModel, 'status', Question::getStatusArray(), ['prompt'=>''])
                 ], 
-                [
-                    'attribute' => 'image',
-                    'header' => 'Изображение',
-                    'format' => 'raw',
-                    'value' => function($data) {
-                        return $data->image ? Html::img($data->imageUrl, ['width' => '200']) : '';
-                    },
-                ],
 
                 ['class' => 'yii\grid\ActionColumn'],
             ],

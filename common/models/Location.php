@@ -4,21 +4,6 @@ namespace common\models;
 
 use Yii;
 
-/**
- * This is the model class for table "location".
- *
- * @property int $id
- * @property string $title
- * @property string $subtitle
- * @property string $text
- * @property string $image
- * @property string $image2
- * @property string $image_share
- * @property string $video
- * @property string $video2
- *
- * @property Question[] $questions
- */
 class Location extends \yii\db\ActiveRecord
 {
     /**
@@ -35,8 +20,8 @@ class Location extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title'], 'required'],
-            [['title', 'subtitle', 'text', 'image', 'image2', 'image_share', 'video', 'video2'], 'string', 'max' => 255],
+            [['title', 'name'], 'required'],
+            [['title', 'subtitle', 'text', 'image', 'image2', 'image_share', 'video', 'video2', 'name', 'video_title', 'video_title2'], 'string', 'max' => 255],
         ];
     }
 
@@ -47,6 +32,7 @@ class Location extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'name' => 'Место',
             'title' => 'Заголовок',
             'subtitle' => 'Подзаголовок',
             'text' => 'Текст',
@@ -55,6 +41,8 @@ class Location extends \yii\db\ActiveRecord
             'image_share' => 'Изображение соц.сети',
             'video' => 'Видео',
             'video2' => 'Видео 2',
+            'video_title' => 'Видео заголовок',
+            'video_title2' => 'Видео 2 заголовок',
         ];
     }
 

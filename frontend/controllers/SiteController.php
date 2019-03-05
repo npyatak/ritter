@@ -112,7 +112,6 @@ class SiteController extends Controller
     {
 
         return $this->render('winners', [
-            'questions' => $questions,
         ]);
     }
 

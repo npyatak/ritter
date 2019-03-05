@@ -20,7 +20,7 @@ class m190224_225335_create_table_answer extends Migration
         
         $this->addForeignKey("{answer}_question_id_fkey", '{{%answer}}', 'question_id', '{{%question}}', 'id', 'CASCADE', 'CASCADE');
 
-        /*$this->batchInsert('{{%answer}}', ['question_id', 'text', 'is_right'], [
+        $this->batchInsert('{{%answer}}', ['question_id', 'text', 'is_right'], [
             [1, '350 лир', 0],
             [1, '550 лир', 1],
             [1, '400 лир', 0],
@@ -141,7 +141,7 @@ class m190224_225335_create_table_answer extends Migration
             [30, 'Вулкана', 0],
             [30, 'Скал', 1],
             [30, 'Над морем', 0],
-        ]);*/
+        ]);
     }
 
     public function safeDown()

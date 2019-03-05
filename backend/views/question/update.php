@@ -1,9 +1,9 @@
 <?php
 use yii\helpers\Html;
 
-$this->title = 'Изменить вопрос: ' . $model->title;
+$this->title = 'Изменить вопрос: ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Вопросы', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Изменить';
 ?>
 

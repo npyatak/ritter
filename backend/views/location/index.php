@@ -25,7 +25,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'id',
                 'title',
                 'subtitle',
-                'text',
+                [
+                    'attribute' => 'text',
+                    'contentOptions' => [
+                        'style' => 'width:600px; white-space: normal;'
+                    ],
+                ],
                 [
                     'attribute' => 'image',
                     'format' => 'raw',

@@ -12,22 +12,7 @@ use common\components\ElfinderInput;
     
     <?=$form->errorSummary($model);?>
 
-    <div class="row">
-        <div class="col-sm-6">
-    	</div>
-    	</div>
-    </div>
-
     <?= $form->field($model, 'text')->textInput(['maxlength' => true]) ?>
-
-    <div class="row">
-        <div class="col-sm-6">
-    		<?= $form->field($model, 'image')->widget(ElfinderInput::className());?>
-    	</div>
-        <div class="col-sm-6">
-    		<?= $form->field($model, 'link')->textInput(['maxlength' => true]) ?>
-        </div>
-    </div>
 
     <div class="row">
         <div class="col-sm-6">
@@ -39,11 +24,14 @@ use common\components\ElfinderInput;
     </div>
 
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <?= $form->field($model, 'status')->dropDownList($model->getStatusArray()) ?>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <?= $form->field($model, 'stage_id')->dropDownList(ArrayHelper::map(\common\models\Stage::find()->all(), 'id', 'name')) ?>
+        </div>
+        <div class="col-sm-4">
+            <?= $form->field($model, 'location_id')->dropDownList(ArrayHelper::map(\common\models\Location::find()->all(), 'id', 'name'), ['prompt'=>'']) ?>
         </div>
     </div>
 

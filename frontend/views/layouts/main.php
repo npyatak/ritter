@@ -70,11 +70,6 @@ AppAsset::register($this);
             
         </div>
 
-
-
-
-
-
         <div class="body_chocolate_wrap">
             <!-- плавающий фон  -->
             <div class="background_choco type_1">
@@ -95,15 +90,7 @@ AppAsset::register($this);
                     <div class="item one">
                         <p>Поделиться проектом</p>
                         <div class="social_block">
-                            <a class="social_1" href="#">
-                                <i class="fa fa-vk" aria-hidden="true"></i>
-                            </a>
-                            <a class="social_1" href="#">
-                                <i class="fa fa-facebook" aria-hidden="true"></i>
-                            </a>
-                            <a class="social_1" href="#">
-                                <i class="fa fa-odnoklassniki" aria-hidden="true"></i>
-                            </a>
+                            <?=\frontend\widgets\share\ShareWidget::widget();?>
                         </div>
                     </div>
                     <!-- item -->
@@ -123,7 +110,7 @@ AppAsset::register($this);
                     <!-- item -->
 
                     <div class="item three">
-                        <a href="#" class="return_call" href="#">Обратная связь</a>
+                        <a class="return_call" href="<?=Url::toRoute(['site/contact']);?>">Обратная связь</a>
                     </div>
 
                 </div>
@@ -176,15 +163,3 @@ AppAsset::register($this);
 </body>
 </html>
 <?php $this->endPage() ?>
-
-
-<?php 
-
-$script = "
-    window.onload = function (){
-        $('.wrapper').css('opacity', '1');
-    }
-";
-
-$this->registerJs($script, yii\web\View::POS_END);
-?>
