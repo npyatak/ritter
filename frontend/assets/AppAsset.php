@@ -20,7 +20,7 @@ class AppAsset extends AssetBundle
         'js/common.js',
     ];
     public $depends = [
-        //'yii\web\YiiAsset',
+        'yii\web\YiiAsset',
         //'yii\bootstrap\BootstrapAsset',
     ];
 }

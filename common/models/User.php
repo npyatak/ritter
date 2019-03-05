@@ -15,13 +15,11 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
 
     public $new_email;
     public $imageFile;
-    public $registerFields = ['rulesCheckbox', 'personalDataCheckbox', 'name', 'phone', 'email', 'password', 'birthDay', 'birthMonth', 'birthYear', 'birthdate'];
-    public $semiRequiredFields = ['rulesCheckbox', 'personalDataCheckbox', 'name', 'phone', 'email', 'birthDay', 'birthMonth', 'birthYear'];
-    public $birthDay;
-    public $birthMonth;
-    public $birthYear;
+    public $registerFields = ['login', 'rulesCheckbox', 'commercialCheckbox', 'email', 'password', 'birthdate', 'birthdateFormatted'];
+    public $semiRequiredFields = ['login', 'rulesCheckbox', 'commercialCheckbox', 'name', 'phone', 'email', 'birthdateFormatted'];
+    public $birthdateFormatted;
     public $rulesCheckbox = true;
-    public $personalDataCheckbox = true;
+    public $commercialCheckbox = true;
     /**
      * {@inheritdoc}
      */
@@ -36,23 +34,15 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            [['password', 'phone', 'name', 'image', 'ip', 'browser'], 'string', 'max' => 255],
-            [['birthDay', 'birthMonth', 'birthYear', 'rulesCheckbox', 'personalDataCheckbox', 'birthdate', 'referrer_id', 'email_subscribe'], 'integer'],
+            [['password', 'phone', 'name', 'login', 'image', 'ip', 'browser', 'birthdateFormatted'], 'string', 'max' => 255],
+            ['login', 'unique'],
+            [['rulesCheckbox', 'commercialCheckbox', 'birthdate', 'referrer_id', 'email_subscribe'], 'integer'],
             [['soc'], 'string', 'max' => 2],
             //[['email'], 'unique'],
             [['email', 'new_email'], 'email', 'checkDNS' => true],
             [$this->registerFields, 'required', 'on'=>'register'],
             ['rulesCheckbox', 'compare', 'compareValue' => 1, 'operator' => '==', 'on' => ['missing_fields', 'register'], 'message' => 'Необходимо согласиться с правилами'],
-            ['personalDataCheckbox', 'compare', 'compareValue' => 1, 'operator' => '==', 'on' => ['missing_fields', 'register'], 'message' => 'Необходимо согласиться на обработку персональных данных'],
-            [['birthDay', 'birthMonth', 'birthYear'], function($attribute, $params) {
-                    if($this->$attribute == 0) {
-                        $this->addError('birthdate', 'Необходимо заполнить дату рождения');
-                    }
-                    if($this->isUnder18()) {
-                        $this->addError('birthdate', 'Участвовать в конкурсе могут лица достигшие 18 лет.');
-                    }
-                },
-            ],
+            ['commercialCheckbox', 'compare', 'compareValue' => 1, 'operator' => '==', 'on' => ['missing_fields', 'register'], 'message' => 'Необходимо согласиться на обработку персональных данных'],
             [$this->semiRequiredFields, 'required', 'on'=>'missing_fields'],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_BANNED]],
             ['password', 'required', 'on' => 'reset-password'],
@@ -81,14 +71,9 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
 
     public function beforeValidate()
     {
-        if($this->birthDay && $this->birthMonth && $this->birthYear) {
-            if(strlen($this->birthDay) < 2) {
-                $this->birthDay = '0'.$this->birthDay;
-            }
-            if(strlen($this->birthMonth) < 2) {
-                $this->birthMonth = '0'.$this->birthMonth;
-            }
-            $this->birthdate = strtotime($this->birthYear.'-'.$this->birthMonth.'-'.$this->birthDay);
+        if($this->birthdateFormatted) {
+            $date = \DateTime::createFromFormat('d.m.Y', $this->birthdateFormatted);
+            $this->birthdate = $date->getTimestamp();
         }
         
         if (parent::beforeValidate()) {
@@ -134,9 +119,7 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
         if($this->birthdate) {
             $date = new \DateTime();
             $date->setTimestamp($this->birthdate);
-            $this->birthDay = $date->format('d');
-            $this->birthMonth = $date->format('m');
-            $this->birthYear = $date->format('o');
+            $this->birthdateFormatted = $date->format('d.m.o');
         }
     }
 
@@ -160,8 +143,9 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
             'created_at' => 'Создано',
             'updated_at' => 'Обновлено',
             'rulesCheckbox' => 'Регистрируясь, я соглашаюсь с Правилами проведения Конкурса и подтверждаю, что мне есть 18 лет.',
-            'personalDataCheckbox' => 'Я согласен на обработку моих персональных данных.',
+            'commercialCheckbox' => 'Я согласен на обработку моих персональных данных.',
             'birthdate' => 'Дата рождения',
+            'birthdateFormatted' => 'Дата рождения',
             'email_subscribe' => 'Подписка на рассылку',
             'userStageScores' => 'Баллы за этапы',
         ];

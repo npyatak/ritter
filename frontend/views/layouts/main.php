@@ -33,7 +33,7 @@ AppAsset::register($this);
                     </div>
                     <nav class="header_nav">
                         <ul>
-                            <li class="menu_li active"><a class="active" href="<?=Url::toRoute(['site/participate']);?>">Участвуй</a></li>
+                            <li class="menu_li active"><a class="active" href="<?=Url::toRoute(['site/index']);?>">Участвуй</a></li>
                             <li class="menu_li"><a href="<?=Url::toRoute(['site/rule']);?>" target="_blank">Полные правила</a></li>
                             <li class="menu_li"><a href="<?=Url::toRoute(['site/winners']);?>">Призы и победители</a></li>
                         </ul>
@@ -62,7 +62,7 @@ AppAsset::register($this);
 
                 <img class="close_burger" src="/img/close_middle.svg" alt="close">
                 <ul class="burger_ul">
-                    <li class="burger_li"><a href="<?=Url::toRoute(['site/participate']);?>">Участвуй</a></li>
+                    <li class="burger_li"><a href="<?=Url::toRoute(['site/index']);?>">Участвуй</a></li>
                     <li class="burger_li"><a href="<?=Url::toRoute(['site/rule']);?>" target="_blank">Полные правила</a></li>
                     <li class="burger_li"><a href="<?=Url::toRoute(['site/winners']);?>">Призы и победители</a></li>
                 </ul>
@@ -87,8 +87,6 @@ AppAsset::register($this);
                 <?= $content ?>
             </div>
         </div>
-
-        <?= Alert::widget() ?>
 
         <footer class="footer_main">
             <div class="contain">
@@ -172,6 +170,8 @@ AppAsset::register($this);
         <!-- popup_block -->
     </div>
     <!-- popup_bg -->
+
+    <?= Alert::widget() ?>
 <?php $this->endBody() ?>
 </body>
 </html>

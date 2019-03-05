@@ -19,7 +19,7 @@ return [
         'assetManager' => [
             'bundles' => [
                 'yii\web\JqueryAsset' => [
-                    'js' => ['/js/jquery-3.3.1.min.js'],
+                    'js' => ['/js/jquery.min.js'],
                 ],
             ]
         ],

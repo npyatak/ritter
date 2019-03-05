@@ -1,3 +1,10 @@
+<?php
+use yii\helpers\Url;
+use yii\helpers\Html;
+use yii\bootstrap\ActiveForm;
+
+$this->title = 'Регистрация';
+?>
 
 <div class="block_type_1 body_chocolate_inner">
 	<!-- рамка -->
@@ -8,53 +15,43 @@
 		</div>
 
 		<p class="name_block">Путешествуй ярко с <span>Ritter Sport</span></p>
-		<p class="light_text">Регистрация</p>
+		<p class="light_text"><?=$this->title;?></p>
 
+		<?php $form = ActiveForm::begin([
+		    'id' => 'form-register', 
+		    'action' => Url::toRoute('site/register'),
+		    'enableClientValidation' => false,
+		    'enableAjaxValidation' => true,
+		]); ?>
+			<div class="inputs_block">
+            	<?= $form->field($user, 'login', ['options' => ['class' => 'input_wrap_1 man']])->textInput(['autofocus' => true, 'placeholder' => 'Твой логин *'])->label(false) ?>
+            	
+            	<?= $form->field($user, 'email', ['options' => ['class' => 'input_wrap_1 mail']])->textInput(['placeholder' => 'E - mail *'])->label(false) ?>
+			</div>
+			<div class="inputs_block two">
+            	<?= $form->field($user, 'password', ['options' => ['class' => 'input_wrap_1 man']])->passwordInput(['placeholder' => 'Пароль *'])->label(false) ?>
+            	
+            	<?= $form->field($user, 'birthdateFormatted', ['options' => ['class' => 'input_wrap_1 date']])->textInput(['placeholder' => 'Дд.Мм.Гг'])->label(false) ?>
+			</div>
 
-		<div class="inputs_block">
-			<div class="input_wrap_1 man">
-				<input clas type="text" placeholder="Твой логин *" name="login">
+			<div class="checkbox_block">
+			    <?php $template = [
+			        'template' => '<div class="checkbox_1">{input}{label}{error}{hint}</div><p class="checkbox_1_text">Я соглашаюсь с <a href="'.Url::toRoute(['site/rules']).'">полными правилами</a> конкурса</p>',
+			        'hidden' => true
+			    ];?>
+			    <?= $form->field($user, 'rulesCheckbox', ['options' => ['class' => 'checkbox_1_wrap']])->checkbox($template)->label('', ['class'=>'checkbox1']);?>
+			    
+			    <?php $template['template'] = '<div class="checkbox_1">{input}{label}{error}{hint}</div><p class="checkbox_1_text">Согласен получать информационные рассылки, в том числе рекламные и иные материалы ООО «Телекомпания ПЯТНИЦА» и третьих лиц</p>';?>
+			    <?= $form->field($user, 'commercialCheckbox', ['options' => ['class' => 'checkbox_1_wrap']])->checkbox($template)->label('', ['class'=>'checkbox1']);?>
 			</div>
-			<div class="input_wrap_1 mail">
-				<input clas type="text" placeholder="E - mail *" name="mail">
-			</div>
-		</div>
-		<div class="inputs_block two">
-			<div class="input_wrap_1 password">
-				<input clas type="text" placeholder="Пароль *" name="password">
-			</div>
-			<div class="input_wrap_1 date">
-				<input clas type="text" placeholder="Дд / Мм / Гг" name="date">
-			</div>
-		</div>
+			<!-- checkbox_block -->
 
-
-		<div class="checkbox_block">
-			<div class="checkbox_1_wrap">	
-				<div class="checkbox_1">
-					 <input id="package_check1" type="checkbox" name="package_check" hidden checked>
-						<label for="package_check1"></label>
-				</div>
-				<!-- checkbox_1 -->
-				<p class="checkbox_1_text">Я соглашаюсь с <a href="#">полными правилами</a> конкурса</p>
+			<div class="center">
+	            <?= Html::submitButton('<span>Отправить</span>', ['class' => 'button_1', 'name' => 'register-button']) ?>
 			</div>
-			<!-- checkbox_1_wrap -->
-			<div class="checkbox_1_wrap">	
-				<div class="checkbox_1">
-					 <input id="package_check2" type="checkbox" name="package_check" hidden checked>
-						<label for="package_check2"></label>
-				</div>
-				<!-- checkbox_1 -->
-				<p class="checkbox_1_text">Согласен получать информационные рассылки, в том числе рекламные и иные материалы ООО «Телекомпания ПЯТНИЦА» и третьих лиц</p>
-			</div>
-			<!-- checkbox_1_wrap -->
-		</div>
-		<!-- checkbox_block -->
-
-		<div class="center">
-			<a class="button_1" href="#"><span>Отправить</span></a>
-		</div>
-		<a href="#" class="bold_refer">Авторизация</a>
+			<a href="<?=Url::toRoute(['site/login']);?>" class="bold_refer">Авторизация</a>
+        
+        <?php ActiveForm::end(); ?>
 
 		
 		<!-- <div class="bottom_block_1">

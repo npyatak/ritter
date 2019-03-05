@@ -95,6 +95,11 @@ class Question extends \yii\db\ActiveRecord
             'status' => 'Статус',
         ];
     }
+    
+    public function getStage()
+    {
+        return $this->hasOne(Stage::className(), ['id' => 'stage_id']);
+    }
 
     /**
      * @return \yii\db\ActiveQuery

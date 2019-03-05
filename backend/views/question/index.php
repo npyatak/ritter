@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\ArrayHelper;
 use yii\widgets\Pjax;
 
 use common\models\Question;
@@ -25,6 +26,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 'id',
                 'text',
                 'title',   
+                [
+                    'attribute' => 'stage_id',
+                    'format' => 'raw',
+                    'value' => function($data) {
+                        return $data->stage_id ? $data->stage->name : '';
+                    },
+                    'filter' => Html::activeDropDownList($searchModel, 'stage_id', ArrayHelper::map(\common\models\Stage::find()->all(), 'id', 'name'), ['prompt'=>''])
+                ], 
                 [
                     'attribute' => 'status',
                     'format' => 'raw',

@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
 use unclead\multipleinput\TabularInput;
 use common\components\ElfinderInput;
 ?>
@@ -51,7 +52,7 @@ use common\components\ElfinderInput;
             <?= $form->field($model, 'status')->dropDownList($model->getStatusArray()) ?>
         </div>
         <div class="col-sm-6">
-            <?= $form->field($model, 'stage_id')->dropDownList($model->getStatusArray()) ?>
+            <?= $form->field($model, 'stage_id')->dropDownList(ArrayHelper::map(\common\models\Stage::find()->all(), 'id', 'name')) ?>
         </div>
     </div>
 

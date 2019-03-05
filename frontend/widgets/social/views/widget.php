@@ -33,8 +33,8 @@ $faClasses = [
 
 <div class="eauth" id="<?php echo $id; ?>">
 	<?php foreach ($services as $name => $service) {
-		echo Html::a('<p><span><i class="fa fa-'.$faClasses[$name].'" aria-hidden="true"></i></span>Авторизация</p>', [$action, 'service' => $name, 'ref' => Url::current()], [
-			'class' => 'atho_button '.$name,
+		echo Html::a('<i class="fa fa-'.$faClasses[$name].'" aria-hidden="true"></i>', [$action, 'service' => $name, 'ref' => Url::current()], [
+			'class' => 'social_1 '.$name,
 			'data-eauth-service' => $service->id,
 			'data-ga-click' => 'reg_'.$name,
 		]);

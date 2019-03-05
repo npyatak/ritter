@@ -1,39 +1,41 @@
 <?php
+use yii\helpers\Url;
 
-/* @var $this yii\web\View */
-/* @var $form yii\bootstrap\ActiveForm */
-/* @var $model \common\models\LoginForm */
-
-use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
-
-$this->title = 'Login';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Авторизация';
 ?>
-<div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to login:</p>
-
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
-
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
-
-                <?= $form->field($model, 'password')->passwordInput() ?>
-
-                <?= $form->field($model, 'rememberMe')->checkbox() ?>
-
-                <div style="color:#999;margin:1em 0">
-                    If you forgot your password you can <?= Html::a('reset it', ['site/request-password-reset']) ?>.
-                </div>
-
-                <div class="form-group">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-                </div>
-
-            <?php ActiveForm::end(); ?>
+<div class="autorization_block body_chocolate_inner" style="display: inline-block;" id="autorization_block">
+    <!-- рамка -->
+    <div class="wrap_inner_border padding_type_1">
+        <div class="inner_border">
+            <span class="top"></span>
+            <span class="bottom"></span>
         </div>
+
+        <p class="name_block">Пожалуйста, <span>авторизуйся</span></p>
+
+        <div class="checkbox_block">
+            <div class="checkbox_1_wrap">   
+                <div class="checkbox_1">
+                     <input id="package_check1" type="checkbox" name="package_check" hidden checked>
+                    <label for="package_check1"></label>
+                </div>
+                <!-- checkbox_1 -->
+                <p class="checkbox_1_text">Я соглашаюсь с <a href="<?=Url::toRoute(['site/rules']);?>">полными правилами</a> конкурса</p>
+            </div>
+            <!-- checkbox_1_wrap -->
+            <div class="checkbox_1_wrap">   
+                <div class="checkbox_1">
+                     <input id="package_check2" type="checkbox" name="package_check" hidden checked>
+                    <label for="package_check2"></label>
+                </div>
+                <!-- checkbox_1 -->
+                <p class="checkbox_1_text">Согласен получать информационные рассылки, в том числе рекламные и иные материалы ООО «Телекомпания ПЯТНИЦА» и третьих лиц</p>
+            </div>
+            <!-- checkbox_1_wrap -->
+        </div>
+        <!-- checkbox_block -->
+
+        <?=$this->render('_login', ['loginForm' => $loginForm]);?>
     </div>
 </div>

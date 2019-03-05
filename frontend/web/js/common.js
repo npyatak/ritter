@@ -50,26 +50,6 @@ function parallaxIt(e, target, movement) {
 	});
 }
 
-
-
-
-
-
-// тест для демонстрации добавления класса active
-$(".quest").on("click", function(){
-	$(this).toggleClass("active");
-})
-
-
-
-
-
-
-
-
-
-
-
 // функция для открытия всплывающей формы
 function show_popup(form_number){
 	$("[data-flag="+form_number+"]").css("display","inline-block");
@@ -149,7 +129,7 @@ $(".show_block").on("click",function(){
 
 // функция отвечающая за переключение блоков на главной 
 function change_block(id){
-	if(!$("#"+ id +"").hasClass('active_block')){
+	if(!$("#"+ id).hasClass('active_block')){
 		$('.active_block').css('opacity','0').delay(150).queue(function () {
 			$(this).removeClass("active_block");
 			$(this).css('display', 'none').dequeue();

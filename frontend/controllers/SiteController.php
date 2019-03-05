@@ -7,6 +7,7 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\helpers\Url;
 
 use frontend\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
@@ -15,7 +16,10 @@ use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 
 use common\models\User;
+use common\models\Stage;
 use common\models\Question;
+use common\models\Answer;
+use common\models\UserAnswer;
 
 /**
  * Site controller
@@ -28,6 +32,11 @@ class SiteController extends Controller
     public function behaviors()
     {
         return [
+            'eauth' => [
+                // required to disable csrf validation on OpenID requests
+                'class' => \nodge\eauth\openid\ControllerBehavior::className(),
+                'only' => ['login'],
+            ],
             'access' => [
                 'class' => AccessControl::className(),
                 'only' => ['logout', 'signup'],
@@ -44,12 +53,12 @@ class SiteController extends Controller
                     ],
                 ],
             ],
-            'verbs' => [
+            /*'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'logout' => ['post'],
                 ],
-            ],
+            ],*/
         ];
     }
 
@@ -76,11 +85,87 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $questions = Question::find()/*->where(['stage_id' => $stage->id])*/->limit(1)->all();
+        $stage = Stage::getCurrent();
+        $userAnswer = UserAnswer::find()->where(['stage_id' => $stage->id, 'user_id' => Yii::$app->user->id])->one();
+        $qIds = [];
+        if($userAnswer !== null && !empty($userAnswer->answersArray)) {
+            foreach ($userAnswer->answersArray as $a) {
+                $qIds[] = $a['q'];
+            }
+        }
+
+        $question = Question::find()->where(['stage_id' => $stage->id])->andWhere(['not in', 'id', $qIds])->one();
 
         return $this->render('index', [
+            'userAnswer' => $userAnswer,
+            'question' => $question,
+            'loginForm' => new LoginForm,
+        ]);
+    }
+
+    public function actionWinners()
+    {
+
+        return $this->render('winners', [
             'questions' => $questions,
         ]);
+    }
+
+    public function actionAnswer($id)
+    {
+        if(Yii::$app->request->isAjax && !Yii::$app->user->isGuest) {
+            Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        
+            $stage = Stage::getCurrent();
+
+            $answer = Answer::findOne($id);
+            if($answer === null || $stage === null) {
+                throw new NotFoundHttpException('The requested page does not exist.');
+            }
+
+            $userAnswer = UserAnswer::find()->where(['stage_id' => $stage->id, 'user_id' => Yii::$app->user->id])->one();
+            if($userAnswer === null) {
+                $userAnswer = new UserAnswer;
+                $userAnswer->user_id = Yii::$app->user->id;
+                $userAnswer->stage_id = $stage->id;
+            }
+
+            $question = $answer->question;
+            $rightAnswerId = Answer::find()->select('id')->where(['question_id' => $question->id, 'is_right' => 1])->column()[0];
+
+            $userAnswer->answersArray[] = ['q' => $answer->question_id, 'a' => $answer->id];
+            if($rightAnswerId == $id) {
+                $userAnswer->score = $userAnswer->score + 1;
+            }
+
+            $userAnswer->save();
+
+            return ['right' => $rightAnswerId, 'comment' => $answer->is_right ? $question->comment_right : $question->comment_wrong];
+        }
+    }
+
+    public function actionNextQuestion()
+    {
+        if(Yii::$app->request->isAjax && !Yii::$app->user->isGuest) {        
+            $stage = Stage::getCurrent();
+            if($stage === null) {
+                throw new NotFoundHttpException('The requested page does not exist.');
+            }
+
+            $userAnswer = UserAnswer::find()->where(['stage_id' => $stage->id, 'user_id' => Yii::$app->user->id])->one();
+            $qIds = [];
+            if($userAnswer !== null && !empty($userAnswer->answersArray)) {
+                foreach ($userAnswer->answersArray as $a) {
+                    $qIds[] = $a['q'];
+                }
+            }
+
+            $question = Question::find()->where(['stage_id' => $stage->id])->andWhere(['not in', 'id', $qIds])->one();
+
+            if($question !== null) {
+                return $this->renderAjax('_question', ['question' => $question, 'userAnswer' => $userAnswer]);
+            }
+        }
     }
 
     public function actionLogout()
@@ -161,26 +246,26 @@ class SiteController extends Controller
             }
         }
 
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post())) {
+        $loginForm = new LoginForm();
+        if ($loginForm->load(Yii::$app->request->post())) {
             if(Yii::$app->request->isAjax) {
                 Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-                return \yii\widgets\ActiveForm::validate($model);
+                return \yii\widgets\ActiveForm::validate($loginForm);
             }
-            if($model->getUser()->status !== User::STATUS_ACTIVE) {
+            if($loginForm->getUser()->status !== User::STATUS_ACTIVE) {
                 Yii::$app->getSession()->setFlash('error', 'Вы не можете войти. Ваш аккаунт заблокирован');
             
                 return $this->redirect(['site/login']);
             }
 
-            $model->login();
+            $loginForm->login();
 
             return $this->redirect(['site/index']);
         } else {
-            $model->password = '';
+            $loginForm->password = '';
 
             return $this->render('login', [
-                'model' => $model,
+                'loginForm' => $loginForm,
             ]);
         }
     }
@@ -207,16 +292,16 @@ class SiteController extends Controller
             if($user->save()) {
                 Yii::$app->user->login($user, 3600 * 24 * 365);
 
-                Yii::$app->session->setFlash('success', 'Поздравляем! Вы успешно зарегистрированы на проекте "Горячая битва"!');
+                Yii::$app->session->setFlash('success', 'Поздравляем! Вы успешно зарегистрированы!');
 
-                /*Yii::$app->mailer->compose(
+                Yii::$app->mailer->compose(
                         ['html' => 'registrationSuccess-html'],
                         ['user' => $user]
                     )
                     ->setFrom([Yii::$app->params['adminEmail'] => Yii::$app->name])
                     ->setTo($user->email)
                     ->setSubject(Yii::$app->name.'. Регистрация')
-                    ->send();*/
+                    ->send();
 
                 return $this->redirect(Yii::$app->request->referrer);
             }

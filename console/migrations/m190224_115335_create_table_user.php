@@ -14,6 +14,7 @@ class m190224_115335_create_table_user extends Migration
         $this->createTable('{{%user}}', [
             'id' => $this->primaryKey(),
             'email' => $this->string()->unique()->comment('E-mail'),
+            'login' => $this->string()->unique()->comment('Логин'),
             'password' => $this->string()->comment('Пароль'),
             'phone' => $this->string()->comment('Телефон'),
             'soc' => $this->string(2)->comment('Соц.сеть'),

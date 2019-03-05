@@ -93,8 +93,8 @@ class Stage extends \yii\db\ActiveRecord
         return $this->date_start < time() && $this->date_end > time();
     }
 
-    public static function getCurrent($type) {
-        return self::find()->where(['<', 'date_start', time()])->andWhere(['>', 'date_end', time()])->andWhere(['type' => $type])->one();
+    public static function getCurrent() {
+        return self::find()->where(['<', 'date_start', time()])->andWhere(['>', 'date_end', time()])->one();
     }
 
     public function isFinished() {
