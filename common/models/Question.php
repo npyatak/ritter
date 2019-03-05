@@ -25,8 +25,8 @@ class Question extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['status', 'stage_id'], 'integer'],
-            [['title', 'subtitle', 'text', 'comment_wrong', 'comment_right', 'link', 'image'], 'string', 'max' => 255],
+            [['status', 'stage_id', 'location_id'], 'integer'],
+            [['video', 'text', 'comment_wrong', 'comment_right'], 'string', 'max' => 255],
             ['answersArray', function($attribute, $params) {
                 if(count($this->answersArray) < 2) {
                     $this->addError($attribute, 'Не менее двух вариантов ответов');
@@ -84,14 +84,12 @@ class Question extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'title' => 'Заголовок',
-            'subtitle' => 'Подзаголовок',
             'text' => 'Текст',
             'comment_wrong' => 'Комментарий для правильного',
             'comment_right' => 'Комментарий для неправильного',
-            'link' => 'Ссылка',
-            'image' => 'Изображение',
+            'video' => 'Видео',
             'stage_id' => 'Этап',
+            'location_id' => 'Локация',
             'status' => 'Статус',
         ];
     }
@@ -99,6 +97,11 @@ class Question extends \yii\db\ActiveRecord
     public function getStage()
     {
         return $this->hasOne(Stage::className(), ['id' => 'stage_id']);
+    }
+    
+    public function getLocation()
+    {
+        return $this->hasOne(Location::className(), ['id' => 'location_id']);
     }
 
     /**

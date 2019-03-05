@@ -22,10 +22,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'filterModel' => $searchModel,
             'columns' => [
                 ['class' => 'yii\grid\SerialColumn'],
-
                 'id',
-                'text',
-                'title',   
+                'text',  
                 [
                     'attribute' => 'stage_id',
                     'format' => 'raw',
@@ -33,6 +31,14 @@ $this->params['breadcrumbs'][] = $this->title;
                         return $data->stage_id ? $data->stage->name : '';
                     },
                     'filter' => Html::activeDropDownList($searchModel, 'stage_id', ArrayHelper::map(\common\models\Stage::find()->all(), 'id', 'name'), ['prompt'=>''])
+                ],  
+                [
+                    'attribute' => 'location_id',
+                    'format' => 'raw',
+                    'value' => function($data) {
+                        return $data->location_id ? $data->location->title : '';
+                    },
+                    'filter' => Html::activeDropDownList($searchModel, 'location_id', ArrayHelper::map(\common\models\Location::find()->all(), 'id', 'title'), ['prompt'=>''])
                 ], 
                 [
                     'attribute' => 'status',

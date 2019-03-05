@@ -35,6 +35,7 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => 'Пользователи', 'url' => ['/user']],
+        ['label' => 'Локации', 'url' => ['/location']],
         ['label' => 'Конкурс', 'items' => [
                 ['label' => 'Вопросы', 'url' => ['/question']],
                 ['label' => 'Этапы', 'url' => ['/stage']],

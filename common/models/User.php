@@ -15,11 +15,10 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
 
     public $new_email;
     public $imageFile;
-    public $registerFields = ['login', 'rulesCheckbox', 'commercialCheckbox', 'email', 'password', 'birthdate', 'birthdateFormatted'];
-    public $semiRequiredFields = ['login', 'rulesCheckbox', 'commercialCheckbox', 'name', 'phone', 'email', 'birthdateFormatted'];
+    public $registerFields = ['login', 'rulesCheckbox', 'spam_subscribe', 'email', 'password', 'birthdate', 'birthdateFormatted'];
+    public $semiRequiredFields = ['login', 'rulesCheckbox', 'spam_subscribe', 'name', 'phone', 'email', 'birthdateFormatted'];
     public $birthdateFormatted;
-    public $rulesCheckbox = true;
-    public $commercialCheckbox = true;
+    public $rulesCheckbox = false;
     /**
      * {@inheritdoc}
      */
@@ -36,13 +35,13 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
         return [
             [['password', 'phone', 'name', 'login', 'image', 'ip', 'browser', 'birthdateFormatted'], 'string', 'max' => 255],
             ['login', 'unique'],
-            [['rulesCheckbox', 'commercialCheckbox', 'birthdate', 'referrer_id', 'email_subscribe'], 'integer'],
+            [['rulesCheckbox', 'spam_subscribe', 'birthdate', 'referrer_id', 'email_subscribe'], 'integer'],
             [['soc'], 'string', 'max' => 2],
             //[['email'], 'unique'],
             [['email', 'new_email'], 'email', 'checkDNS' => true],
             [$this->registerFields, 'required', 'on'=>'register'],
             ['rulesCheckbox', 'compare', 'compareValue' => 1, 'operator' => '==', 'on' => ['missing_fields', 'register'], 'message' => 'Необходимо согласиться с правилами'],
-            ['commercialCheckbox', 'compare', 'compareValue' => 1, 'operator' => '==', 'on' => ['missing_fields', 'register'], 'message' => 'Необходимо согласиться на обработку персональных данных'],
+            ['spam_subscribe', 'compare', 'compareValue' => 1, 'operator' => '==', 'on' => ['missing_fields', 'register'], 'message' => 'Необходимо согласиться на обработку персональных данных'],
             [$this->semiRequiredFields, 'required', 'on'=>'missing_fields'],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_BANNED]],
             ['password', 'required', 'on' => 'reset-password'],
@@ -143,7 +142,7 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
             'created_at' => 'Создано',
             'updated_at' => 'Обновлено',
             'rulesCheckbox' => 'Регистрируясь, я соглашаюсь с Правилами проведения Конкурса и подтверждаю, что мне есть 18 лет.',
-            'commercialCheckbox' => 'Я согласен на обработку моих персональных данных.',
+            'spam_subscribe' => 'Я согласен на обработку моих персональных данных.',
             'birthdate' => 'Дата рождения',
             'birthdateFormatted' => 'Дата рождения',
             'email_subscribe' => 'Подписка на рассылку',

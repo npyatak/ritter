@@ -9,8 +9,8 @@ class ShareWidget extends \yii\base\Widget
 {
 
 	public $share = [
-		'title' => 'Прокачай свою заботу с Кагоцелом. #ПрокачайсвоюзаботуcКагоцелом #Кагоцел',
-        'text' => 'Собери свой трек и выиграй призы. #ПрокачайсвоюзаботуcКагоцелом #Кагоцел',
+		'title' => 'Калейдоскоп вкусов и призов от Ritter Sport!',
+        'text' => 'Пройди тест и выиграй дорожный рюкзак и другие призы от Ritter Sport! #ПутешествуйсRitterSport',
 		'image' => '/img/01_kagocel_studia_souz_sharing_fb.jpg',
 		'image_vk' => '/img/01_kagocel_studia_souz_sharing_vk.jpg',
 		'image_ok' => '/img/01_kagocel_studia_souz_sharing_ok.jpg',

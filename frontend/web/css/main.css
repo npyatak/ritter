@@ -114,10 +114,10 @@ img {
   min-height: 100vh;
   margin: 0 auto;
   position: relative;
-  opacity: 1;
+  /*opacity: 1;
   -webkit-transition: opacity .5s;
   -o-transition: opacity .5s;
-  transition: opacity .5s;
+  transition: opacity .5s;*/
   overflow: hidden;
 }
 

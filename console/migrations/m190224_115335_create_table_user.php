@@ -23,6 +23,7 @@ class m190224_115335_create_table_user extends Migration
             'surname' => $this->string()->comment('Фамилия'),
             'image' => $this->string()->comment('Изображение'),
             'status' => $this->integer(1)->notNull()->defaultValue(1)->comment('Статус'),
+            'spam_subscribe' => $this->integer(1)->notNull()->defaultValue(0),
             'ip' => $this->string()->comment('IP'),
             'browser' => $this->string()->comment('Браузер'),
             'birthdate' => $this->bigInteger()->comment('Дата рождения'),

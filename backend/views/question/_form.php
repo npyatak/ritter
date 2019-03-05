@@ -22,15 +22,6 @@ use common\components\ElfinderInput;
 
     <div class="row">
         <div class="col-sm-6">
-    		<?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
-        </div>
-        <div class="col-sm-6">
-    		<?= $form->field($model, 'subtitle')->textInput(['maxlength' => true]) ?>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-6">
     		<?= $form->field($model, 'image')->widget(ElfinderInput::className());?>
     	</div>
         <div class="col-sm-6">

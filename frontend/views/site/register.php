@@ -42,7 +42,7 @@ $this->title = 'Регистрация';
 			    <?= $form->field($user, 'rulesCheckbox', ['options' => ['class' => 'checkbox_1_wrap']])->checkbox($template)->label('', ['class'=>'checkbox1']);?>
 			    
 			    <?php $template['template'] = '<div class="checkbox_1">{input}{label}{error}{hint}</div><p class="checkbox_1_text">Согласен получать информационные рассылки, в том числе рекламные и иные материалы ООО «Телекомпания ПЯТНИЦА» и третьих лиц</p>';?>
-			    <?= $form->field($user, 'commercialCheckbox', ['options' => ['class' => 'checkbox_1_wrap']])->checkbox($template)->label('', ['class'=>'checkbox1']);?>
+			    <?= $form->field($user, 'spam_subscribe', ['options' => ['class' => 'checkbox_1_wrap']])->checkbox($template)->label('', ['class'=>'checkbox1']);?>
 			</div>
 			<!-- checkbox_block -->
 

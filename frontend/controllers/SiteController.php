@@ -39,10 +39,10 @@ class SiteController extends Controller
             ],
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout', 'signup'],
+                'only' => ['logout', 'test'],
                 'rules' => [
                     [
-                        'actions' => ['signup'],
+                        'actions' => ['test'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
@@ -85,6 +85,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        return $this->render('index');
+    }
+
+    public function actionTest()
+    {
         $stage = Stage::getCurrent();
         $userAnswer = UserAnswer::find()->where(['stage_id' => $stage->id, 'user_id' => Yii::$app->user->id])->one();
         $qIds = [];
@@ -96,7 +101,7 @@ class SiteController extends Controller
 
         $question = Question::find()->where(['stage_id' => $stage->id])->andWhere(['not in', 'id', $qIds])->one();
 
-        return $this->render('index', [
+        return $this->render('test', [
             'userAnswer' => $userAnswer,
             'question' => $question,
             'loginForm' => new LoginForm,

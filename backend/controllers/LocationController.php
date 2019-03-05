@@ -9,15 +9,15 @@ use yii\web\UploadedFile;
 use yii\widgets\ActiveForm;
 use yii\base\Model;
 
-use common\models\Stage;
-use common\models\search\StageSearch;
+use common\models\Location;
+use common\models\search\LocationSearch;
 
 
-class StageController extends CController
+class LocationController extends CController
 {
     public function actionIndex()
     {
-        $searchModel = new StageSearch();
+        $searchModel = new LocationSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -27,7 +27,7 @@ class StageController extends CController
     }
 
     /**
-     * Displays a single Stage model.
+     * Displays a single Location model.
      * @param integer $id
      * @return mixed
      */
@@ -39,7 +39,7 @@ class StageController extends CController
     }
 
     public function actionCreate() {
-        $model = new Stage();
+        $model = new Location();
 
         if ($model->load(Yii::$app->request->post())) {
             if($model->save()) {
@@ -53,7 +53,7 @@ class StageController extends CController
     }
 
     /**
-     * Updates an existing Stage model.
+     * Updates an existing Location model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -73,7 +73,7 @@ class StageController extends CController
     }
 
     /**
-     * Deletes an existing Stage model.
+     * Deletes an existing Location model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -86,15 +86,15 @@ class StageController extends CController
     }
 
     /**
-     * Finds the Stage model based on its primary key value.
+     * Finds the Location model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Stage the loaded model
+     * @return Location the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Stage::findOne($id)) !== null) {
+        if (($model = Location::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
