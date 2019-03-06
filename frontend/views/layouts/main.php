@@ -70,7 +70,12 @@ AppAsset::register($this);
             
         </div>
 
+
+        <?php if(Yii::$app->controller->action->id == 'index'):?>
+        <div class="body_chocolate_wrap section_scroll" id="slider_section" data-section="1">
+        <?php else:?>            
         <div class="body_chocolate_wrap">
+        <?php endif;?>
             <!-- плавающий фон  -->
             <div class="background_choco type_1">
                 <img class="left img_1" src="/img/chocolate_bg_1_1.jpg" alt="img">
