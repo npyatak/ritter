@@ -26,7 +26,7 @@ AppAsset::register($this);
     <div class="wrapper">
 
         <?php if(Yii::$app->controller->action->id == 'index'):?>
-         <header class="main_header boss">
+        <header class="main_header boss">
         <?php else:?>            
         <header class="main_header">
         <?php endif;?>
@@ -42,7 +42,7 @@ AppAsset::register($this);
                         <ul>
                             <li class="menu_li active"><a class="active" href="<?=Url::toRoute(['site/index']);?>">Участвуй</a></li>
                             <li class="menu_li"><a href="<?=Url::toRoute(['site/rule']);?>" target="_blank">Полные правила</a></li>
-                            <li class="menu_li"><a href="<?=Url::toRoute(['site/winners']);?>">Призы и победители</a></li>
+                            <!-- <li class="menu_li"><a href="<?=Url::toRoute(['site/winners']);?>">Призы и победители</a></li> -->
                         </ul>
                     </nav>
                     <div class="header_logo_2">
@@ -71,7 +71,7 @@ AppAsset::register($this);
                 <ul class="burger_ul">
                     <li class="burger_li"><a href="<?=Url::toRoute(['site/index']);?>">Участвуй</a></li>
                     <li class="burger_li"><a href="<?=Url::toRoute(['site/rule']);?>" target="_blank">Полные правила</a></li>
-                    <li class="burger_li"><a href="<?=Url::toRoute(['site/winners']);?>">Призы и победители</a></li>
+                    <!-- <li class="burger_li"><a href="<?=Url::toRoute(['site/winners']);?>">Призы и победители</a></li> -->
                 </ul>
             </div>
             
