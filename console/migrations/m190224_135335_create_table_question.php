@@ -26,7 +26,7 @@ class m190224_135335_create_table_question extends Migration
         $this->addForeignKey("{question}_stage_id_fkey", '{{%question}}', 'stage_id', '{{%stage}}', 'id', 'RESTRICT', 'RESTRICT');
         $this->addForeignKey("{question}_location_id_fkey", '{{%question}}', 'location_id', '{{%location}}', 'id', 'RESTRICT', 'RESTRICT');
 
-        $this->batchInsert('{{%question}}', ['id', 'location_id', 'stage_id', 'video', 'text', 'comment_wrong', 'comment_right'], [
+        $this->batchInsert('{{%question}}', ['id', 'location_id', 'stage_id', 'video', 'text', 'comment_right', 'comment_wrong'], [
             [
                 1,
                 1,

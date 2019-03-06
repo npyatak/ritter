@@ -17,8 +17,8 @@ $this->title = 'Участвовать';
         </div>
     </div>
     <!-- test_block -->
-<?php else:?>
-    <div class="alert_block body_chocolate_inner" id="occupied_block">
+<?php elseif($userAnswer !== null && $userAnswer->is_shared):?>
+    <div class="alert_block body_chocolate_inner" id="occupied_block" style="display: block;">
         <!-- рамка -->
         <div class="wrap_inner_border padding_type_1">
             <div class="inner_border">
@@ -104,8 +104,6 @@ $this->title = 'Участвовать';
                 <img src="/img/insta_icon.svg" alt="img">
             </a>
         </div>
-
-
     </div>
     <!-- wrap_inner_border -->
     <div class="center">
@@ -114,12 +112,44 @@ $this->title = 'Участвовать';
 </div>
 <!-- occupied_block -->
 
+<!-- <div class="popup_bg">
+    <div class="not_answer popup_block style_1" data-flag="not_answer">
+        <img class="close_popup" src="/img/close_middle.svg" alt="close">
+        <div class="wrap_inner_border">
+            <div class="inner_border">
+                <span class="top"></span>
+                <span class="bottom"></span>
+            </div>
+
+            <div class="not_answer_content">
+                <p class="name">Не можешь определится с ответом?</p>
+                <p class="anons">Смотри подсказку здесь!</p>
+            </div>
+            
+            <div class="not_answer_video">
+                <div class="video_wrap">
+                    <iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/11982280?quality=1&platform=someplatform" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+                <div class="video_info">
+                    <div class="video_content">
+                        <p class="name">Орел и Решка: Перезагрузка</p>
+                        <p class="desc"><span>США, Лос-Анджелес</span> 14 сезон</p>
+                        <div class="video_img">
+                            <img src="/img/chocolate_1.png" alt="img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
 
 <!-- ========================================= -->
 <!-- ========================================= -->
 
 
-<div class="alert_block two body_chocolate_inner" id="congratulation_block_2">
+<div class="alert_block two body_chocolate_inner" id="congratulation_block_2" <?=($userAnswer !== null && $userAnswer->is_finished && !$userAnswer->is_shared) ? 'style="display: block;"' : '';?>>
     <!-- рамка -->
     <div class="wrap_inner_border padding_type_1">
         <div class="inner_border">
@@ -136,10 +166,8 @@ $this->title = 'Участвовать';
         <p class="light_text">У нас отличная новость: здесь скучно тебе точно не будет! Смело планируй маршрут и открывай море новых впечатлений вместе с Ritter Sport. Поделись проектом с друзьями и участвуй в розыгрыше призов. Удачи!</p>
 
         <div class="social_block">
-            <?=\frontend\widgets\share\ShareWidget::widget();?>
+            <?=\frontend\widgets\share\ShareWidget::widget(['addClass' => 'result']);?>
         </div>
-
-
     </div>
     <!-- wrap_inner_border -->
     <div class="center">
@@ -168,8 +196,7 @@ $this->title = 'Участвовать';
             var answer = $('.quest.active');
             if(answer.length) {
                 $.ajax({
-                    data: {id: answer.data('id')},
-                    url: 'site/answer',
+                    data: {answerId: answer.data('id')},
                     success: function(data) {
                         $('.quest_alert').html(data.comment).show();
                         $('#nextButton').show();
@@ -187,7 +214,7 @@ $this->title = 'Участвовать';
 
         $(document).on('click', '#nextButton', function() {
             $.ajax({
-                url: 'site/next-question',
+                data: {next: 1},
                 success: function(data) {
                     if(data.length) {
                         $('.content_test').html(data);
@@ -199,6 +226,5 @@ $this->title = 'Участвовать';
         });
     ";
 }
-
 
 $this->registerJs($script, yii\web\View::POS_END);?>

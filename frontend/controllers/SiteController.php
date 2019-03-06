@@ -4,6 +4,7 @@ namespace frontend\controllers;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\web\BadRequestHttpException;
+use yii\web\NotFoundHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
@@ -17,6 +18,7 @@ use frontend\models\ContactForm;
 
 use common\models\User;
 use common\models\Stage;
+use common\models\Location;
 use common\models\Question;
 use common\models\Answer;
 use common\models\UserAnswer;
@@ -74,12 +76,21 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $locations = Location::find()->all();
+
+        return $this->render('index', [
+            'locations' => $locations,
+        ]);
     }
 
-    public function actionTest()
+    public function actionTest($id, $answerId = null, $next = null)
     {
         $stage = Stage::getCurrent();
+        $location = Location::findOne($id);
+        if($location === null || $stage === null) {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+
         $userAnswer = UserAnswer::find()->where(['stage_id' => $stage->id, 'user_id' => Yii::$app->user->id])->one();
         $qIds = [];
         if($userAnswer !== null && !empty($userAnswer->answersArray)) {
@@ -88,39 +99,35 @@ class SiteController extends Controller
             }
         }
 
-        $question = Question::find()->where(['stage_id' => $stage->id])->andWhere(['not in', 'id', $qIds])->one();
+        $question = Question::find()->where(['stage_id' => $stage->id, 'location_id' => $userAnswer !== null ? $userAnswer->location_id : $location->id])->andWhere(['not in', 'id', $qIds])->one();
 
-        return $this->render('test', [
-            'userAnswer' => $userAnswer,
-            'question' => $question,
-            'loginForm' => new LoginForm,
-        ]);
-    }
-
-    public function actionWinners()
-    {
-
-        return $this->render('winners', [
-        ]);
-    }
-
-    public function actionAnswer($id)
-    {
         if(Yii::$app->request->isAjax && !Yii::$app->user->isGuest) {
-            Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
-        
-            $stage = Stage::getCurrent();
+            if($next) {
+                if($question !== null) {
+                    return $this->renderAjax('_question', ['question' => $question, 'userAnswer' => $userAnswer]);
+                } else {
+                    $userAnswer->is_finished = 1;
+                    $userAnswer->save(false, ['is_finished']);
 
-            $answer = Answer::findOne($id);
-            if($answer === null || $stage === null) {
+                    return false;
+                }
+            }
+
+            Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+            $answer = Answer::findOne($answerId);
+            if($answer === null) {
                 throw new NotFoundHttpException('The requested page does not exist.');
             }
 
-            $userAnswer = UserAnswer::find()->where(['stage_id' => $stage->id, 'user_id' => Yii::$app->user->id])->one();
             if($userAnswer === null) {
                 $userAnswer = new UserAnswer;
                 $userAnswer->user_id = Yii::$app->user->id;
                 $userAnswer->stage_id = $stage->id;
+                $userAnswer->location_id = $location->id;
+            } elseif($userAnswer->location_id !== $location->id) {
+                $userAnswer->answersArray = [];
+                $userAnswer->score = 0;
             }
 
             $question = $answer->question;
@@ -135,6 +142,41 @@ class SiteController extends Controller
 
             return ['right' => $rightAnswerId, 'comment' => $answer->is_right ? $question->comment_right : $question->comment_wrong];
         }
+
+        return $this->render('test', [
+            'userAnswer' => $userAnswer,
+            'question' => $question,
+            'loginForm' => new LoginForm,
+        ]);
+    }
+
+    public function actionShareResult() 
+    {        
+        if(Yii::$app->request->isAjax && !Yii::$app->user->isGuest) {
+            Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+            $stage = Stage::getCurrent();
+            if($stage === null) {
+                throw new NotFoundHttpException('The requested page does not exist.');
+            }
+
+            $userAnswer = UserAnswer::find()->where(['stage_id' => $stage->id, 'user_id' => Yii::$app->user->id])->one();
+            if($userAnswer !== null && $userAnswer->is_finished) {
+                $userAnswer->is_shared = 1;
+                $userAnswer->save(false, ['is_shared']);
+            
+                return ['status' => 'success'];
+            }
+
+            return ['status' => 'error'];
+        }
+    }
+
+    public function actionWinners()
+    {
+
+        return $this->render('winners', [
+        ]);
     }
 
     public function actionNextQuestion()
@@ -153,10 +195,13 @@ class SiteController extends Controller
                 }
             }
 
-            $question = Question::find()->where(['stage_id' => $stage->id])->andWhere(['not in', 'id', $qIds])->one();
+            $question = Question::find()->where(['stage_id' => $stage->id, 'location_id' => $userAnswer->location_id])->andWhere(['not in', 'id', $qIds])->one();
 
             if($question !== null) {
                 return $this->renderAjax('_question', ['question' => $question, 'userAnswer' => $userAnswer]);
+            } else {
+                $userAnswer->is_finished = 1;
+                $$userAnswer->save(false, ['is_finished']);
             }
         }
     }

@@ -33,11 +33,20 @@ class Question extends \yii\db\ActiveRecord
                 } elseif(count($this->answersArray) > 5) {
                     $this->addError($attribute, 'Не более пяти вариантов ответов');
                 } else {
+                    $hasRight = false;
                     foreach ($this->answersArray as $item) {
                         $item->validate();
+                        if($item->is_right) {
+                            $hasRight = true;
+                        }
+
                         if($item->hasErrors()) {
                             $this->addError($attribute, 'Необходимо заполнить варианты ответов');
                         }
+                    }
+
+                    if(!$hasRight) {
+                        $this->addError($attribute, 'Необходимо выбрать правильный ответ');
                     }
                 }
             }],

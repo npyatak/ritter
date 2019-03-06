@@ -16,6 +16,7 @@ class ShareWidget extends \yii\base\Widget
 		'image_ok' => '/img/01_kagocel_studia_souz_sharing_ok.jpg',
 	];
 	public $showButtons = true;
+	public $addClass = '';
 
     public function init()
     {
@@ -52,7 +53,7 @@ class ShareWidget extends \yii\base\Widget
 
 		if($this->showButtons) {
 		    echo Html::a('<i class="fa fa-vk" aria-hidden="true"></i>', '', [
-		        'class' => 'social_1 share',
+		        'class' => 'social_1 share '.$this->addClass,
 		        'data-soc' => 'vk',
 		        'data-url' => $this->share['url'],
 		        'data-title' => $this->share['title'],
@@ -60,7 +61,7 @@ class ShareWidget extends \yii\base\Widget
 		        'data-text' => $this->share['text'],
 		    ]);
 			echo Html::a('<i class="fa fa-facebook" aria-hidden="true"></i>', '', [
-		        'class' => 'social_1 share',
+		        'class' => 'social_1 share '.$this->addClass,
 		        'data-soc' => 'fb',
 		        'data-url' => $this->share['url'],
 		        'data-title' => $this->share['title'],
@@ -68,7 +69,7 @@ class ShareWidget extends \yii\base\Widget
 		        'data-text' => $this->share['text'],
 		    ]);
 		    echo Html::a('<i class="fa fa-odnoklassniki" aria-hidden="true"></i>', '#', [
-		        'class' => 'social_1 share',
+		        'class' => 'social_1 share '.$this->addClass,
 		        'data-soc' => 'ok',
 		        'data-url' => $this->share['url'],
 		        'data-title' => $this->share['title'],

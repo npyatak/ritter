@@ -174,5 +174,11 @@ use yii\helpers\Url;
 		
 	</div>
 	<!-- main_slider_wrap -->
+	<?php if($locations):?>
+		<?php foreach ($locations as $location):?>
+			<a href="<?=Url::toRoute(['site/test', 'id' => $location->id]);?>"><?=$location->name;?></a>
+			<br>
+		<?php endforeach;?>
+	<?php endif;?>
 </div>
 <!-- body_chocolate_inner -->
