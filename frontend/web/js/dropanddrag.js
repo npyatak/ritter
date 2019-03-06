@@ -4,8 +4,8 @@ $( function() {
     let items = $.trim($(".drwrap .dritems").html())
     $(".drwrap .dritems").html(items+items+items);
     $(".drwrap .dritems .dritem").click(function () {
-
-        console.log($(this).index()-Math.floor($(this).index()/15)*15+1);
+        var id = $(this).index()-Math.floor($(this).index()/15)*15+1;
+        window.location.href = '/test/'+id;
     })
     // $("")
 
