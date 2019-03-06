@@ -22,7 +22,7 @@ use yii\helpers\Url;
 								</p>
 							</div>
 
-							<a href="<?=Url::toRoute(['site/test']);?>" class="button_1"><span>Участвовать</span></a>
+							<a href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>" class="button_1"><span>Участвовать</span></a>
 						</div>
 						<!-- item_inner -->
 					</div>
@@ -70,7 +70,7 @@ use yii\helpers\Url;
 								</p>
 							</div>
 
-							<a href="<?=Url::toRoute(['site/test']);?>" class="button_1"><span>Участвовать</span></a>
+							<a href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>" class="button_1"><span>Участвовать</span></a>
 						</div>
 						<!-- item_inner -->
 					</div>
@@ -111,7 +111,7 @@ use yii\helpers\Url;
 								</p>
 							</div>
 
-							<a href="<?=Url::toRoute(['site/test']);?>" class="button_1"><span>Участвовать</span></a>
+							<a href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>" class="button_1"><span>Участвовать</span></a>
 						</div>
 						<!-- item_inner -->
 					</div>
@@ -161,7 +161,7 @@ use yii\helpers\Url;
 								</p>
 							</div>
 
-							<a href="<?=Url::toRoute(['site/test']);?>" class="button_1"><span>Участвовать</span></a>
+							<a href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>" class="button_1"><span>Участвовать</span></a>
 						</div>
 						<!-- item_inner -->
 					</div>
@@ -228,7 +228,7 @@ use yii\helpers\Url;
 								<p class="name">Орел и Решка: Перезагрузка</p>
 								<p class="desc">США, Лос-Анджелес<strong>·</strong>14 сезон</p>
 								<div class="video_img">
-									<img src="img/chocolate_1.png" alt="img">
+									<img src="/img/chocolate_1.png" alt="img">
 								</div>
 							</div>
 							
@@ -248,7 +248,7 @@ use yii\helpers\Url;
 								<p class="name">Орел и Решка: Перезагрузка</p>
 								<p class="desc">США, Лос-Анджелес<strong>·</strong>14 сезон</p>
 								<div class="video_img">
-									<img src="img/chocolate_1.png" alt="img">
+									<img src="/img/chocolate_1.png" alt="img">
 								</div>
 							</div>
 							
@@ -268,7 +268,7 @@ use yii\helpers\Url;
 								<p class="name">Орел и Решка: Перезагрузка</p>
 								<p class="desc">США, Лос-Анджелес<strong>·</strong>14 сезон</p>
 								<div class="video_img">
-									<img src="img/chocolate_1.png" alt="img">
+									<img src="/img/chocolate_1.png" alt="img">
 								</div>
 							</div>
 							
@@ -288,7 +288,7 @@ use yii\helpers\Url;
 								<p class="name">Орел и Решка: Перезагрузка</p>
 								<p class="desc">США, Лос-Анджелес<strong>·</strong>14 сезон</p>
 								<div class="video_img">
-									<img src="img/chocolate_1.png" alt="img">
+									<img src="/img/chocolate_1.png" alt="img">
 								</div>
 							</div>
 							
@@ -308,7 +308,7 @@ use yii\helpers\Url;
 								<p class="name">Орел и Решка: Перезагрузка</p>
 								<p class="desc">США, Лос-Анджелес<strong>·</strong>14 сезон</p>
 								<div class="video_img">
-									<img src="img/chocolate_1.png" alt="img">
+									<img src="/img/chocolate_1.png" alt="img">
 								</div>
 							</div>
 							
@@ -328,7 +328,7 @@ use yii\helpers\Url;
 								<p class="name">Орел и Решка: Перезагрузка</p>
 								<p class="desc">США, Лос-Анджелес<strong>·</strong>14 сезон</p>
 								<div class="video_img">
-									<img src="img/chocolate_1.png" alt="img">
+									<img src="/img/chocolate_1.png" alt="img">
 								</div>
 							</div>
 							
@@ -348,7 +348,7 @@ use yii\helpers\Url;
 								<p class="name">Орел и Решка: Перезагрузка</p>
 								<p class="desc">США, Лос-Анджелес<strong>·</strong>14 сезон</p>
 								<div class="video_img">
-									<img src="img/chocolate_1.png" alt="img">
+									<img src="/img/chocolate_1.png" alt="img">
 								</div>
 							</div>
 							
@@ -368,7 +368,7 @@ use yii\helpers\Url;
 								<p class="name">Орел и Решка: Перезагрузка</p>
 								<p class="desc">США, Лос-Анджелес<strong>·</strong>14 сезон</p>
 								<div class="video_img">
-									<img src="img/chocolate_1.png" alt="img">
+									<img src="/img/chocolate_1.png" alt="img">
 								</div>
 							</div>
 							
@@ -376,13 +376,7 @@ use yii\helpers\Url;
 					</div>
 				</div>
 				<!-- wrap_item_video -->
-
-
-
 			</div>
-
-
-
 
 		</div>
 		<div class="slider_controll">

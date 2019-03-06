@@ -107,7 +107,7 @@ $this->title = 'Участвовать';
     </div>
     <!-- wrap_inner_border -->
     <div class="center">
-        <a class="button_2" href="#">Смотреть другие серии “Орла и Решки”</a>
+        <a class="button_2" href="<?=Url::toRoute(['site/index', '#' => 'video_section']);?>">Смотреть другие серии “Орла и Решки”</a>
     </div>
 </div>
 <!-- occupied_block -->
@@ -166,7 +166,7 @@ $this->title = 'Участвовать';
     </div>
     <!-- wrap_inner_border -->
     <div class="center">
-        <a class="button_2" href="#">Смотреть другие серии “Орла и Решки”</a>
+        <a class="button_2" href="<?=Url::toRoute(['site/index', '#' => 'video_section']);?>">Смотреть другие серии “Орла и Решки”</a>
     </div>
 </div>
 
