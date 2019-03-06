@@ -211,7 +211,7 @@ $(".show_block").on("click",function(){
 
 // функция отвечающая за переключение блоков на главной 
 function change_block(id){
-	if(!$("#"+ id).hasClass('active_block')){
+	//if(!$("#"+ id).hasClass('active_block')){
 		$('.active_block').css('opacity','0').delay(150).queue(function () {
 			$(this).removeClass("active_block");
 			$(this).css('display', 'none').dequeue();
@@ -221,7 +221,7 @@ function change_block(id){
 				$(this).addClass("active_block");
 			});
 		});
-	}
+	//}
 }
 
 
