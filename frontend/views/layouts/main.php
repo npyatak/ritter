@@ -121,10 +121,10 @@ AppAsset::register($this);
                         <p>Оставайтесь с нами: <span>Наши группы</span></p>
                     
                         <div class="social_block">
-                            <a class="social_1" href="#">
+                            <a class="social_1" href="https://vk.com/rittersportru" target="_blank">
                                 <i class="fa fa-vk" aria-hidden="true"></i>
                             </a>
-                            <a class="social_1" href="#">
+                            <a class="social_1" href="https://www.facebook.com/RitterSport/?brand_redir=136684793051581" target="_blank">
                                 <i class="fa fa-facebook" aria-hidden="true"></i>
                             </a>
                         </div>

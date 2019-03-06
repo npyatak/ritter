@@ -97,10 +97,10 @@ $this->title = 'Участвовать';
         <p class="light_text">Оставайся с нами на связи и узнай больше о других конкурсах Ritter Sport:</p>
 
         <div class="social_block">
-            <a class="social_1" href="#">
+            <a class="social_1" href="https://vk.com/rittersportru" target="_blank">
                 <i class="fa fa-vk" aria-hidden="true"></i>
             </a>
-            <a class="social_1" href="#">
+            <a class="social_1" href="https://www.instagram.com/rittersportru/?hl=ru" target="_blank">
                 <img src="/img/insta_icon.svg" alt="img">
             </a>
         </div>
