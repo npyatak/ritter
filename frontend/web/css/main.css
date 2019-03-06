@@ -114,6 +114,9 @@ img {
   min-height: 100vh;
   margin: 0 auto;
   position: relative;
+  -webkit-transition: opacity .5s;
+  -o-transition: opacity .5s;
+  transition: opacity .5s;
   overflow: hidden;
 }
 
@@ -1225,7 +1228,6 @@ img {
   max-width: 100%;
   padding-bottom: 50%;
   position: relative;
-  border: 1px solid red;
   background-color: #fff;
   -webkit-background-size: cover;
           background-size: cover;
