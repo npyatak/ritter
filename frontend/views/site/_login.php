@@ -17,15 +17,17 @@ use yii\bootstrap\ActiveForm;
     'enableAjaxValidation' => true,
 ]); ?>
 
-    <?= $form->field($loginForm, 'email', ['options' => ['class' => 'input_wrap_1 man']])->textInput(['autofocus' => true, 'placeholder' => 'Твой логин *'])->label(false) ?>
-    
-    <?= $form->field($loginForm, 'password', ['options' => ['class' => 'input_wrap_1 man']])->passwordInput(['placeholder' => 'Пароль *'])->label(false) ?>
-    
+    <div class="inputs_block">
+        <?= $form->field($loginForm, 'email', ['options' => ['class' => 'input_wrap_1 man']])->textInput(['autofocus' => true, 'placeholder' => 'Твой логин *'])->label(false) ?>
+        
+        <?= $form->field($loginForm, 'password', ['options' => ['class' => 'input_wrap_1 man']])->passwordInput(['placeholder' => 'Пароль *'])->label(false) ?>
+    </div>
+
     <div class="center">
         <?= Html::submitButton('<span>Войти с помощью почты</span>', ['class' => 'button_1', 'name' => 'login-button']) ?>
         <br>
-        <a class="bold_refer" href="<?=Url::toRoute(['site/register']);?>">Регистрация</a>
+        <a class="bold_refer mt_15" href="<?=Url::toRoute(['site/register']);?>">Регистрация</a>
         <br>
-        <a class="bold_refer" href="<?=Url::toRoute(['site/request-password-reset']);?>">Забыли пароль?</a>
+        <a class="bold_refer mt_15" href="<?=Url::toRoute(['site/request-password-reset']);?>">Забыли пароль?</a>
     </div>
 <?php ActiveForm::end(); ?>
