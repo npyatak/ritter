@@ -104,6 +104,10 @@ img {
   padding-bottom: 9rem;
 }
 
+.mt_15 {
+  margin-top: 15px;
+}
+
 .contain {
   max-width: 1140px;
   padding: 0 15px;
@@ -877,7 +881,6 @@ img {
 
 .autorization_block .button_1 {
   margin-top: 25px;
-  margin-bottom: 15px;
   max-width: 350px;
 }
 
@@ -1147,6 +1150,7 @@ img {
   -webkit-transition: opacity .25s;
   -o-transition: opacity .25s;
   transition: opacity .25s;
+  display: inline-block;
 }
 
 .bold_refer:hover {
