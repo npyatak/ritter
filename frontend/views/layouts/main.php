@@ -24,7 +24,14 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
     <div class="wrapper">
+
+        <?php if(Yii::$app->controller->action->id == 'index'):?>
+         <header class="main_header boss">
+        <?php else:?>            
         <header class="main_header">
+        <?php endif;?>
+
+       
             <div class="contain">
                 <div class="header_wrap_items">
                     <div class="header_logo_1">
@@ -77,16 +84,26 @@ AppAsset::register($this);
         <div class="body_chocolate_wrap">
         <?php endif;?>
             <!-- плавающий фон  -->
-            <div class="background_choco type_1">
-                <img class="left img_1" src="/img/chocolate_bg_1_1.jpg" alt="img">
-                <img class="left img_2" src="/img/chocolate_bg_1_1.png" alt="img">
-                <img class="right img_1" src="/img/chocolate_bg_1_2.jpg" alt="img">
-                <img class="right img_2" src="/img/chocolate_bg_1_2.png" alt="img">
+            <div class="background_choco type_3">
+                <img class="left img_1" src="/img/chocolate_bg_5_1.jpg" alt="img">
+                <img class="left img_2" src="/img/chocolate_bg_5_1.png" alt="img">
+                <img class="right img_1" src="/img/chocolate_bg_5_2.jpg" alt="img">
+                <img class="right img_2" src="/img/chocolate_bg_5_2.png" alt="img">
             </div>
             <div class="body_chocolate">    
                 <?= $content ?>
+
+
+        <?php if(Yii::$app->controller->action->id == 'index'):?>
+           
+        <?php else:?>            
             </div>
         </div>
+        <!-- body_chocolate_wrap -->
+        <?php endif;?>
+
+
+            
 
         <footer class="footer_main">
             <div class="contain">

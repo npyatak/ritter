@@ -13,7 +13,7 @@ $this->title = 'Участвовать';
         </div>
 
         <div class="center">
-            <a class="button_2" href="#">Вернуться к выбору вкуса</a>
+            <a class="button_2" href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>">Вернуться к выбору вкуса</a>
         </div>
     </div>
     <!-- test_block -->
@@ -35,7 +35,7 @@ $this->title = 'Участвовать';
         </div>
         <!-- wrap_inner_border -->
         <div class="center">
-            <a class="button_2" href="#">Вернуться к выбору вкуса</a>
+            <a class="button_2" href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>">Вернуться к выбору вкуса</a>
         </div>
     </div>
     <!-- occupied_block -->
@@ -77,7 +77,7 @@ $this->title = 'Участвовать';
         </div>
         <!-- wrap_inner_border -->
         <div class="center">
-            <a class="button_2" href="#">Вернуться к выбору вкуса</a>
+            <a class="button_2" href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>">Вернуться к выбору вкуса</a>
         </div>
     </div>
     <!-- autorization_block -->
