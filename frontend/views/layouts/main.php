@@ -33,11 +33,11 @@ AppAsset::register($this);
 
        
             <div class="contain">
-                <div class="header_wrap_items">
-                    <div class="header_logo_1">
+                <div href="https://friday.ru/" target="_blank" class="header_wrap_items">
+                    <a class="header_logo_1">
                         <!-- <img src="/img/logo.png" alt="logo"> -->
                         <img src="/img/logo_text.png" alt="logo">
-                    </div>
+                    </a>
                     <nav class="header_nav">
                         <ul>
                             <li class="menu_li active"><a class="active" href="<?=Url::toRoute(['site/index']);?>">Участвуй</a></li>
@@ -45,9 +45,9 @@ AppAsset::register($this);
                             <li class="menu_li"><a href="<?=Url::toRoute(['site/winners']);?>">Призы и победители</a></li>
                         </ul>
                     </nav>
-                    <div class="header_logo_2">
+                    <a href="https://www.karta-vkusov-ritter-sport.ru/?utm_source=Friday.ru&utm_medium=display_CPM&utm_content=Contest_page&utm_campaign=0267-19-MS_Ritter" target="_blank" class="header_logo_2">
                         <img src="/img/logo_2.png" alt="logo">
-                    </div>
+                    </a>
 
                     <div class="burger_button">
                         <div class="one"></div>
