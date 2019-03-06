@@ -220,128 +220,7 @@ use yii\helpers\Url;
 				<div class="wrap_item_video">
 					<div class="not_answer_video" style="border-color: #006037">
 						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
-							<span class="play"><i class="fa fa-play" aria-hidden="true"></i></span>
-							<!-- <iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/10949751?quality=1&platform=someplatform" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe> -->
-						</div>
-						<div class="video_info">
-							<div class="video_content">
-								<p class="name">Орел и Решка: Перезагрузка</p>
-								<p class="desc">США, Лос-Анджелес<strong>·</strong>14 сезон</p>
-								<div class="video_img">
-									<img src="/img/chocolate_1.png" alt="img">
-								</div>
-							</div>
-							
-						</div>
-					</div>
-				</div>
-				<!-- wrap_item_video -->
-
-				<div class="wrap_item_video">
-					<div class="not_answer_video" style="border-color: #006037">
-						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
-							<span class="play"><i class="fa fa-play" aria-hidden="true"></i></span>
-							<!-- <iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/10949751?quality=1&platform=someplatform" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe> -->
-						</div>
-						<div class="video_info">
-							<div class="video_content">
-								<p class="name">Орел и Решка: Перезагрузка</p>
-								<p class="desc">США, Лос-Анджелес<strong>·</strong>14 сезон</p>
-								<div class="video_img">
-									<img src="/img/chocolate_1.png" alt="img">
-								</div>
-							</div>
-							
-						</div>
-					</div>
-				</div>
-				<!-- wrap_item_video -->
-
-				<div class="wrap_item_video">
-					<div class="not_answer_video" style="border-color: #006037">
-						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
-							<span class="play"><i class="fa fa-play" aria-hidden="true"></i></span>
-							<!-- <iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/10949751?quality=1&platform=someplatform" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe> -->
-						</div>
-						<div class="video_info">
-							<div class="video_content">
-								<p class="name">Орел и Решка: Перезагрузка</p>
-								<p class="desc">США, Лос-Анджелес<strong>·</strong>14 сезон</p>
-								<div class="video_img">
-									<img src="/img/chocolate_1.png" alt="img">
-								</div>
-							</div>
-							
-						</div>
-					</div>
-				</div>
-				<!-- wrap_item_video -->
-
-				<div class="wrap_item_video">
-					<div class="not_answer_video" style="border-color: #006037">
-						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
-							<span class="play"><i class="fa fa-play" aria-hidden="true"></i></span>
-							<!-- <iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/10949751?quality=1&platform=someplatform" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe> -->
-						</div>
-						<div class="video_info">
-							<div class="video_content">
-								<p class="name">Орел и Решка: Перезагрузка</p>
-								<p class="desc">США, Лос-Анджелес<strong>·</strong>14 сезон</p>
-								<div class="video_img">
-									<img src="/img/chocolate_1.png" alt="img">
-								</div>
-							</div>
-							
-						</div>
-					</div>
-				</div>
-				<!-- wrap_item_video -->
-
-				<div class="wrap_item_video">
-					<div class="not_answer_video" style="border-color: #006037">
-						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
-							<span class="play"><i class="fa fa-play" aria-hidden="true"></i></span>
-							<!-- <iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/10949751?quality=1&platform=someplatform" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe> -->
-						</div>
-						<div class="video_info">
-							<div class="video_content">
-								<p class="name">Орел и Решка: Перезагрузка</p>
-								<p class="desc">США, Лос-Анджелес<strong>·</strong>14 сезон</p>
-								<div class="video_img">
-									<img src="/img/chocolate_1.png" alt="img">
-								</div>
-							</div>
-							
-						</div>
-					</div>
-				</div>
-				<!-- wrap_item_video -->
-
-				<div class="wrap_item_video">
-					<div class="not_answer_video" style="border-color: #006037">
-						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
-							<span class="play"><i class="fa fa-play" aria-hidden="true"></i></span>
-							<!-- <iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/10949751?quality=1&platform=someplatform" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe> -->
-						</div>
-						<div class="video_info">
-							<div class="video_content">
-								<p class="name">Орел и Решка: Перезагрузка</p>
-								<p class="desc">США, Лос-Анджелес<strong>·</strong>14 сезон</p>
-								<div class="video_img">
-									<img src="/img/chocolate_1.png" alt="img">
-								</div>
-							</div>
-							
-						</div>
-					</div>
-				</div>
-				<!-- wrap_item_video -->
-
-				<div class="wrap_item_video">
-					<div class="not_answer_video" style="border-color: #006037">
-						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
-							<span class="play"><i class="fa fa-play" aria-hidden="true"></i></span>
-							<!-- <iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/10949751?quality=1&platform=someplatform" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe> -->
+							<span class="play" data-video-id="10949751"><i class="fa fa-play" aria-hidden="true"></i></span>
 						</div>
 						<div class="video_info">
 							<div class="video_content">
@@ -361,7 +240,120 @@ use yii\helpers\Url;
 					<div class="not_answer_video" style="border-color: #006037">
 						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
 							<span class="play" data-video-id="10949751"><i class="fa fa-play" aria-hidden="true"></i></span>
-							<!-- <iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/10949751?quality=1&platform=someplatform" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe> -->
+						</div>
+						<div class="video_info">
+							<div class="video_content">
+								<p class="name">Орел и Решка: Перезагрузка</p>
+								<p class="desc">США, Лос-Анджелес<strong>·</strong>14 сезон</p>
+								<div class="video_img">
+									<img src="/img/chocolate_1.png" alt="img">
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!-- wrap_item_video -->
+
+				<div class="wrap_item_video">
+					<div class="not_answer_video" style="border-color: #006037">
+						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
+							<span class="play" data-video-id="10949751"><i class="fa fa-play" aria-hidden="true"></i></span>
+						</div>
+						<div class="video_info">
+							<div class="video_content">
+								<p class="name">Орел и Решка: Перезагрузка</p>
+								<p class="desc">США, Лос-Анджелес<strong>·</strong>14 сезон</p>
+								<div class="video_img">
+									<img src="/img/chocolate_1.png" alt="img">
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!-- wrap_item_video -->
+
+				<div class="wrap_item_video">
+					<div class="not_answer_video" style="border-color: #006037">
+						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
+							<span class="play" data-video-id="10949751"><i class="fa fa-play" aria-hidden="true"></i></span>
+						</div>
+						<div class="video_info">
+							<div class="video_content">
+								<p class="name">Орел и Решка: Перезагрузка</p>
+								<p class="desc">США, Лос-Анджелес<strong>·</strong>14 сезон</p>
+								<div class="video_img">
+									<img src="/img/chocolate_1.png" alt="img">
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!-- wrap_item_video -->
+
+				<div class="wrap_item_video">
+					<div class="not_answer_video" style="border-color: #006037">
+						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
+							<span class="play" data-video-id="10949751"><i class="fa fa-play" aria-hidden="true"></i></span>
+						</div>
+						<div class="video_info">
+							<div class="video_content">
+								<p class="name">Орел и Решка: Перезагрузка</p>
+								<p class="desc">США, Лос-Анджелес<strong>·</strong>14 сезон</p>
+								<div class="video_img">
+									<img src="/img/chocolate_1.png" alt="img">
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!-- wrap_item_video -->
+
+				<div class="wrap_item_video">
+					<div class="not_answer_video" style="border-color: #006037">
+						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
+							<span class="play" data-video-id="10949751"><i class="fa fa-play" aria-hidden="true"></i></span>
+						</div>
+						<div class="video_info">
+							<div class="video_content">
+								<p class="name">Орел и Решка: Перезагрузка</p>
+								<p class="desc">США, Лос-Анджелес<strong>·</strong>14 сезон</p>
+								<div class="video_img">
+									<img src="/img/chocolate_1.png" alt="img">
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!-- wrap_item_video -->
+
+				<div class="wrap_item_video">
+					<div class="not_answer_video" style="border-color: #006037">
+						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
+							<span class="play" data-video-id="10949751"><i class="fa fa-play" aria-hidden="true"></i></span>
+						</div>
+						<div class="video_info">
+							<div class="video_content">
+								<p class="name">Орел и Решка: Перезагрузка</p>
+								<p class="desc">США, Лос-Анджелес<strong>·</strong>14 сезон</p>
+								<div class="video_img">
+									<img src="/img/chocolate_1.png" alt="img">
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!-- wrap_item_video -->
+
+				<div class="wrap_item_video">
+					<div class="not_answer_video" style="border-color: #006037">
+						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
+							<span class="play" data-video-id="10949751"><i class="fa fa-play" aria-hidden="true"></i></span>
 						</div>
 						<div class="video_info">
 							<div class="video_content">

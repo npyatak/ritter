@@ -109,12 +109,12 @@ AppAsset::register($this);
             <div class="contain">
                 <div class="footer_items">
 
-                    <div class="item one">
+                   <!--  <div class="item one">
                         <p>Поделиться проектом</p>
                         <div class="social_block">
                             <?=\frontend\widgets\share\ShareWidget::widget();?>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- item -->
 
                     <div class="item two">
