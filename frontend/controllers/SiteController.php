@@ -146,6 +146,7 @@ class SiteController extends Controller
         return $this->render('test', [
             'userAnswer' => $userAnswer,
             'question' => $question,
+            'location' => $location,
             'loginForm' => new LoginForm,
         ]);
     }

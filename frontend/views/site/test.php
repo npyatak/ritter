@@ -30,7 +30,7 @@ $this->title = 'Участвовать';
 
             <p class="bold_text">Поделиться проектом:</p>
             <div class="social_block">
-                <?=\frontend\widgets\share\ShareWidget::widget();?>
+                <?=\frontend\widgets\share\ShareWidget::widget(['image' => $location->image_share]);?>
             </div>
         </div>
         <!-- wrap_inner_border -->
@@ -144,11 +144,6 @@ $this->title = 'Участвовать';
     </div>
 </div> -->
 
-
-<!-- ========================================= -->
-<!-- ========================================= -->
-
-
 <div class="alert_block two body_chocolate_inner" id="congratulation_block_2" <?=($userAnswer !== null && $userAnswer->is_finished && !$userAnswer->is_shared) ? 'style="display: block;"' : '';?>>
     <!-- рамка -->
     <div class="wrap_inner_border padding_type_1">
@@ -166,7 +161,7 @@ $this->title = 'Участвовать';
         <p class="light_text">У нас отличная новость: здесь скучно тебе точно не будет! Смело планируй маршрут и открывай море новых впечатлений вместе с Ritter Sport. Поделись проектом с друзьями и участвуй в розыгрыше призов. Удачи!</p>
 
         <div class="social_block">
-            <?=\frontend\widgets\share\ShareWidget::widget(['addClass' => 'result']);?>
+            <?=\frontend\widgets\share\ShareWidget::widget(['addClass' => 'result', 'image' => $location->image_share]);?>
         </div>
     </div>
     <!-- wrap_inner_border -->
