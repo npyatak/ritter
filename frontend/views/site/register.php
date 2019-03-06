@@ -31,7 +31,12 @@ $this->title = 'Регистрация';
 			<div class="inputs_block two">
             	<?= $form->field($user, 'password', ['options' => ['class' => 'input_wrap_1 man']])->passwordInput(['placeholder' => 'Пароль *'])->label(false) ?>
             	
-            	<?= $form->field($user, 'birthdateFormatted', ['options' => ['class' => 'input_wrap_1 date']])->textInput(['placeholder' => 'Дд.Мм.Гг'])->label(false) ?>
+            	<?= $form->field($user, 'birthdateFormatted', ['options' => ['class' => 'input_wrap_1 date']])->widget(\yii\widgets\MaskedInput::className(), [
+				    'mask' => '99.99.9999',
+				    'options' => [
+				    	'placeholder' => 'Дд.Мм.Гг',
+				    ]
+				])->label(false) ?>
 			</div>
 
 			<div class="checkbox_block">

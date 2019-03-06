@@ -39,13 +39,8 @@ class SiteController extends Controller
             ],
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout', 'test'],
+                'only' => ['logout'],
                 'rules' => [
-                    [
-                        'actions' => ['test'],
-                        'allow' => true,
-                        'roles' => ['?'],
-                    ],
                     [
                         'actions' => ['logout'],
                         'allow' => true,
@@ -53,12 +48,6 @@ class SiteController extends Controller
                     ],
                 ],
             ],
-            /*'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],*/
         ];
     }
 

@@ -6,10 +6,10 @@
 </div>
 
 <div class="choco_item">
-    <p class="name" style="color:#006037"><?=$question->title;?></p>
-    <p class="desc"><?=$question->subtitle;?></p>
+    <p class="name" style="color:#006037"><?=$question->location->title;?></p>
+    <p class="desc"><?=$question->location->subtitle;?></p>
     <div class="choco_pack">
-        <img src="<?=$question->image;?>" alt="img">
+        <img src="<?=$question->location->image;?>" alt="img">
     </div>
 </div>
 <div class="test_item">

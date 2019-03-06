@@ -166,21 +166,23 @@ $this->title = 'Участвовать';
 
         $(document).on('click', '#answerButton', function() {
             var answer = $('.quest.active');
-            $.ajax({
-                data: {id: answer.data('id')},
-                url: 'site/answer',
-                success: function(data) {
-                    $('.quest_alert').html(data.comment).show();
-                    $('#nextButton').show();
-                    $('#answerButton').hide();
-                    if(data.right == answer.data('id')) {
-                        answer.addClass('active_true');
-                    } else {
-                        answer.addClass('error');
-                        $('.quest[data-id=\"'+data.right+'\"]').addClass('true');
+            if(answer.length) {
+                $.ajax({
+                    data: {id: answer.data('id')},
+                    url: 'site/answer',
+                    success: function(data) {
+                        $('.quest_alert').html(data.comment).show();
+                        $('#nextButton').show();
+                        $('#answerButton').hide();
+                        if(data.right == answer.data('id')) {
+                            answer.addClass('active_true');
+                        } else {
+                            answer.addClass('error');
+                            $('.quest[data-id=\"'+data.right+'\"]').addClass('true');
+                        }
                     }
-                }
-            });
+                });
+            }
         });
 
         $(document).on('click', '#nextButton', function() {

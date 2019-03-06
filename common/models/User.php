@@ -16,7 +16,7 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
     public $new_email;
     public $imageFile;
     public $registerFields = ['login', 'rulesCheckbox', 'spam_subscribe', 'email', 'password', 'birthdate', 'birthdateFormatted'];
-    public $semiRequiredFields = ['login', 'rulesCheckbox', 'spam_subscribe', 'name', 'phone', 'email', 'birthdateFormatted'];
+    public $semiRequiredFields = ['login', 'rulesCheckbox', 'name', 'phone', 'email', 'birthdateFormatted'];
     public $birthdateFormatted;
     public $rulesCheckbox = false;
     /**
@@ -41,7 +41,6 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
             [['email', 'new_email'], 'email', 'checkDNS' => true],
             [$this->registerFields, 'required', 'on'=>'register'],
             ['rulesCheckbox', 'compare', 'compareValue' => 1, 'operator' => '==', 'on' => ['missing_fields', 'register'], 'message' => 'Необходимо согласиться с правилами'],
-            ['spam_subscribe', 'compare', 'compareValue' => 1, 'operator' => '==', 'on' => ['missing_fields', 'register'], 'message' => 'Необходимо согласиться на обработку персональных данных'],
             [$this->semiRequiredFields, 'required', 'on'=>'missing_fields'],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_BANNED]],
             ['password', 'required', 'on' => 'reset-password'],
