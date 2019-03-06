@@ -193,6 +193,46 @@ use yii\helpers\Url;
 			<div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div>
 		</div>
 	</div>
+
+
+	<div class="choco_popup">
+		<div class="choco_popup_inner body_chocolate_inner">
+		
+			<div class="wrap_inner_border padding_type_1">
+				<div class="inner_border">
+					<span class="top"></span>
+					<span class="bottom"></span>
+				</div>
+
+				<div class="popup_items">
+					<div class="left_popup">
+						<div class="choco_circle">
+							<img src="/img/chocolate_1.png" alt="img">
+						</div>
+					</div>
+					<div class="left_popup">
+						<div class="choco_popup_content">
+							<p class="name">Прекрасный выбор!</p>
+							<div class="text">
+								<p>
+									Если ты фанат США, то наверняка знаешь, что там был представлен первый в мире фильм в 1894 г. А любителям спорта предлагаем заняться американским футболом. Проверь, готов ли ты к путешествиям?
+								</p>
+							</div>
+							<p class="bold_text">
+								Ответь на 3 вопроса и выиграй призы от <a href="#">Ritter Sport</a> и <a href="#">телеканала «Пятница!»</a>
+							</p>
+							<a href="#" class="bold_refer">Участвовать</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<!-- choco_popup_inner -->
+	</div>
+	<!-- choco_popup -->
+
 </div>
 <!-- infinite_section -->
 

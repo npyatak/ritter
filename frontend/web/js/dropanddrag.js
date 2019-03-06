@@ -5,9 +5,17 @@ $( function() {
     $(".drwrap .dritems").html(items+items+items);
     $(".drwrap .dritems .dritem").click(function () {
         var id = $(this).index()-Math.floor($(this).index()/15)*15+1;
-        window.location.href = '/test/'+id;
+        // window.location.href = '/test/'+id;
+        choco_popup_show();
     })
-    // $("")
+    function choco_popup_show() {
+        $(".choco_popup_inner").css("display","inline-block");
+        $(".choco_popup").css('display','block').delay(100).queue(function () {  // delay() позволяет сделать паузу 
+            $(".choco_popup").css('opacity', '1');
+            $("body").css('overflow-y','hidden'); 
+            $(".choco_popup").dequeue(); //должно применяться к тому же элементу что и .queue
+        });
+    };
 
     $(".dritems .dritem")
         .attr("data-stapLeft", 0)

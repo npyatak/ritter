@@ -258,3 +258,14 @@ $(function() {
 	}
 });
 
+// Закрываем попап
+$(".choco_popup, .close_popup").on("click", function(){
+	$(".choco_popup").css('opacity','0').delay(200).queue(function () {  // delay() позволяет сделать паузу м
+		$(".choco_popup").css('display', 'none');
+		$("body").css('overflow-y','auto'); 
+		$(".choco_popup .choco_popup_inner").css("display","none");
+		$(".choco_popup").dequeue(); //должно применяться к тому же элементу что и .queue
+	}); 
+}).children().click(function(e){        // вешаем на потомков
+	e.stopPropagation();   // предотвращаем распространение на потомков
+});
