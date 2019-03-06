@@ -2324,6 +2324,27 @@ img {
   vertical-align: middle;
   max-width: 1000px;
   margin-left: -5px;
+  position: relative;
+}
+
+.choco_popup_inner:before {
+  content: url(../img/choko_slice_1.svg);
+  position: absolute;
+  left: 3%;
+  top: 5%;
+  width: 50px;
+  opacity: .16;
+  z-index: 2;
+}
+
+.choco_popup_inner:after {
+  content: url(../img/choko_slice_2.svg);
+  position: absolute;
+  right: 3%;
+  bottom: 5%;
+  width: 100px;
+  opacity: .16;
+  z-index: 1;
 }
 
 .popup_items {
