@@ -379,12 +379,4 @@ use yii\helpers\Url;
 			</div>
 
 		</div>
-		<div class="slider_controll">
-			<div class="slider_dots dots_1"></div>
-			<div class="slider_nav nav_1"></div>
-		</div>	
-		
-	</div>
-	<!-- main_slider_wrap -->
-</div>
-<!-- body_chocolate_inner -->
+		<!-- video_section -->

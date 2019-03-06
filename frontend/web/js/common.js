@@ -149,7 +149,8 @@ function close_popup(){
 		$("body").css('overflow-y','auto'); 
 		$(".popup_bg .popup_block").css("display","none");
 		$(".popup_bg").dequeue(); //должно применяться к тому же элементу что и .queue
-	}); 
+	});
+	$('.popup_block #video_player').remove(); 
 };
 
 // При клике открываем попап
@@ -167,36 +168,36 @@ $(".popup_bg, .close_popup").on("click", function(){
 
 
 
-// видео rutube
-$(function(){
-	if($("iframe").is("#video_player")){
 
-		var player = document.getElementById('video_player');
-		setTimeout(function(){
-			// смена цвета проигрывателя
-			player.contentWindow.postMessage(JSON.stringify({
-					type: 'player:setSkinColor',
-					data: {
-						color: 'F2403E'
-					}
-			}), '*');
-		},500);	
+// добавляем видео с рутуб в iframe и управляем им
+$(".video_wrap .play").on("click", function(){
+	var el = $(this);
+	var id = el.data("video-id");
+	el.after('<iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/'+id+'?quality=1&platform=someplatform&autoplay=true" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>');
+	
+	var player = document.getElementById('video_player');
+	// console.log(player);
 
-		// ставим на паузу при загрузке
-		player.contentWindow.postMessage(JSON.stringify({
-			type: 'player:pause',
-		}), '*');
+	window.addEventListener('message', function (event) {
+	    var message = JSON.parse(event.data);
+	    // console.log(message.type); // some type
+	    switch (message.type) {
+	        case 'player:ready':
+				player.contentWindow.postMessage(JSON.stringify({
+				    type: 'player:setSkinColor',
+				    data: {
+				    	color: 'f7323f'
+				    }
+				}), '*');
+				player.contentWindow.postMessage(JSON.stringify({
+				    type: 'player:play',
+				    data: {}
+				}), '*');
+	            break;
+	    };
+	});
 
-		$(".popup_bg, .close_popup").on("click", function(){
-			player.contentWindow.postMessage(JSON.stringify({
-				type: 'player:pause',
-			}), '*');
-		});	
-		
-	}//if
-})
-
-
+});
 
 
 
