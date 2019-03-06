@@ -360,7 +360,7 @@ use yii\helpers\Url;
 				<div class="wrap_item_video">
 					<div class="not_answer_video" style="border-color: #006037">
 						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
-							<span class="play"><i class="fa fa-play" aria-hidden="true"></i></span>
+							<span class="play" data-video-id="10949751"><i class="fa fa-play" aria-hidden="true"></i></span>
 							<!-- <iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/10949751?quality=1&platform=someplatform" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe> -->
 						</div>
 						<div class="video_info">

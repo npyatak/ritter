@@ -241,7 +241,9 @@ $(".close_burger").on("click", function() {
   });
 });
 
+// $(".video_wrap .play").on("click", function(){
 
+// });
 
 // слайдер блоков на главной
 $(function() {
