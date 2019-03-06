@@ -203,6 +203,7 @@ use yii\helpers\Url;
 					<span class="top"></span>
 					<span class="bottom"></span>
 				</div>
+				<img class="close_popup" src="img/close_middle.svg" alt="close">
 
 				<div class="popup_items">
 					<div class="left_popup">

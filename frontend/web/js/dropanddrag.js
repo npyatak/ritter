@@ -15,6 +15,7 @@ $( function() {
             $("body").css('overflow-y','hidden'); 
             $(".choco_popup").dequeue(); //должно применяться к тому же элементу что и .queue
         });
+        $.scrollify.disable();
     };
 
     $(".dritems .dritem")
