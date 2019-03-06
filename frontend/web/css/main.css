@@ -1228,6 +1228,18 @@ img {
   z-index: -1;
 }
 
+.not_answer_video.green {
+  border-color: #006037;
+}
+
+.not_answer_video.blue {
+  border-color: #84B0D4;
+}
+
+.not_answer_video.orange {
+  border-color: #F07100;
+}
+
 .video_wrap {
   max-width: 100%;
   padding-bottom: 50%;
@@ -1338,6 +1350,10 @@ img {
       -ms-flex-pack: justify;
           justify-content: space-between;
   text-align: left;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .video_info .name {
@@ -1379,7 +1395,7 @@ img {
 .video_img {
   width: 60px;
   position: absolute;
-  top: 25px;
+  top: 55px;
   right: 15px;
   z-index: 1;
 }
@@ -1398,6 +1414,17 @@ img {
   width: 70px;
   height: 70px;
   z-index: -1;
+}
+
+.video_img img {
+  width: 150%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  max-width: none;
 }
 
 .video_content {
