@@ -185,12 +185,18 @@ use yii\helpers\Url;
 
 
 <div class="infinite_section section_scroll" id="locations" data-section="2">
-	<?php if($locations):?>
+	<?/*php if($locations):?>
 		<?php foreach ($locations as $location):?>
 			<a href="<?=Url::toRoute(['site/test', 'id' => $location->id]);?>"><?=$location->name;?></a>
 			<br>
 		<?php endforeach;?>
-	<?php endif;?>
+	<?php endif;*/?>
+	<div class="drwrap">
+		<div class="dritems">
+			<div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div><div class="dritem"><div class="choco_wrapp"></div></div>
+
+		</div>
+	</div>
 </div>
 <!-- infinite_section -->
 

@@ -2260,11 +2260,33 @@ img {
 
 .infinite_section {
   min-height: 100vh;
-  background-color: grey;
 }
 
 .section_scroll {
   padding-top: 78px;
+}
+
+.popup_bg_chocolate {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  -webkit-transition: opacity .25s;
+  -o-transition: opacity .25s;
+  transition: opacity .25s;
+  background-color: rgba(255, 255, 255, 0.6);
+  overflow-x: auto;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.popup_bg_chocolate:before {
+  content: '';
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .push {
