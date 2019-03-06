@@ -220,8 +220,7 @@ use yii\helpers\Url;
 				<div class="wrap_item_video">
 					<div class="not_answer_video" style="border-color: #006037">
 						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
-							<span class="play"><i class="fa fa-play" aria-hidden="true"></i></span>
-							<!-- <iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/10949751?quality=1&platform=someplatform" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe> -->
+							<span class="play" data-video-id="10949751"><i class="fa fa-play" aria-hidden="true"></i></span>
 						</div>
 						<div class="video_info">
 							<div class="video_content">
@@ -240,8 +239,7 @@ use yii\helpers\Url;
 				<div class="wrap_item_video">
 					<div class="not_answer_video" style="border-color: #006037">
 						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
-							<span class="play"><i class="fa fa-play" aria-hidden="true"></i></span>
-							<!-- <iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/10949751?quality=1&platform=someplatform" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe> -->
+							<span class="play" data-video-id="10949751"><i class="fa fa-play" aria-hidden="true"></i></span>
 						</div>
 						<div class="video_info">
 							<div class="video_content">
@@ -260,8 +258,7 @@ use yii\helpers\Url;
 				<div class="wrap_item_video">
 					<div class="not_answer_video" style="border-color: #006037">
 						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
-							<span class="play"><i class="fa fa-play" aria-hidden="true"></i></span>
-							<!-- <iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/10949751?quality=1&platform=someplatform" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe> -->
+							<span class="play" data-video-id="10949751"><i class="fa fa-play" aria-hidden="true"></i></span>
 						</div>
 						<div class="video_info">
 							<div class="video_content">
@@ -280,8 +277,7 @@ use yii\helpers\Url;
 				<div class="wrap_item_video">
 					<div class="not_answer_video" style="border-color: #006037">
 						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
-							<span class="play"><i class="fa fa-play" aria-hidden="true"></i></span>
-							<!-- <iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/10949751?quality=1&platform=someplatform" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe> -->
+							<span class="play" data-video-id="10949751"><i class="fa fa-play" aria-hidden="true"></i></span>
 						</div>
 						<div class="video_info">
 							<div class="video_content">
@@ -300,8 +296,7 @@ use yii\helpers\Url;
 				<div class="wrap_item_video">
 					<div class="not_answer_video" style="border-color: #006037">
 						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
-							<span class="play"><i class="fa fa-play" aria-hidden="true"></i></span>
-							<!-- <iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/10949751?quality=1&platform=someplatform" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe> -->
+							<span class="play" data-video-id="10949751"><i class="fa fa-play" aria-hidden="true"></i></span>
 						</div>
 						<div class="video_info">
 							<div class="video_content">
@@ -320,8 +315,7 @@ use yii\helpers\Url;
 				<div class="wrap_item_video">
 					<div class="not_answer_video" style="border-color: #006037">
 						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
-							<span class="play"><i class="fa fa-play" aria-hidden="true"></i></span>
-							<!-- <iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/10949751?quality=1&platform=someplatform" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe> -->
+							<span class="play" data-video-id="10949751"><i class="fa fa-play" aria-hidden="true"></i></span>
 						</div>
 						<div class="video_info">
 							<div class="video_content">
@@ -340,8 +334,7 @@ use yii\helpers\Url;
 				<div class="wrap_item_video">
 					<div class="not_answer_video" style="border-color: #006037">
 						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
-							<span class="play"><i class="fa fa-play" aria-hidden="true"></i></span>
-							<!-- <iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/10949751?quality=1&platform=someplatform" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe> -->
+							<span class="play" data-video-id="10949751"><i class="fa fa-play" aria-hidden="true"></i></span>
 						</div>
 						<div class="video_info">
 							<div class="video_content">
@@ -360,8 +353,7 @@ use yii\helpers\Url;
 				<div class="wrap_item_video">
 					<div class="not_answer_video" style="border-color: #006037">
 						<div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
-							<span class="play"><i class="fa fa-play" aria-hidden="true"></i></span>
-							<!-- <iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/10949751?quality=1&platform=someplatform" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe> -->
+							<span class="play" data-video-id="10949751"><i class="fa fa-play" aria-hidden="true"></i></span>
 						</div>
 						<div class="video_info">
 							<div class="video_content">
@@ -379,12 +371,4 @@ use yii\helpers\Url;
 			</div>
 
 		</div>
-		<div class="slider_controll">
-			<div class="slider_dots dots_1"></div>
-			<div class="slider_nav nav_1"></div>
-		</div>	
-		
-	</div>
-	<!-- main_slider_wrap -->
-</div>
-<!-- body_chocolate_inner -->
+		<!-- video_section -->
