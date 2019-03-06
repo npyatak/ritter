@@ -170,23 +170,25 @@ $this->title = 'Участвовать';
     </div>
 </div>
 
-<?php if(Yii::$app->user->isGuest) {
-    $script = "
+<?php $script = "
+    $(document).on('click', '.quest', function() {
+        $('.quest').removeClass('active');
+        $(this).addClass('active');
+    });
+";
+
+if(Yii::$app->user->isGuest) {
+    $script .= "
         $('#answerButton').click(function() {
             change_block('autorization_block');
         });
     ";
 } elseif($question === null) {
-    $script = "
+    $script .= "
         change_block('occupied_block');
     ";
 } else {
-    $script = "
-        $(document).on('click', '.quest', function() {
-            $('.quest').removeClass('active');
-            $(this).addClass('active');
-        });
-
+    $script .= "
         $(document).on('click', '#answerButton', function() {
             var answer = $('.quest.active');
             if(answer.length) {
