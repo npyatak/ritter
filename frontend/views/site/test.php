@@ -141,11 +141,13 @@ $this->title = 'Участвовать';
 
 <div class="popup_bg">
     <div class="not_answer popup_block style_1" data-flag="not_answer">
+       
 
     </div>
     <!-- popup_block -->
 </div>
 <!-- popup_bg -->
+
 
 <?php $script = "
     $(document).on('click', '.quest', function() {
