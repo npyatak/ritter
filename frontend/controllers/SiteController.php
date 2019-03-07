@@ -200,11 +200,13 @@ class SiteController extends Controller
                 $data['video'] = $location->video;
                 $data['video_title'] = $location->video_title;
                 $data['image'] = $location->image;
+                $data['video_image'] = $location->video_image;
             } elseif (count($userAnswer->answersArray)) {
                 $data['place'] = $location->place2;
                 $data['video'] = $location->video2;
                 $data['video_title'] = $location->video_title2;
                 $data['image'] = $location->image2;
+                $data['video_image'] = $location->video_image2;
             }
 
             if(!empty($data)) {            
