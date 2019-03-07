@@ -128,8 +128,8 @@ $this->title = 'Участвовать';
             <!-- not_answer_content -->
             <div class="not_answer_video">
                 <div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
-                    <!-- в data-video-id="10949751" передаем id видео с рутуба -->
-                    <span class="play" data-video-id="10949751"><i class="fa fa-play" aria-hidden="true"></i></span>
+                    <!-- в data-video-iframe="" передаем iframe видео с рутуба -->
+                    <span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12001776?p=BrVQ913CF_8S5TGmda2mhw" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
                 </div>
                 <div class="video_info">
                     <div class="video_content">
