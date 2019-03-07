@@ -22,6 +22,7 @@ use common\models\Location;
 use common\models\Question;
 use common\models\Answer;
 use common\models\UserAnswer;
+use common\models\Contact;
 
 /**
  * Site controller
@@ -416,6 +417,7 @@ class SiteController extends Controller
      */
     public function actionContact()
     {
+                Yii::$app->session->setFlash('success', 'Спасибо, ваша заявка отправлена!');
         $model = new ContactForm();
         if(!Yii::$app->user->isGuest) {
             $model->email = Yii::$app->user->identity->email;
