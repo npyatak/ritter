@@ -73,7 +73,7 @@ $this->title = 'Участвовать';
                 <!-- checkbox_1_wrap -->
             </div>
             <!-- checkbox_block -->
-            <?=$this->render('_login', ['loginForm' => $loginForm]);?>
+            <?=$this->render('_login', ['loginForm' => $loginForm, 'location' => $location]);?>
         </div>
         <!-- wrap_inner_border -->
         <div class="center">
@@ -139,7 +139,6 @@ $this->title = 'Участвовать';
                             <img src="/img/chocolate_1.png" alt="img">
                         </div>
                     </div>
-                    
                 </div>
             </div>
             <!-- not_answer_video -->
@@ -149,7 +148,6 @@ $this->title = 'Участвовать';
 
     </div>
     <!-- popup_block -->
-
 </div>
 <!-- popup_bg -->
 

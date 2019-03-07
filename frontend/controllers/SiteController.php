@@ -310,7 +310,7 @@ class SiteController extends Controller
         }
     }
 
-    public function actionRegister()
+    public function actionRegister($location_id = null)
     {
         if (!Yii::$app->user->isGuest) {
             return $this->redirect(['site/index']);
@@ -343,12 +343,13 @@ class SiteController extends Controller
                     ->setSubject(Yii::$app->name.'. Регистрация')
                     ->send();
 
-                return $this->redirect(Yii::$app->request->referrer);
+                return $this->redirect($location_id ? Url::toRoute(['site/test', 'id' => $location_id]) : Yii::$app->request->referrer);
             }
         }
 
         return $this->render('register', [
             'user' => $user,
+            'location_id' => $location_id,
         ]);
     }
 

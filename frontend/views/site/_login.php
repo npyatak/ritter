@@ -26,7 +26,7 @@ use yii\bootstrap\ActiveForm;
     <div class="center">
         <?= Html::submitButton('<span>Войти с помощью почты</span>', ['class' => 'button_1', 'name' => 'login-button']) ?>
         <br>
-        <a class="bold_refer mt_15" href="<?=Url::toRoute(['site/register']);?>">Регистрация</a>
+        <a class="bold_refer mt_15" href="<?=Url::toRoute(['site/register', 'location_id' => $location->id]);?>">Регистрация</a>
         <br>
         <a class="bold_refer mt_15" href="<?=Url::toRoute(['site/request-password-reset']);?>">Забыли пароль?</a>
     </div>
