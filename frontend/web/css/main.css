@@ -246,6 +246,8 @@ img {
 }
 
 .header_nav ul {
+  margin-bottom: 0;
+  line-height: 1;
   list-style-type: none;
   display: -webkit-box;
   display: -webkit-flex;
