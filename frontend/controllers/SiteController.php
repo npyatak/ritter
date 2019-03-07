@@ -300,7 +300,7 @@ class SiteController extends Controller
 
             $loginForm->login();
 
-            return $this->redirect(['site/index']);
+            return $this->redirect(Yii::$app->request->referrer);
         } else {
             $loginForm->password = '';
 
