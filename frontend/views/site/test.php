@@ -207,7 +207,6 @@ if(Yii::$app->user->isGuest) {
         });
 
         $(document).ready(function() {
-                alert('ok');
             setTimeout(function() {
                 $.ajax({
                     url: '/site/no-answer',
@@ -217,7 +216,7 @@ if(Yii::$app->user->isGuest) {
                         show_popup('not_answer');
                     }
                 });
-            }, 600);
+            }, 60000);
         });
     ";
 }
