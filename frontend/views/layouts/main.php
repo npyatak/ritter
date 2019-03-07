@@ -132,7 +132,8 @@ AppAsset::register($this);
                     <!-- item -->
 
                     <div class="item three">
-                        <a class="return_call" href="<?=Url::toRoute(['site/contact']);?>">Обратная связь</a>
+                        <a class="return_call" href="<?=Url::toRoute(['site/contact']);?>">Обратная связь</a><br>
+                        <a class="return_call" href="<?=Url::toRoute(['site/winners']);?>">Призы и победители</a>
                     </div>
 
                 </div>
