@@ -166,6 +166,9 @@ use yii\helpers\Url;
 				<!-- item_inner -->
 			</div>
 			<!-- item -->
+            <div class="itme slide_5">
+                sdfsdfsdfd
+            </div>
 		</div>
 		<div class="slider_controll">
 			<div class="slider_dots dots_1"></div>
