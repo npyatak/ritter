@@ -291,7 +291,7 @@ class SiteController extends Controller
                 Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
                 return \yii\widgets\ActiveForm::validate($loginForm);
             }
-            if($loginForm->getUser()->status !== User::STATUS_ACTIVE) {
+            if($loginForm->user && $loginForm->user->status !== User::STATUS_ACTIVE) {
                 Yii::$app->getSession()->setFlash('error', 'Вы не можете войти. Ваш аккаунт заблокирован');
             
                 return $this->redirect(['site/login']);

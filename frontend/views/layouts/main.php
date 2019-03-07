@@ -40,9 +40,9 @@ AppAsset::register($this);
                     </a>
                     <nav class="header_nav">
                         <ul>
-                            <li class="menu_li active"><a class="active" href="<?=Url::toRoute(['site/index']);?>">Участвуй</a></li>
+                            <li class="menu_li"><a <?=Yii::$app->controller->action->id == 'index' ? 'class="active"' : '';?> href="<?=Url::toRoute(['site/index']);?>">Участвуй</a></li>
                             <li class="menu_li"><a href="<?=Url::toRoute(['site/rule']);?>" target="_blank">Полные правила</a></li>
-                            <li class="menu_li"><a href="<?=Url::toRoute(['site/winners']);?>">Призы и победители</a></li>
+                            <li class="menu_li"><a <?=Yii::$app->controller->action->id == 'winners' ? 'class="active"' : '';?> href="<?=Url::toRoute(['site/winners']);?>">Призы и победители</a></li>
                         </ul>
                     </nav>
                     <a href="https://www.karta-vkusov-ritter-sport.ru/?utm_source=Friday.ru&utm_medium=display_CPM&utm_content=Contest_page&utm_campaign=0267-19-MS_Ritter" target="_blank" class="header_logo_2">
@@ -69,9 +69,9 @@ AppAsset::register($this);
 
                 <img class="close_burger" src="/img/close_middle.svg" alt="close">
                 <ul class="burger_ul">
-                    <li class="burger_li"><a href="<?=Url::toRoute(['site/index']);?>">Участвуй</a></li>
+                    <li class="burger_li"><a <?=Yii::$app->controller->action->id == 'index' ? 'class="active"' : '';?> href="<?=Url::toRoute(['site/index']);?>">Участвуй</a></li>
                     <li class="burger_li"><a href="<?=Url::toRoute(['site/rule']);?>" target="_blank">Полные правила</a></li>
-                    <li class="burger_li"><a href="<?=Url::toRoute(['site/winners']);?>">Призы и победители</a></li>
+                    <li class="burger_li"><a <?=Yii::$app->controller->action->id == 'winners' ? 'class="active"' : '';?> href="<?=Url::toRoute(['site/winners']);?>">Призы и победители</a></li>
                 </ul>
             </div>
             
