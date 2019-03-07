@@ -95,7 +95,7 @@ $this->title = 'Участвовать';
         <p class="name_block"><span>Поздравляем!</span> Ты участвуешь в конкурсе!</p>
 
         <p class="light_text">Оставайся с нами на связи и узнай больше о других конкурсах Ritter Sport:</p>
-
+        <p class="soc_name">Поделись проектом с друзьями и участвуй в розыгрыше призов. Удачи!</p>
         <div class="social_block">
             <a class="social_1" href="https://vk.com/rittersportru" target="_blank">
                 <i class="fa fa-vk" aria-hidden="true"></i>
@@ -128,7 +128,7 @@ $this->title = 'Участвовать';
         <p class="name_block"><span>Поздравляем!</span> Ты прошел все вопросы викторины!</p>
 
         <p class="light_text"></p>
-
+        <p class="soc_name">Поделись проектом с друзьями и участвуй в розыгрыше призов. Удачи!</p>
         <div class="social_block">
             <?=\frontend\widgets\share\ShareWidget::widget(['addClass' => 'result', 'image' => $location->image_share]);?>
         </div>
