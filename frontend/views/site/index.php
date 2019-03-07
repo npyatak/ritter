@@ -349,7 +349,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video blue">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_5.jpg)">
-					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12103537?p=4OzA2TdXrT4mktySnDx9RA" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12103537?p=4OzA2TdXrT4mktySnDx9RA" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -389,7 +389,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video green">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_7.jpg)">
-					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12004728?p=2NUvDQkC2BwPFaSc_o1dXQ" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12004728?p=2NUvDQkC2BwPFaSc_o1dXQ" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -469,7 +469,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video green">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_11.jpg)">
-					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12008928?p=jy7utnSZnsiaGn222eZFuA" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12008928?p=jy7utnSZnsiaGn222eZFuA" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -489,7 +489,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video blue">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_12.jpg)">
-					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12007677?p=zsSD9rTIYKnZkyiIKJYxVg" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12007677?p=zsSD9rTIYKnZkyiIKJYxVg" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -629,7 +629,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video green">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_19.jpg)">
-					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12007684?p=KiSbSLflPao868Jr94AwzA" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12007684?p=KiSbSLflPao868Jr94AwzA" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -669,7 +669,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video blue">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_21.jpg)">
-					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12007686?p=peL8bot5E4OpUD0AC7R8tg" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12007686?p=peL8bot5E4OpUD0AC7R8tg" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -689,7 +689,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video blue">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_22.jpg)">
-					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12007688?p=AZ5Dm6-_xQPYfpwsGOSfdg" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12007688?p=AZ5Dm6-_xQPYfpwsGOSfdg" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -709,7 +709,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video blue">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_23.jpg)">
-					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12103528?p=A2tX6UhqI1FaQACVPuVSnA" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12103528?p=A2tX6UhqI1FaQACVPuVSnA" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -769,7 +769,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video green">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_26.jpg)">
-					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12007690?p=zsvqr82HjPWizYzIvW6s3A" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12007690?p=zsvqr82HjPWizYzIvW6s3A" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -789,7 +789,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video blue">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_27.jpg)">
-					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12102822?p=NnKgG2xeO3NN6kKosARvfg" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12102822?p=NnKgG2xeO3NN6kKosARvfg" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -829,7 +829,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video green">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_29.jpg)">
-					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12008125?p=LBjM3AoZEEO4Tu_Basw_wQ" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12008125?p=LBjM3AoZEEO4Tu_Basw_wQ" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -849,7 +849,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video blue">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_30.jpg)">
-					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12008126?p=gvO6TyB3tOAVPmyBuLskrw" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12008126?p=gvO6TyB3tOAVPmyBuLskrw" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
