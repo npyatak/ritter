@@ -15,6 +15,8 @@ class m190224_115335_create_table_location extends Migration
         $this->createTable('{{%location}}', [
             'id' => $this->primaryKey(),
             'name' => $this->string()->notNull(),
+            'place' => $this->string(),
+            'place2' => $this->string(),
             'title' => $this->string()->notNull(),
             'subtitle' => $this->string(),
             'text' => $this->text(),
@@ -30,6 +32,8 @@ class m190224_115335_create_table_location extends Migration
         $this->batchInsert('{{%location}}', [
             'id',
             'name',
+            'place',
+            'place2',
             'video', 
             'video_title', 
             'video2', 

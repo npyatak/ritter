@@ -298,7 +298,6 @@ use yii\helpers\Url;
 							<img src="/img/chocolate/rs-1.png" alt="img">
 						</div>
 					</div>
-					
 				</div>
 			</div>
 		</div>

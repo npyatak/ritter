@@ -21,7 +21,7 @@ class Location extends \yii\db\ActiveRecord
     {
         return [
             [['title', 'name'], 'required'],
-            [['title', 'subtitle', 'text', 'image', 'image2', 'image_share', 'video', 'video2', 'name', 'video_title', 'video_title2'], 'string', 'max' => 255],
+            [['title', 'subtitle', 'text', 'image', 'image2', 'image_share', 'video', 'video2', 'name', 'video_title', 'video_title2'], 'string'],
         ];
     }
 

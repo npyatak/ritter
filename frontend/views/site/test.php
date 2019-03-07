@@ -73,7 +73,7 @@ $this->title = 'Участвовать';
                 <!-- checkbox_1_wrap -->
             </div>
             <!-- checkbox_block -->
-            <?=$this->render('_login', ['loginForm' => $loginForm]);?>
+            <?=$this->render('_login', ['loginForm' => $loginForm, 'location' => $location]);?>
         </div>
         <!-- wrap_inner_border -->
         <div class="center">
@@ -139,7 +139,6 @@ $this->title = 'Участвовать';
                             <img src="/img/chocolate_1.png" alt="img">
                         </div>
                     </div>
-                    
                 </div>
             </div>
             <!-- not_answer_video -->
@@ -149,7 +148,6 @@ $this->title = 'Участвовать';
 
     </div>
     <!-- popup_block -->
-
 </div>
 <!-- popup_bg -->
 
@@ -169,7 +167,7 @@ $this->title = 'Участвовать';
         </div>
         <p class="name_block"><span>Поздравляем!</span> Ты прошел все вопросы викторины!</p>
 
-        <p class="light_text">У нас отличная новость: здесь скучно тебе точно не будет! Смело планируй маршрут и открывай море новых впечатлений вместе с Ritter Sport. Поделись проектом с друзьями и участвуй в розыгрыше призов. Удачи!</p>
+        <p class="light_text"></p>
 
         <div class="social_block">
             <?=\frontend\widgets\share\ShareWidget::widget(['addClass' => 'result', 'image' => $location->image_share]);?>
@@ -224,10 +222,17 @@ if(Yii::$app->user->isGuest) {
             $.ajax({
                 data: {next: 1},
                 success: function(data) {
-                    if(data.length) {
-                        $('.content_test').html(data);
-                    } else {
+                    if(typeof data.score !== 'undefined') {
+                        var texts = [
+                            'У нас отличная новость: здесь скучно тебе точно не будет! Смело планируй маршрут и открывай море новых впечатлений вместе с Ritter Sport. Поделись проектом с друзьями и участвуй в розыгрыше призов. Удачи!',
+                            'Поздравляем! Жажда приключений в тебе неистребима! Ты как настоящий Дон Кихот, готов бороться за любую возможность оказаться в новом месте и получить максимум от путешествия. Поделись проектом с друзьями и участвуй в розыгрыше призов. Удачи!',
+                            'Признайся, ты здесь уже был, и не раз :) Мы подозреваем, что ты уже стал местной легендой ведь ты знаешь здесь лучшие кафе, бары, улицы и рестораны и готов возвращаться сюда с удовольствием еще не раз. Прими наши аплодисменты! Поделись проектом с друзьями и участвуй в розыгрыше призов. Удачи!',
+                        ];
+
+                        $('#congratulation_block_2 .light_text').html(texts[data.score]);
                         change_block('congratulation_block_2');
+                    } else {
+                        $('.content_test').html(data);
                     }
                 }
             });

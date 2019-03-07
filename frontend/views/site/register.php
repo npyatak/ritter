@@ -19,7 +19,7 @@ $this->title = 'Регистрация';
 
 		<?php $form = ActiveForm::begin([
 		    'id' => 'form-register', 
-		    'action' => Url::toRoute('site/register'),
+		    'action' => Url::toRoute(['site/register', 'location_id' => $location_id]),
 		    'enableClientValidation' => false,
 		    'enableAjaxValidation' => true,
 		]); ?>
