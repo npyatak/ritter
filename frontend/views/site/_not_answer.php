@@ -14,7 +14,7 @@
     <div class="not_answer_video">
         <div class="video_wrap" style="background-image: url(<?=$data['video_image'];?>)">
             <!-- в data-video-iframe="" передаем iframe видео с рутуба -->
-            <span class="play" data-video-iframe='<iframe width="720" height="405" src="<?=$data['video'];?>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
+            <span class="play popup_play" data-video-iframe='<iframe width="720" height="405" src="<?=$data['video'];?>" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
         </div>
         <div class="video_info">
             <div class="video_content">

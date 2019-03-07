@@ -141,38 +141,8 @@ $this->title = 'Участвовать';
 
 <div class="popup_bg">
     <div class="not_answer popup_block style_1" data-flag="not_answer">
-        <img class="close_popup" src="/img/close_middle.svg" alt="close">
-        <div class="wrap_inner_border">
-            <div class="inner_border">
-                <span class="top"></span>
-                <span class="bottom"></span>
-            </div>
+       
 
-            <div class="not_answer_content">
-                <p class="name">Не можешь определится с ответом?</p>
-                <p class="anons">Смотри подсказку здесь!</p>
-            </div>
-            <!-- not_answer_content -->
-            <div class="not_answer_video">
-                <div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
-                    <!-- в data-video-id="10949751" передаем id видео с рутуба -->
-                    <span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12001776?p=BrVQ913CF_8S5TGmda2mhw" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
-                </div>
-                <div class="video_info">
-                    <div class="video_content">
-                        <p class="name">Орел и Решка: Перезагрузка</p>
-                        <p class="desc"><span>США, Лос-Анджелес</span> 14 сезон</p>
-                        <div class="video_img">
-                            <img src="/img/chocolate/rs-4.png" alt="img">
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            <!-- not_answer_video -->
-                
-        </div>
-        <!-- wrap_inner_border -->
     </div>
     <!-- popup_block -->
 </div>

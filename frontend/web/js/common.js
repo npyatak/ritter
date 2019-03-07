@@ -173,11 +173,18 @@ $(".popup_bg, .close_popup").on("click", function(){
 $(".video_wrap .play").on("click", function(){
 	$('#video_player').remove(); 
 	var el = $(this);
-
 	var iframe_code = el.data("video-iframe");
-	el.after(iframe_code);
-	el.next("iframe").attr("id","video_player");
 	
+
+	if(el.hasClass("popup_play")){
+		el.after('<iframe width="720" height="405" src="'+ iframe_code +'" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>');
+		console.log("11111");
+	}else{
+		el.after(iframe_code);
+		console.log("22222");
+	}
+
+	el.next("iframe").attr("id","video_player");
 	var player = document.getElementById('video_player');
 	// console.log(player);
 
