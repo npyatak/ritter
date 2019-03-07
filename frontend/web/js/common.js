@@ -271,3 +271,11 @@ $(".choco_popup, .close_popup").on("click", function(){
 }).children().click(function(e){        // вешаем на потомков
 	e.stopPropagation();   // предотвращаем распространение на потомков
 });
+
+
+// класс для плавного скролла ссылок
+$(".scroll_refer").on("click",function() {
+	var href = $(this).attr("href");
+	$("html, body").animate({ scrollTop: $(href).offset().top}, "slow");
+	return false;
+});
