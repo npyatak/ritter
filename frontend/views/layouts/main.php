@@ -23,13 +23,15 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-    <div class="wrapper">        
+    <div class="wrapper">
+
         <?php if(Yii::$app->controller->action->id == 'index'):?>
         <header class="main_header boss">
         <?php else:?>            
         <header class="main_header">
         <?php endif;?>
 
+       
             <div class="contain">
                 <div href="https://friday.ru/" target="_blank" class="header_wrap_items">
                     <a class="header_logo_1">
@@ -72,6 +74,7 @@ AppAsset::register($this);
                     <li class="burger_li"><a <?=Yii::$app->controller->action->id == 'winners' ? 'class="active"' : '';?> href="<?=Url::toRoute(['site/winners']);?>">Призы и победители</a></li>
                 </ul>
             </div>
+            
         </div>
 
 
@@ -87,8 +90,7 @@ AppAsset::register($this);
                 <img class="right img_1" src="/img/chocolate_bg_5_2.jpg" alt="img">
                 <img class="right img_2" src="/img/chocolate_bg_5_2.png" alt="img">
             </div>
-            <div class="body_chocolate"> 
-                <?= Alert::widget() ?>   
+            <div class="body_chocolate">    
                 <?= $content ?>
 
 
@@ -99,6 +101,9 @@ AppAsset::register($this);
         </div>
         <!-- body_chocolate_wrap -->
         <?php endif;?>
+
+
+            
 
         <footer class="footer_main">
             <div class="contain">
@@ -135,6 +140,7 @@ AppAsset::register($this);
             </div>
         </footer>
     </div>
+    <?= Alert::widget() ?>
 <?php $this->endBody() ?>
 </body>
 </html>
