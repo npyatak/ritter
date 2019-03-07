@@ -24,13 +24,20 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
     <div class="wrapper">
+
+        <?php if(Yii::$app->controller->action->id == 'index'):?>
+        <header class="main_header boss">
+        <?php else:?>            
         <header class="main_header">
+        <?php endif;?>
+
+       
             <div class="contain">
-                <div class="header_wrap_items">
-                    <div class="header_logo_1">
+                <div href="https://friday.ru/" target="_blank" class="header_wrap_items">
+                    <a class="header_logo_1">
                         <!-- <img src="/img/logo.png" alt="logo"> -->
                         <img src="/img/logo_text.png" alt="logo">
-                    </div>
+                    </a>
                     <nav class="header_nav">
                         <ul>
                             <li class="menu_li active"><a class="active" href="<?=Url::toRoute(['site/index']);?>">Участвуй</a></li>
@@ -38,9 +45,9 @@ AppAsset::register($this);
                             <li class="menu_li"><a href="<?=Url::toRoute(['site/winners']);?>">Призы и победители</a></li>
                         </ul>
                     </nav>
-                    <div class="header_logo_2">
+                    <a href="https://www.karta-vkusov-ritter-sport.ru/?utm_source=Friday.ru&utm_medium=display_CPM&utm_content=Contest_page&utm_campaign=0267-19-MS_Ritter" target="_blank" class="header_logo_2">
                         <img src="/img/logo_2.png" alt="logo">
-                    </div>
+                    </a>
 
                     <div class="burger_button">
                         <div class="one"></div>
@@ -77,37 +84,47 @@ AppAsset::register($this);
         <div class="body_chocolate_wrap">
         <?php endif;?>
             <!-- плавающий фон  -->
-            <div class="background_choco type_1">
-                <img class="left img_1" src="/img/chocolate_bg_1_1.jpg" alt="img">
-                <img class="left img_2" src="/img/chocolate_bg_1_1.png" alt="img">
-                <img class="right img_1" src="/img/chocolate_bg_1_2.jpg" alt="img">
-                <img class="right img_2" src="/img/chocolate_bg_1_2.png" alt="img">
+            <div class="background_choco type_3">
+                <img class="left img_1" src="/img/chocolate_bg_5_1.jpg" alt="img">
+                <img class="left img_2" src="/img/chocolate_bg_5_1.png" alt="img">
+                <img class="right img_1" src="/img/chocolate_bg_5_2.jpg" alt="img">
+                <img class="right img_2" src="/img/chocolate_bg_5_2.png" alt="img">
             </div>
             <div class="body_chocolate">    
                 <?= $content ?>
+
+
+        <?php if(Yii::$app->controller->action->id == 'index'):?>
+           
+        <?php else:?>            
             </div>
         </div>
+        <!-- body_chocolate_wrap -->
+        <?php endif;?>
+
+
+            
 
         <footer class="footer_main">
             <div class="contain">
                 <div class="footer_items">
 
-                    <div class="item one">
+                   <!--  <div class="item one">
                         <p>Поделиться проектом</p>
                         <div class="social_block">
                             <?=\frontend\widgets\share\ShareWidget::widget();?>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- item -->
 
                     <div class="item two">
                         <p>Оставайтесь с нами: <span>Наши группы</span></p>
                     
                         <div class="social_block">
-                            <a class="social_1" href="#">
+                            <a class="social_1" href="https://vk.com/rittersportru" target="_blank">
                                 <i class="fa fa-vk" aria-hidden="true"></i>
                             </a>
-                            <a class="social_1" href="#">
+                            <a class="social_1" href="https://www.facebook.com/RitterSport/?brand_redir=136684793051581" target="_blank">
                                 <i class="fa fa-facebook" aria-hidden="true"></i>
                             </a>
                         </div>
@@ -123,46 +140,6 @@ AppAsset::register($this);
             </div>
         </footer>
     </div>
-
-    <div class="popup_bg">
-        <div class="not_answer popup_block style_1" data-flag="not_answer">
-            <img class="close_popup" src="/img/close_middle.svg" alt="close">
-            <div class="wrap_inner_border">
-                <div class="inner_border">
-                    <span class="top"></span>
-                    <span class="bottom"></span>
-                </div>
-
-                <div class="not_answer_content">
-                    <p class="name">Не можешь определится с ответом?</p>
-                    <p class="anons">Смотри подсказку здесь!</p>
-                </div>
-                <!-- not_answer_content -->
-                <div class="not_answer_video">
-                    <div class="video_wrap">
-                        <iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/11982280?quality=1&platform=someplatform" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
-                    </div>
-                    <div class="video_info">
-                        <div class="video_content">
-                            <p class="name">Орел и Решка: Перезагрузка</p>
-                            <p class="desc"><span>США, Лос-Анджелес</span> 14 сезон</p>
-                            <div class="video_img">
-                                <img src="/img/chocolate_1.png" alt="img">
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <!-- not_answer_video -->
-                
-            </div>
-            <!-- wrap_inner_border -->
-
-        </div>
-        <!-- popup_block -->
-    </div>
-    <!-- popup_bg -->
-
     <?= Alert::widget() ?>
 <?php $this->endBody() ?>
 </body>

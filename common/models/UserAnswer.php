@@ -34,10 +34,11 @@ class UserAnswer extends \yii\db\ActiveRecord
     {
         return [
             [['stage_id', 'user_id'], 'required'],
-            [['stage_id', 'user_id', 'score'], 'integer'],
+            [['stage_id', 'user_id', 'score', 'is_finished', 'is_shared', 'location_id'], 'integer'],
             [['answers'], 'string'],
             [['stage_id'], 'exist', 'skipOnError' => true, 'targetClass' => Stage::className(), 'targetAttribute' => ['stage_id' => 'id']],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
+            [['location_id'], 'exist', 'skipOnError' => true, 'targetClass' => Location::className(), 'targetAttribute' => ['location_id' => 'id']],
         ];
     }
 

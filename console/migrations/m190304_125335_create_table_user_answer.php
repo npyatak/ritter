@@ -15,18 +15,23 @@ class m190304_125335_create_table_user_answer extends Migration
             'id' => $this->primaryKey(),
             'stage_id' => $this->integer()->notNull(),
             'user_id' => $this->integer()->notNull(),
+            'location_id' => $this->integer()->notNull(),
             'answers' => $this->text(),
             'score' => $this->integer()->notNull()->defaultValue(0),
+            'is_finished' => $this->integer(1)->notNull()->defaultValue(0),
+            'is_shared' => $this->integer(1)->notNull()->defaultValue(0),
         ], $tableOptions);
         
         $this->addForeignKey("{user_answer}_stage_id_fkey", '{{%user_answer}}', 'stage_id', '{{%stage}}', 'id', 'CASCADE', 'CASCADE');
         $this->addForeignKey("{user_answer}_user_id_fkey", '{{%user_answer}}', 'user_id', '{{%user}}', 'id', 'CASCADE', 'CASCADE');
+        $this->addForeignKey("{user_answer}_location_id_fkey", '{{%user_answer}}', 'location_id', '{{%location}}', 'id', 'CASCADE', 'CASCADE');
     }
 
     public function safeDown()
     {
         $this->dropForeignKey('{user_answer}_stage_id_fkey', '{{%user_answer}}');
         $this->dropForeignKey('{user_answer}_user_id_fkey', '{{%user_answer}}');
+        $this->dropForeignKey('{user_answer}_location_id_fkey', '{{%user_answer}}');
 
         $this->dropTable('{{%user_answer}}');
     }

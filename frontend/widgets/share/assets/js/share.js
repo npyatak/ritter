@@ -6,6 +6,15 @@ $(document).on('click', 'a.share', function(e) {
     url = getShareUrl($(this));
     window.open(url,'','toolbar=0,status=0,width=626,height=436');
 
+    if($(this).hasClass('result')) {
+        $.ajax({
+            url: '/site/share-result',
+            success: function(data) {
+                change_block('congratulation_block_1');
+            }
+        });
+    }
+
     return false;
 });
 

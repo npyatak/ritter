@@ -9,7 +9,7 @@
     <p class="name" style="color:#006037"><?=$question->location->title;?></p>
     <p class="desc"><?=$question->location->subtitle;?></p>
     <div class="choco_pack">
-        <img src="<?=$question->location->image;?>" alt="img">
+        <img src="<?=$question->location->image2;?>" alt="img">
     </div>
 </div>
 <div class="test_item">

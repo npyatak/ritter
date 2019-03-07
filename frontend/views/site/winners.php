@@ -14,7 +14,7 @@
 			
 			<p class="prize_name">Призы:</p>
 
-			<div class="wrap_items_prizes">
+			<div class="wrap_items_prizes type_1">
 				<div class="item_prize">
 					<div class="img">
 						<img src="img/prize_1.png" alt="img">

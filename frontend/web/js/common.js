@@ -149,7 +149,8 @@ function close_popup(){
 		$("body").css('overflow-y','auto'); 
 		$(".popup_bg .popup_block").css("display","none");
 		$(".popup_bg").dequeue(); //должно применяться к тому же элементу что и .queue
-	}); 
+	});
+	$('.popup_block #video_player').remove(); 
 };
 
 // При клике открываем попап
@@ -167,36 +168,37 @@ $(".popup_bg, .close_popup").on("click", function(){
 
 
 
-// видео rutube
-$(function(){
-	if($("iframe").is("#video_player")){
 
-		var player = document.getElementById('video_player');
-		setTimeout(function(){
-			// смена цвета проигрывателя
-			player.contentWindow.postMessage(JSON.stringify({
-					type: 'player:setSkinColor',
-					data: {
-						color: 'F2403E'
-					}
-			}), '*');
-		},500);	
+// добавляем видео с рутуб в iframe и управляем им
+$(".video_wrap .play").on("click", function(){
+	$('#video_player').remove(); 
+	var el = $(this);
+	var id = el.data("video-id");
+	el.after('<iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/'+id+'?quality=1&platform=someplatform&autoplay=true" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>');
+	
+	var player = document.getElementById('video_player');
+	// console.log(player);
 
-		// ставим на паузу при загрузке
-		player.contentWindow.postMessage(JSON.stringify({
-			type: 'player:pause',
-		}), '*');
+	window.addEventListener('message', function (event) {
+	    var message = JSON.parse(event.data);
+	    // console.log(message.type); // some type
+	    switch (message.type) {
+	        case 'player:ready':
+				player.contentWindow.postMessage(JSON.stringify({
+				    type: 'player:setSkinColor',
+				    data: {
+				    	color: 'f7323f'
+				    }
+				}), '*');
+				player.contentWindow.postMessage(JSON.stringify({
+				    type: 'player:play',
+				    data: {}
+				}), '*');
+	            break;
+	    };
+	});
 
-		$(".popup_bg, .close_popup").on("click", function(){
-			player.contentWindow.postMessage(JSON.stringify({
-				type: 'player:pause',
-			}), '*');
-		});	
-		
-	}//if
-})
-
-
+});
 
 
 
@@ -209,7 +211,7 @@ $(".show_block").on("click",function(){
 
 // функция отвечающая за переключение блоков на главной 
 function change_block(id){
-	if(!$("#"+ id).hasClass('active_block')){
+	//if(!$("#"+ id).hasClass('active_block')){
 		$('.active_block').css('opacity','0').delay(150).queue(function () {
 			$(this).removeClass("active_block");
 			$(this).css('display', 'none').dequeue();
@@ -219,7 +221,7 @@ function change_block(id){
 				$(this).addClass("active_block");
 			});
 		});
-	}
+	//}
 }
 
 
@@ -250,9 +252,22 @@ $(function() {
 		  section : ".section_scroll",
 		  scrollSpeed: 800,
 		  overflowScroll: true,
+		  scrollbars: true,
 		  // scrollbars: false,
 		  // easing: "easeOutExpo",
 		});
 	}
 });
 
+// Закрываем попап
+$(".choco_popup, .close_popup").on("click", function(){
+	$(".choco_popup").css('opacity','0').delay(200).queue(function () {  // delay() позволяет сделать паузу м
+		$(".choco_popup").css('display', 'none');
+		$("body").css('overflow-y','auto'); 
+		$(".choco_popup .choco_popup_inner").css("display","none");
+		$(".choco_popup").dequeue(); //должно применяться к тому же элементу что и .queue
+	});
+	$.scrollify.enable();
+}).children().click(function(e){        // вешаем на потомков
+	e.stopPropagation();   // предотвращаем распространение на потомков
+});

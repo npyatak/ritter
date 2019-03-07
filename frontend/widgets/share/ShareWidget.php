@@ -12,10 +12,10 @@ class ShareWidget extends \yii\base\Widget
 		'title' => 'Калейдоскоп вкусов и призов от Ritter Sport!',
         'text' => 'Пройди тест и выиграй дорожный рюкзак и другие призы от Ritter Sport! #ПутешествуйсRitterSport',
 		'image' => '/img/01_kagocel_studia_souz_sharing_fb.jpg',
-		'image_vk' => '/img/01_kagocel_studia_souz_sharing_vk.jpg',
-		'image_ok' => '/img/01_kagocel_studia_souz_sharing_ok.jpg',
 	];
 	public $showButtons = true;
+	public $addClass = '';
+	public $image;
 
     public function init()
     {
@@ -26,6 +26,10 @@ class ShareWidget extends \yii\base\Widget
 
     public function run() {
     	$scheme = isset($_SERVER['REQUEST_SCHEME']) ? $_SERVER['REQUEST_SCHEME'] : 'https';
+
+    	if($this->image) {
+    		$this->share['image'] = $this->image;
+    	}
 
         $this->share['url'] = Url::current([], $scheme);
         $this->share['imageUrl'] = isset($this->share['image']) ? Url::to([$this->share['image']], $scheme) : null;
@@ -52,7 +56,7 @@ class ShareWidget extends \yii\base\Widget
 
 		if($this->showButtons) {
 		    echo Html::a('<i class="fa fa-vk" aria-hidden="true"></i>', '', [
-		        'class' => 'social_1 share',
+		        'class' => 'social_1 share '.$this->addClass,
 		        'data-soc' => 'vk',
 		        'data-url' => $this->share['url'],
 		        'data-title' => $this->share['title'],
@@ -60,7 +64,7 @@ class ShareWidget extends \yii\base\Widget
 		        'data-text' => $this->share['text'],
 		    ]);
 			echo Html::a('<i class="fa fa-facebook" aria-hidden="true"></i>', '', [
-		        'class' => 'social_1 share',
+		        'class' => 'social_1 share '.$this->addClass,
 		        'data-soc' => 'fb',
 		        'data-url' => $this->share['url'],
 		        'data-title' => $this->share['title'],
@@ -68,7 +72,7 @@ class ShareWidget extends \yii\base\Widget
 		        'data-text' => $this->share['text'],
 		    ]);
 		    echo Html::a('<i class="fa fa-odnoklassniki" aria-hidden="true"></i>', '#', [
-		        'class' => 'social_1 share',
+		        'class' => 'social_1 share '.$this->addClass,
 		        'data-soc' => 'ok',
 		        'data-url' => $this->share['url'],
 		        'data-title' => $this->share['title'],
