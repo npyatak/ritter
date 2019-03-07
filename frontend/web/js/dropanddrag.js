@@ -211,8 +211,8 @@ $( function() {
                     if((wrapTopBorder - elementTopBorder) < (elementBottomBorder - wrapBottomBorder )){
                         // console.log("Нижний ряд в верх ")
 
-                        let horizontCountOffsets = $(".dritems .dritem").slice(Math.min(...min_array),Math.max(...min_array)+1).attr("data-verticalCountOffsets");
-                        $(".dritems .dritem").slice(Math.min(...min_array),Math.max(...min_array)+1).each(function (index) {
+                        let horizontCountOffsets = $(".dritems .dritem").slice(Math.min(min_array+""),Math.max(min_array+"")+1).attr("data-verticalCountOffsets");
+                        $(".dritems .dritem").slice(Math.min(min_array+""),Math.max(min_array+"")+1).each(function (index) {
                             // $(".dritems .dritem").css("opacity", "1")
                             $(this)
                                 .css("transition", "transform .0s linear")
@@ -227,8 +227,8 @@ $( function() {
 
                     } else {
                         // console.log("Верхний ряд в низ")
-                        let horizontCountOffsets = $(".dritems .dritem").slice(Math.min(...max_array),Math.max(...max_array)+1).attr("data-verticalCountOffsets");
-                        $(".dritems .dritem").slice(Math.min(...max_array),Math.max(...max_array)+1).each(function (index) {
+                        let horizontCountOffsets = $(".dritems .dritem").slice(Math.min(max_array+""),Math.max(max_array+"")+1).attr("data-verticalCountOffsets");
+                        $(".dritems .dritem").slice(Math.min(max_array+""),Math.max(max_array+"")+1).each(function (index) {
                             // $(".dritems .dritem").css("opacity", "1")
                             //$(this).attr("data-verticalCountOffsets", parseInt(horizontCountOffsets) - 1)
                             $(this)
