@@ -252,9 +252,30 @@ $(function() {
 		  section : ".section_scroll",
 		  scrollSpeed: 800,
 		  overflowScroll: true,
+		  scrollbars: true,
 		  // scrollbars: false,
 		  // easing: "easeOutExpo",
 		});
 	}
 });
 
+// Закрываем попап
+$(".choco_popup, .close_popup").on("click", function(){
+	$(".choco_popup").css('opacity','0').delay(200).queue(function () {  // delay() позволяет сделать паузу м
+		$(".choco_popup").css('display', 'none');
+		$("body").css('overflow-y','auto'); 
+		$(".choco_popup .choco_popup_inner").css("display","none");
+		$(".choco_popup").dequeue(); //должно применяться к тому же элементу что и .queue
+	});
+	$.scrollify.enable();
+}).children().click(function(e){        // вешаем на потомков
+	e.stopPropagation();   // предотвращаем распространение на потомков
+});
+
+
+// класс для плавного скролла ссылок
+$(".scroll_refer").on("click",function() {
+	var href = $(this).attr("href");
+	$("html, body").animate({ scrollTop: $(href).offset().top}, "slow");
+	return false;
+});

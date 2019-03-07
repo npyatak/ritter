@@ -14,7 +14,7 @@
 			
 			<p class="prize_name">Призы:</p>
 
-			<div class="wrap_items_prizes">
+			<div class="wrap_items_prizes type_1">
 				<div class="item_prize">
 					<div class="img">
 						<img src="img/prize_1.png" alt="img">
@@ -56,7 +56,7 @@
 			<!-- wrap_items_prizes -->
 
 			<div class="center">
-				<a class="button_1" href="#"><span>Участвовать</span></a>
+				<a class="button_1" href="/#2"><span>Участвовать</span></a>
 				<p class="prize_alert">Реальные призы могут отличаться от их изображения</p>
 			</div>
 
@@ -70,6 +70,8 @@
 	</div>
 	<!-- prizes -->
 
+
+<?/*
 	<div class="winners">
 
 		<!-- рамка -->
@@ -163,6 +165,8 @@
 
 	</div>
 	<!-- winners -->
+	*/?>
 
 
 </div>
+<!-- prizes_and_winners -->
