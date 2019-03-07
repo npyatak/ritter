@@ -173,8 +173,10 @@ $(".popup_bg, .close_popup").on("click", function(){
 $(".video_wrap .play").on("click", function(){
 	$('#video_player').remove(); 
 	var el = $(this);
-	var id = el.data("video-id");
-	el.after('<iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/'+id+'?quality=1&platform=someplatform&autoplay=true" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>');
+
+	var iframe_code = el.data("video-iframe");
+	el.after(iframe_code);
+	el.next("iframe").attr("id","video_player");
 	
 	var player = document.getElementById('video_player');
 	// console.log(player);
