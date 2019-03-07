@@ -12,13 +12,13 @@ use yii\bootstrap\ActiveForm;
 
 <?php $form = ActiveForm::begin([
     'id' => 'login-form',
-    'action' => Url::toRoute('site/login'),
+    'action' => Url::toRoute(['site/login']),
     'enableClientValidation' => false,
     'enableAjaxValidation' => true,
 ]); ?>
 
     <div class="inputs_block">
-        <?= $form->field($loginForm, 'email', ['options' => ['class' => 'input_wrap_1 man']])->textInput(['autofocus' => true, 'placeholder' => 'Твой логин *'])->label(false) ?>
+        <?= $form->field($loginForm, 'email', ['options' => ['class' => 'input_wrap_1 man']])->textInput(['autofocus' => true, 'placeholder' => 'Твой Email *'])->label(false) ?>
         
         <?= $form->field($loginForm, 'password', ['options' => ['class' => 'input_wrap_1 man']])->passwordInput(['placeholder' => 'Пароль *'])->label(false) ?>
     </div>
