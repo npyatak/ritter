@@ -21,7 +21,7 @@ class Location extends \yii\db\ActiveRecord
     {
         return [
             [['title', 'name'], 'required'],
-            [['title', 'subtitle', 'text', 'image', 'image2', 'image_share', 'video', 'video2', 'name', 'video_title', 'video_title2'], 'string'],
+            [['title', 'place', 'place2', 'subtitle', 'text', 'image', 'image2', 'image_share', 'video', 'video2', 'name', 'video_title', 'video_title2'], 'string'],
         ];
     }
 
@@ -43,6 +43,8 @@ class Location extends \yii\db\ActiveRecord
             'video2' => 'Видео 2',
             'video_title' => 'Видео заголовок',
             'video_title2' => 'Видео 2 заголовок',
+            'place' => 'Город', 
+            'place2' => 'Город 2', 
         ];
     }
 

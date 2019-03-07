@@ -183,6 +183,36 @@ class SiteController extends Controller
         }
     }
 
+    public function actionNoAnswer($id) 
+    {
+        if(Yii::$app->request->isAjax && !Yii::$app->user->isGuest) {
+            $stage = Stage::getCurrent();
+            $location = Location::findOne($id);
+            if($location === null || $stage === null) {
+                throw new NotFoundHttpException('The requested page does not exist.');
+            }
+
+            $userAnswer = UserAnswer::find()->where(['stage_id' => $stage->id, 'user_id' => Yii::$app->user->id])->one();
+            
+            $data = [];
+            if($userAnswer === null) {
+                $data['place'] = $location->place;
+                $data['video'] = $location->video;
+                $data['video_title'] = $location->video_title;
+                $data['image'] = $location->image;
+            } elseif (count($userAnswer->answersArray)) {
+                $data['place'] = $location->place2;
+                $data['video'] = $location->video2;
+                $data['video_title'] = $location->video_title2;
+                $data['image'] = $location->image2;
+            }
+
+            if(!empty($data)) {            
+                return $this->renderAjax('_not_answer', ['data' => $data]);
+            }
+        }
+    }
+
     public function actionWinners()
     {
 
