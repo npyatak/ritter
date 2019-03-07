@@ -57,14 +57,14 @@ html {
 }
 
 body {
-  font-size: 16px;
+  font-size: 16px !important;
   font-weight: 200;
   min-width: 360px;
   position: relative;
-  line-height: 1.2;
+  line-height: 1.2 !important;
   overflow-x: hidden;
   color: #41464b;
-  font-family: "AFuturaOrto", sans-serif;
+  font-family: "AFuturaOrto", sans-serif !important;
 }
 
 body.no_scroll {
@@ -247,7 +247,7 @@ img {
 
 .header_nav ul {
   margin-bottom: 0;
-  line-height: 1;
+  /*line-height: 1;*/
   list-style-type: none;
   display: -webkit-box;
   display: -webkit-flex;
