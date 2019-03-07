@@ -170,7 +170,7 @@ $(".popup_bg, .close_popup").on("click", function(){
 
 
 // добавляем видео с рутуб в iframe и управляем им
-$(".video_wrap").on("click", ".play" function(){
+$(".video_wrap").on("click", ".play", function(){
 	$('#video_player').remove(); 
 	var el = $(this);
 	var iframe_code = el.data("video-iframe");
