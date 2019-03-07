@@ -28,9 +28,10 @@ $this->title = 'Обратная связь';
 
             <?= $form->field($model, 'body', ['options' => ['class' => 'textarea_wrap_1']])->textarea(['rows' => 6, 'placeholder' => 'Сообщение'])->label(false) ?>
 
-            <div class="bottom_block_1">
+            <p class="bold_text">Проверочный код</p>
+            <div class="capcha_block_1">
                 <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-                    'template' => '<div class="capcha_item">{image}</div><div class="col-lg-6">{input}</div></div>',
+                    'template' => '<div class="capcha_item">{image}</div><div class="input_wrap_1">{input}</div>',
                 ]) ?>
                 <?= Html::submitButton('<span>Отправить</span>', ['class' => 'button_1', 'name' => 'contact-button']) ?>
             </div>
