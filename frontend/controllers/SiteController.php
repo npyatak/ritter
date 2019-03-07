@@ -110,7 +110,17 @@ class SiteController extends Controller
                     $userAnswer->is_finished = 1;
                     $userAnswer->save(false, ['is_finished']);
 
-                    return false;
+                    $score = 0;
+
+                    foreach ($userAnswer->answersArray as $key => $a) {
+                        if($key == 2) break;
+                        if($a['r']) {
+                            $score++;
+                        }
+                    }
+                    Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+                    return ['score' => $score];
                 }
             }
 
@@ -131,11 +141,10 @@ class SiteController extends Controller
                 $userAnswer->score = 0;
             }
 
-            $question = $answer->question;
-            $rightAnswerId = Answer::find()->select('id')->where(['question_id' => $question->id, 'is_right' => 1])->column()[0];
+            $rightAnswerId = Answer::find()->select('id')->where(['question_id' => $answer->question_id, 'is_right' => 1])->column()[0];
 
-            $userAnswer->answersArray[] = ['q' => $answer->question_id, 'a' => $answer->id];
-            if($rightAnswerId == $id) {
+            $userAnswer->answersArray[] = ['q' => $answer->question_id, 'a' => $answer->id, 'r' => $rightAnswerId == $answerId ? 1 : 0];
+            if($rightAnswerId == $answerId) {
                 $userAnswer->score = $userAnswer->score + 1;
             }
 
@@ -179,33 +188,6 @@ class SiteController extends Controller
 
         return $this->render('winners', [
         ]);
-    }
-
-    public function actionNextQuestion()
-    {
-        if(Yii::$app->request->isAjax && !Yii::$app->user->isGuest) {        
-            $stage = Stage::getCurrent();
-            if($stage === null) {
-                throw new NotFoundHttpException('The requested page does not exist.');
-            }
-
-            $userAnswer = UserAnswer::find()->where(['stage_id' => $stage->id, 'user_id' => Yii::$app->user->id])->one();
-            $qIds = [];
-            if($userAnswer !== null && !empty($userAnswer->answersArray)) {
-                foreach ($userAnswer->answersArray as $a) {
-                    $qIds[] = $a['q'];
-                }
-            }
-
-            $question = Question::find()->where(['stage_id' => $stage->id, 'location_id' => $userAnswer->location_id])->andWhere(['not in', 'id', $qIds])->one();
-
-            if($question !== null) {
-                return $this->renderAjax('_question', ['question' => $question, 'userAnswer' => $userAnswer]);
-            } else {
-                $userAnswer->is_finished = 1;
-                $$userAnswer->save(false, ['is_finished']);
-            }
-        }
     }
 
     public function actionLogout()
