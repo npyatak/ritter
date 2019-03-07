@@ -160,7 +160,7 @@ $(".open_form").on("click",function() {
 });
 
 // Закрываем попап
-$('body').on("click", '.popup_bg, .close_popup', function(){
+$('.wrapper').on("click", '.popup_bg, .close_popup', function(){
 	close_popup();
 }).children().click(function(e){        // вешаем на потомков
 	e.stopPropagation();   // предотвращаем распространение на потомков
@@ -171,7 +171,7 @@ $('body').on("click", '.popup_bg, .close_popup', function(){
 
 // добавляем видео с рутуб в iframe и управляем им
 
-$(".video_wrap").delegate(".play", "click", function(){
+$(".wrapper").on("click", ".play", function(){
 
 	$('#video_player').remove(); 
 	var el = $(this);
