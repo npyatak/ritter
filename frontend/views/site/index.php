@@ -269,7 +269,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video green">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_1.jpg)">
-					<span class="play" data-video-id="11370815"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12001776?p=BrVQ913CF_8S5TGmda2mhw" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -288,7 +288,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video blue">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_2.jpg)">
-					<span class="play" data-video-id="11227347"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12001610?p=tlnWoE2PeSbkTN_RtHZW7g" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -307,7 +307,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video blue">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_3.jpg)">
-					<span class="play" data-video-id="11797841"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12001618?p=b_NahOS21XetKxYKtVPIVA" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -326,7 +326,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video green">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_4.jpg)">
-					<span class="play" data-video-id="10688634"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12001846?p=jhKWVLUliZ-mDz3mUTh-KQ" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -350,7 +350,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video blue">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_5.jpg)">
-					<span class="play" data-video-id="12020084"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12103537" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -370,7 +370,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video green">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_6.jpg)">
-					<span class="play" data-video-id="10280882"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/11997295?p=vsYOAmNa3RL6tCUbTsABJQ" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -390,7 +390,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video green">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_7.jpg)">
-					<span class="play" data-video-id="10405282"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12004728" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -410,7 +410,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video green">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_8.jpg)">
-					<span class="play" data-video-id="10389982"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/11997493?p=eo4lwpNZCSg8q8jzJch2cg" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -430,7 +430,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video blue">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_9.jpg)">
-					<span class="play" data-video-id="11159651"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12004730?p=63p8U8R8xc_XRCOFk2488w" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -450,7 +450,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video blue">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_10.jpg)">
-					<span class="play" data-video-id="11173947"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12004731?p=inNtRLefAPLT6A-mOd0ZnQ" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -470,7 +470,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video green">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_11.jpg)">
-					<span class="play" data-video-id="10321889"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12008928" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -490,7 +490,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video blue">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_12.jpg)">
-					<span class="play" data-video-id="11816176"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12008135" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -510,7 +510,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video green">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_13.jpg)">
-					<span class="play" data-video-id="10457266"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12004748?p=19jvKnK0IDso4tkgxx0dxQ" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -530,7 +530,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video blue">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_14.jpg)">
-					<span class="play" data-video-id="11252424"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12004798?p=JRoDZQOhNyDSe6PRECWLEQ" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -550,7 +550,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video green">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_15.jpg)">
-					<span class="play" data-video-id="10441439"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12007681?p=gqVJHNLi8jYwLeV16x9zFA" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -570,7 +570,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video orange">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_16.jpg)">
-					<span class="play" data-video-id="12102019"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12102834?p=DPErC03uiusXQUlQYNyLXg" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -590,7 +590,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video green">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_17.jpg)">
-					<span class="play" data-video-id="11415454"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12004802?p=l_UT7W1Mxi_2On_pwL7G0g" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -610,7 +610,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video green">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_18.jpg)">
-					<span class="play" data-video-id="10588758"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12005032?p=hcv2neoLd6nsnNTbWBo5Tg" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -630,7 +630,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video green">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_19.jpg)">
-					<span class="play" data-video-id="10825025"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12007684" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -650,7 +650,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video orange">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_20.jpg)">
-					<span class="play" data-video-id="12098309"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12102829?p=e0-N1WfwjzCaTavbdtBMug" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -670,7 +670,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video blue">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_21.jpg)">
-					<span class="play" data-video-id="11022857"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12007686" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -690,7 +690,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video blue">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_22.jpg)">
-					<span class="play" data-video-id="11134157"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12007688" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -710,7 +710,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video blue">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_23.jpg)">
-					<span class="play" data-video-id="12046631"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12103528" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -730,7 +730,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video green">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_24.jpg)">
-					<span class="play" data-video-id="10235260"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/11997296?p=sMbP7XnJTrwkIPlELhOPaA" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -750,7 +750,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video orange">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_25.jpg)">
-					<span class="play" data-video-id="11993012"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/11996618?p=eUfmDmR8D5AU_XpQZMyQww" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -770,7 +770,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video green">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_26.jpg)">
-					<span class="play" data-video-id="11686508"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12007690" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -790,7 +790,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video blue">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_27.jpg)">
-					<span class="play" data-video-id="11108023"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12008135" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -810,7 +810,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video blue">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_28.jpg)">
-					<span class="play" data-video-id="12098904"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12102822?p=NnKgG2xeO3NN6kKosARvfg" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -830,7 +830,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video green">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_29.jpg)">
-					<span class="play" data-video-id="10755299"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12008125" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
@@ -850,7 +850,7 @@ use yii\helpers\Url;
 		<div class="wrap_item_video">
 			<div class="not_answer_video blue">
 				<div class="video_wrap" style="background-image: url(../img/video_previews/img_30.jpg)">
-					<span class="play" data-video-id="11782779"><i class="fa fa-play" aria-hidden="true"></i></span>
+					<span class="play" data-video-iframe='<iframe width="720" height="405" src="https://rutube.ru/play/embed/12008126" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>'><i class="fa fa-play" aria-hidden="true"></i></span>
 				</div>
 				<div class="video_info">
 					<div class="video_content">
