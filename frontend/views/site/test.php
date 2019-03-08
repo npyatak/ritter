@@ -202,27 +202,34 @@ if(Yii::$app->user->isGuest) {
                         change_block('congratulation_block_2');
                     } else {
                         $('.content_test').html(data);
+                        showHelpVideo();
                     }
                 }
             });
         });
 
         $(document).ready(function() {
+            showHelpVideo();
+        });
+
+        function showHelpVideo() {
             setTimeout(function() {
                 $.ajax({
-                    url: '/site/no-answer',
+                    url: '/site/show-help-video',
                     data: {id: $location->id},
                     success: function(data) {
-                        $('.not_answer .video_wrap').css({'background-image': 'url('+data.video_image+')'});
-                        $('.not_answer .popup_play').attr('data-video-iframe', data.video);
-                        $('.not_answer .name').html(data.video_title);
-                        $('.not_answer .desc').html(data.place);
-                        $('.not_answer .video_img img').attr('src', data.image);
-                        show_popup('not_answer');
+                        if(data) {
+                            $('.not_answer .video_wrap').css({'background-image': 'url('+data.video_image+')'});
+                            $('.not_answer .popup_play').attr('data-video-iframe', data.video);
+                            $('.not_answer .name').html(data.video_title);
+                            $('.not_answer .desc').html(data.place);
+                            $('.not_answer .video_img img').attr('src', data.image);
+                            show_popup('not_answer');
+                        }
                     }
                 });
             }, 600);
-        });
+        }
     ";
 }
 

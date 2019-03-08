@@ -183,7 +183,7 @@ class SiteController extends Controller
         }
     }
 
-    public function actionNoAnswer($id) 
+    public function actionShowHelpVideo($id) 
     {
         if(Yii::$app->request->isAjax && !Yii::$app->user->isGuest) {
             $stage = Stage::getCurrent();
@@ -201,7 +201,7 @@ class SiteController extends Controller
                 $data['video_title'] = $location->video_title;
                 $data['image'] = $location->image;
                 $data['video_image'] = $location->video_image;
-            } elseif (count($userAnswer->answersArray)) {
+            } elseif (count($userAnswer->answersArray) == 1) {
                 $data['place'] = $location->place2;
                 $data['video'] = $location->video2;
                 $data['video_title'] = $location->video_title2;
