@@ -141,8 +141,7 @@ $this->title = 'Участвовать';
 
 <div class="popup_bg">
     <div class="not_answer popup_block style_1" data-flag="not_answer">
-       
-
+        <?=$this->render('_not_answer');?>
     </div>
     <!-- popup_block -->
 </div>
@@ -214,11 +213,15 @@ if(Yii::$app->user->isGuest) {
                     url: '/site/no-answer',
                     data: {id: $location->id},
                     success: function(data) {
-                        $('.not_answer').html(data);
+                        $('.not_answer .video_wrap').css({'background-image': 'url('+data.video_image+')'});
+                        $('.not_answer .popup_play').attr('data-video-iframe', data.video);
+                        $('.not_answer .name').html(data.video_title);
+                        $('.not_answer .desc').html(data.place);
+                        $('.not_answer .video_img img').attr('src', data.image);
                         show_popup('not_answer');
                     }
                 });
-            }, 60000);
+            }, 600);
         });
     ";
 }

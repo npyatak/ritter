@@ -210,7 +210,9 @@ class SiteController extends Controller
             }
 
             if(!empty($data)) {            
-                return $this->renderAjax('_not_answer', ['data' => $data]);
+                Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+                return $data;
             }
         }
     }
