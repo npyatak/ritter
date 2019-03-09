@@ -93,10 +93,16 @@ class SiteController extends Controller
         }
 
         $userAnswer = UserAnswer::find()->where(['stage_id' => $stage->id, 'user_id' => Yii::$app->user->id])->one();
+
         $qIds = [];
-        if($userAnswer !== null && !empty($userAnswer->answersArray)) {
-            foreach ($userAnswer->answersArray as $a) {
-                $qIds[] = $a['q'];
+        if($userAnswer !== null) {
+            if ($userAnswer->location_id !== $location->id) {
+                $userAnswer->delete();
+                $userAnswer = null;
+            } elseif(!empty($userAnswer->answersArray)) {
+                foreach ($userAnswer->answersArray as $a) {
+                    $qIds[] = $a['q'];
+                }
             }
         }
 
@@ -136,9 +142,6 @@ class SiteController extends Controller
                 $userAnswer->user_id = Yii::$app->user->id;
                 $userAnswer->stage_id = $stage->id;
                 $userAnswer->location_id = $location->id;
-            } elseif($userAnswer->location_id !== $location->id) {
-                $userAnswer->answersArray = [];
-                $userAnswer->score = 0;
             }
 
             $rightAnswerId = Answer::find()->select('id')->where(['question_id' => $answer->question_id, 'is_right' => 1])->column()[0];
