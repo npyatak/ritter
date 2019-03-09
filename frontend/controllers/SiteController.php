@@ -96,7 +96,7 @@ class SiteController extends Controller
 
         $qIds = [];
         if($userAnswer !== null) {
-            if ($userAnswer->location_id !== $location->id) {
+            if ($userAnswer->location_id !== $location->id && !$userAnswer->is_shared) {
                 $userAnswer->delete();
                 $userAnswer = null;
             } elseif(!empty($userAnswer->answersArray)) {
