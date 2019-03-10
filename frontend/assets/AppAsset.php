@@ -13,7 +13,7 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/libs.min.css',
-        'css/main.css',
+        'css/main.css?v=1',
         'css/dropanddrag.css',
     ];
     public $js = [

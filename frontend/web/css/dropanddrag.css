@@ -3,13 +3,29 @@
   height: calc(100vh - 78px);
   overflow: hidden;
   background: #ffffff; }
+  @media only screen and (max-width: 1110px) {
+    .drwrap {
+      height: calc(360px * 8); } }
+  @media only screen and (max-width: 720px) {
+    .drwrap {
+      height: calc(360px * 15); } }
   .drwrap .dritems {
     position: relative;
     width: calc(360px * 9);
     height: calc(360px * 5);
     transform-origin: 0px 0px;
     z-index: 1;
-    position: relative; }
+    position: relative;
+    /* Large Devices, Wide Screens */ }
+    @media only screen and (max-width: 1110px) {
+      .drwrap .dritems {
+        width: calc(360px * 2);
+        margin: 0 auto; }
+        .drwrap .dritems .dritem:nth-child(n+16) {
+          display: none; } }
+    @media only screen and (max-width: 720px) {
+      .drwrap .dritems {
+        width: calc(360px); } }
     .drwrap .dritems .dritem {
       width: 360px;
       height: 360px;
@@ -17,6 +33,10 @@
       position: relative;
       font-size: 100px;
       display: inline-block; }
+      @media only screen and (max-width: 1110px) {
+        .drwrap .dritems .dritem {
+          transform: translate3d(0px, 0px, 0px) scale(1) !important;
+          transition: transform 0s linear  !important; } }
       .drwrap .dritems .dritem .choco_wrapp {
         display: -ms-flexbox;
         display: flex;

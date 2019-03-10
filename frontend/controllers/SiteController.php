@@ -22,6 +22,7 @@ use common\models\Location;
 use common\models\Question;
 use common\models\Answer;
 use common\models\UserAnswer;
+use common\models\Contact;
 
 /**
  * Site controller
@@ -92,10 +93,16 @@ class SiteController extends Controller
         }
 
         $userAnswer = UserAnswer::find()->where(['stage_id' => $stage->id, 'user_id' => Yii::$app->user->id])->one();
+
         $qIds = [];
-        if($userAnswer !== null && !empty($userAnswer->answersArray)) {
-            foreach ($userAnswer->answersArray as $a) {
-                $qIds[] = $a['q'];
+        if($userAnswer !== null) {
+            if ($userAnswer->location_id !== $location->id && !$userAnswer->is_shared) {
+                $userAnswer->delete();
+                $userAnswer = null;
+            } elseif(!empty($userAnswer->answersArray)) {
+                foreach ($userAnswer->answersArray as $a) {
+                    $qIds[] = $a['q'];
+                }
             }
         }
 
@@ -109,7 +116,17 @@ class SiteController extends Controller
                     $userAnswer->is_finished = 1;
                     $userAnswer->save(false, ['is_finished']);
 
-                    return false;
+                    $score = 0;
+
+                    foreach ($userAnswer->answersArray as $key => $a) {
+                        if($key == 2) break;
+                        if($a['r']) {
+                            $score++;
+                        }
+                    }
+                    Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+                    return ['score' => $score];
                 }
             }
 
@@ -125,16 +142,12 @@ class SiteController extends Controller
                 $userAnswer->user_id = Yii::$app->user->id;
                 $userAnswer->stage_id = $stage->id;
                 $userAnswer->location_id = $location->id;
-            } elseif($userAnswer->location_id !== $location->id) {
-                $userAnswer->answersArray = [];
-                $userAnswer->score = 0;
             }
 
-            $question = $answer->question;
-            $rightAnswerId = Answer::find()->select('id')->where(['question_id' => $question->id, 'is_right' => 1])->column()[0];
+            $rightAnswerId = Answer::find()->select('id')->where(['question_id' => $answer->question_id, 'is_right' => 1])->column()[0];
 
-            $userAnswer->answersArray[] = ['q' => $answer->question_id, 'a' => $answer->id];
-            if($rightAnswerId == $id) {
+            $userAnswer->answersArray[] = ['q' => $answer->question_id, 'a' => $answer->id, 'r' => $rightAnswerId == $answerId ? 1 : 0];
+            if($rightAnswerId == $answerId) {
                 $userAnswer->score = $userAnswer->score + 1;
             }
 
@@ -173,38 +186,45 @@ class SiteController extends Controller
         }
     }
 
+    public function actionShowHelpVideo($id) 
+    {
+        if(Yii::$app->request->isAjax && !Yii::$app->user->isGuest) {
+            $stage = Stage::getCurrent();
+            $location = Location::findOne($id);
+            if($location === null || $stage === null) {
+                throw new NotFoundHttpException('The requested page does not exist.');
+            }
+
+            $userAnswer = UserAnswer::find()->where(['stage_id' => $stage->id, 'user_id' => Yii::$app->user->id])->one();
+            
+            $data = [];
+            if($userAnswer === null) {
+                $data['place'] = $location->place;
+                $data['video'] = $location->video;
+                $data['video_title'] = $location->video_title;
+                $data['image'] = $location->image;
+                $data['video_image'] = $location->video_image;
+            } elseif (count($userAnswer->answersArray) == 1) {
+                $data['place'] = $location->place2;
+                $data['video'] = $location->video2;
+                $data['video_title'] = $location->video_title2;
+                $data['image'] = $location->image2;
+                $data['video_image'] = $location->video_image2;
+            }
+
+            if(!empty($data)) {            
+                Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+                return $data;
+            }
+        }
+    }
+
     public function actionWinners()
     {
 
         return $this->render('winners', [
         ]);
-    }
-
-    public function actionNextQuestion()
-    {
-        if(Yii::$app->request->isAjax && !Yii::$app->user->isGuest) {        
-            $stage = Stage::getCurrent();
-            if($stage === null) {
-                throw new NotFoundHttpException('The requested page does not exist.');
-            }
-
-            $userAnswer = UserAnswer::find()->where(['stage_id' => $stage->id, 'user_id' => Yii::$app->user->id])->one();
-            $qIds = [];
-            if($userAnswer !== null && !empty($userAnswer->answersArray)) {
-                foreach ($userAnswer->answersArray as $a) {
-                    $qIds[] = $a['q'];
-                }
-            }
-
-            $question = Question::find()->where(['stage_id' => $stage->id, 'location_id' => $userAnswer->location_id])->andWhere(['not in', 'id', $qIds])->one();
-
-            if($question !== null) {
-                return $this->renderAjax('_question', ['question' => $question, 'userAnswer' => $userAnswer]);
-            } else {
-                $userAnswer->is_finished = 1;
-                $$userAnswer->save(false, ['is_finished']);
-            }
-        }
     }
 
     public function actionLogout()
@@ -291,7 +311,7 @@ class SiteController extends Controller
                 Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
                 return \yii\widgets\ActiveForm::validate($loginForm);
             }
-            if($loginForm->getUser()->status !== User::STATUS_ACTIVE) {
+            if($loginForm->user && $loginForm->user->status !== User::STATUS_ACTIVE) {
                 Yii::$app->getSession()->setFlash('error', 'Вы не можете войти. Ваш аккаунт заблокирован');
             
                 return $this->redirect(['site/login']);
@@ -299,7 +319,7 @@ class SiteController extends Controller
 
             $loginForm->login();
 
-            return $this->redirect(['site/index']);
+            return $this->redirect(Yii::$app->request->referrer);
         } else {
             $loginForm->password = '';
 
@@ -309,7 +329,7 @@ class SiteController extends Controller
         }
     }
 
-    public function actionRegister()
+    public function actionRegister($location_id = null)
     {
         if (!Yii::$app->user->isGuest) {
             return $this->redirect(['site/index']);
@@ -342,12 +362,13 @@ class SiteController extends Controller
                     ->setSubject(Yii::$app->name.'. Регистрация')
                     ->send();
 
-                return $this->redirect(Yii::$app->request->referrer);
+                return $this->redirect($location_id ? Url::toRoute(['site/test', 'id' => $location_id]) : Yii::$app->request->referrer);
             }
         }
 
         return $this->render('register', [
             'user' => $user,
+            'location_id' => $location_id,
         ]);
     }
 
@@ -416,6 +437,7 @@ class SiteController extends Controller
      */
     public function actionContact()
     {
+                Yii::$app->session->setFlash('success', 'Спасибо, ваша заявка отправлена!');
         $model = new ContactForm();
         if(!Yii::$app->user->isGuest) {
             $model->email = Yii::$app->user->identity->email;
@@ -445,7 +467,7 @@ class SiteController extends Controller
 
     public function actionRules() 
     {
-        $filename = 'rules_ritter.pdf';
+        $filename = 'rules.pdf';
         $completePath = __DIR__.'/../web/files/'.$filename;
         if(!is_file($completePath)) {
             throw new NotFoundHttpException('The requested page does not exist.');

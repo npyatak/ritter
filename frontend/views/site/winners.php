@@ -1,3 +1,6 @@
+<?php
+use yii\helpers\Url;
+?>
 
 <div class="prizes_and_winners body_chocolate_inner">
 
@@ -10,14 +13,13 @@
 				<span class="top"></span>
 				<span class="bottom"></span>
 			</div>
-
 			
 			<p class="prize_name">Призы:</p>
 
 			<div class="wrap_items_prizes type_1">
 				<div class="item_prize">
 					<div class="img">
-						<img src="img/prize_1.png" alt="img">
+						<img src="/img/prize_1.png" alt="img">
 					</div>
 					<p class="position">1 место</p>
 					<p class="name">Рюкзак</p>
@@ -29,7 +31,7 @@
 
 				<div class="item_prize">
 					<div class="img">
-						<img src="img/prize_2.png" alt="img">
+						<img src="/img/prize_2.png" alt="img">
 					</div>
 					<p class="position">2 место</p>
 					<p class="name">Футболка и мини-набор «Яркая коллекция» Ritter Sport</p>
@@ -41,7 +43,7 @@
 
 				<div class="item_prize">
 					<div class="img">
-						<img src="img/prize_3.png" alt="img">
+						<img src="/img/prize_3.png" alt="img">
 					</div>
 					<p class="position">3 место</p>
 					<p class="name">Мини-набор «Яркая коллекция» Ritter Sport</p>
@@ -56,7 +58,7 @@
 			<!-- wrap_items_prizes -->
 
 			<div class="center">
-				<a class="button_1" href="#"><span>Участвовать</span></a>
+				<a class="button_1" href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>"><span>Участвовать</span></a>
 				<p class="prize_alert">Реальные призы могут отличаться от их изображения</p>
 			</div>
 
@@ -70,6 +72,8 @@
 	</div>
 	<!-- prizes -->
 
+
+<?/*
 	<div class="winners">
 
 		<!-- рамка -->
@@ -163,6 +167,8 @@
 
 	</div>
 	<!-- winners -->
+	*/?>
 
 
 </div>
+<!-- prizes_and_winners -->

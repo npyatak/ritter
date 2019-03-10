@@ -40,20 +40,26 @@ use common\models\UserTest;
     </div>
 
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <?= $form->field($model, 'video')->textInput() ?>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <?= $form->field($model, 'video_title')->textInput() ?>
+        </div>
+        <div class="col-sm-4">
+            <?= $form->field($model, 'video_image')->widget(ElfinderInput::className());?>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <?= $form->field($model, 'video2')->textInput() ?>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <?= $form->field($model, 'video_title2')->textInput() ?>
+        </div>
+        <div class="col-sm-4">
+            <?= $form->field($model, 'video_image2')->widget(ElfinderInput::className());?>
         </div>
     </div>
 

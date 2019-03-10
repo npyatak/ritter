@@ -88,9 +88,9 @@ $( function() {
         $(".choco_popup_inner .bold_refer").attr("href", '/test/'+id);
 
         $(".choco_popup_inner").css("display","inline-block");
-        $(".choco_popup").css('display','block').delay(100).queue(function () {  // delay() позволяет сделать паузу
+        $(".choco_popup").css('display','block').delay(100).queue(function () {  // delay() позволяет сделать паузу 
             $(".choco_popup").css('opacity', '1');
-            $("body").css('overflow-y','hidden');
+            $("body").css('overflow-y','hidden'); 
             $(".choco_popup").dequeue(); //должно применяться к тому же элементу что и .queue
         });
         $.scrollify.disable();
@@ -257,18 +257,12 @@ $( function() {
                 }
 
                 if(status == "collback"){
-                    console.table({
-                        "top": Math.abs((wrapTopBorder - elementTopBorder) - (elementBottomBorder - wrapBottomBorder )),
-                        "left:": Math.abs((wrapLeftBorder - elementLeftBorder) - (elementRightBorder - wrapRightBorder))
-                    });
-                    if( (Math.abs((wrapTopBorder - elementTopBorder) - (elementBottomBorder - wrapBottomBorder )) > (parseInt($(".drwrap .dritem").eq(maxX.ind).height()) - 50) ) || Math.abs((wrapLeftBorder - elementLeftBorder) - (elementRightBorder - wrapRightBorder)) > (parseInt($(".drwrap .dritem").eq(maxX.ind).width()) - 50) ){
-                        // console.log("fix_2");
+                    console.log("fix");
+                    if( (Math.abs((wrapTopBorder - elementTopBorder) - (elementBottomBorder - wrapBottomBorder )) > $(".drwrap .dritem").eq(maxX.ind).height()) || Math.abs((wrapLeftBorder - elementLeftBorder) - (elementRightBorder - wrapRightBorder)) > $(".drwrap .dritem").eq(maxX.ind).width()){
                         $(".dritems .dritem").each(function (index){
                             $(this).css({"transform": "translate3d("
                                     + (event.clientX - $(this).attr("data-offsetLeftStart") + parseInt($(this).attr("data-stapLeft")) ) +"px, "
-                                    + (event.clientY - $(this).attr("data-offsetTopStart") + parseInt($(this).attr("data-stapTop"))) + "px, 0px) "+scale})
-                                .attr("data-nowLeft",(event.clientX - $(this).attr("data-offsetLeftStart") + parseInt($(this).attr("data-stapLeft"))))
-                                .attr("data-nowTop",(event.clientY - $(this).attr("data-offsetTopStart") + parseInt($(this).attr("data-stapTop"))) );;
+                                    + (event.clientY - $(this).attr("data-offsetTopStart") + parseInt($(this).attr("data-stapTop"))) + "px, 0px) "});
 
                         })
                     } else {
@@ -292,7 +286,6 @@ $( function() {
 
         swipeStatus : function(event, phase, direction, distance, duration) {
             if(phase === 'start'){
-                $(".dritems").removeClass("not-move");
                 $(".dritems .dritem").each(function (index){
                     $(this).attr("data-offsetLeftStart", ( event.clientX - $(this).attr("data-translate3dX") ))
                     $(this).attr("data-offsetTopStart", ( event.clientY - $(this).attr("data-translate3dY") ))
@@ -311,9 +304,7 @@ $( function() {
                 $(".dritems .dritem").each(function (index){
                     $(this).css({"transform": "translate3d("
                             + (event.clientX - $(this).attr("data-offsetLeftStart") + parseInt($(this).attr("data-stapLeft")) ) +"px, "
-                            + (event.clientY - $(this).attr("data-offsetTopStart") + parseInt($(this).attr("data-stapTop"))) + "px, 0px) "+scale})
-                        .attr("data-nowLeft",(event.clientX - $(this).attr("data-offsetLeftStart") + parseInt($(this).attr("data-stapLeft"))))
-                        .attr("data-nowTop",(event.clientY - $(this).attr("data-offsetTopStart") + parseInt($(this).attr("data-stapTop"))) );
+                            + (event.clientY - $(this).attr("data-offsetTopStart") + parseInt($(this).attr("data-stapTop"))) + "px, 0px) "});
 
                 })
             }
@@ -343,7 +334,6 @@ $( function() {
 
         swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
             // console.log(event)
-            $(".dritems").addClass("not-move");
             setTimeout(function(){
                 stopclick = "no";
             }, 100)

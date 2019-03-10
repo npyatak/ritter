@@ -160,7 +160,7 @@ $(".open_form").on("click",function() {
 });
 
 // Закрываем попап
-$(".popup_bg, .close_popup").on("click", function(){
+$('.popup_bg, .close_popup').on("click", function(){
 	close_popup();
 }).children().click(function(e){        // вешаем на потомков
 	e.stopPropagation();   // предотвращаем распространение на потомков
@@ -170,12 +170,21 @@ $(".popup_bg, .close_popup").on("click", function(){
 
 
 // добавляем видео с рутуб в iframe и управляем им
+
 $(".video_wrap .play").on("click", function(){
+
 	$('#video_player').remove(); 
 	var el = $(this);
-	var id = el.data("video-id");
-	el.after('<iframe id="video_player" width="720" height="405" src="//rutube.ru/play/embed/'+id+'?quality=1&platform=someplatform&autoplay=true" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>');
+	var iframe_code = el.data("video-iframe");
 	
+
+	if(el.hasClass("popup_play")){
+		el.after('<iframe width="720" height="405" src="'+ iframe_code +'" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>');
+	}else{
+		el.after(iframe_code);
+	}
+
+	el.next("iframe").attr("id","video_player");
 	var player = document.getElementById('video_player');
 	// console.log(player);
 
@@ -197,7 +206,6 @@ $(".video_wrap .play").on("click", function(){
 	            break;
 	    };
 	});
-
 });
 
 
@@ -270,4 +278,12 @@ $(".choco_popup, .close_popup").on("click", function(){
 	$.scrollify.enable();
 }).children().click(function(e){        // вешаем на потомков
 	e.stopPropagation();   // предотвращаем распространение на потомков
+});
+
+
+// класс для плавного скролла ссылок
+$(".scroll_refer").on("click",function() {
+	var href = $(this).attr("href");
+	$("html, body").animate({ scrollTop: $(href).offset().top}, "slow");
+	return false;
 });

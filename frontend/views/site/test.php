@@ -73,7 +73,7 @@ $this->title = 'Участвовать';
                 <!-- checkbox_1_wrap -->
             </div>
             <!-- checkbox_block -->
-            <?=$this->render('_login', ['loginForm' => $loginForm]);?>
+            <?=$this->render('_login', ['loginForm' => $loginForm, 'location' => $location]);?>
         </div>
         <!-- wrap_inner_border -->
         <div class="center">
@@ -95,7 +95,7 @@ $this->title = 'Участвовать';
         <p class="name_block"><span>Поздравляем!</span> Ты участвуешь в конкурсе!</p>
 
         <p class="light_text">Оставайся с нами на связи и узнай больше о других конкурсах Ritter Sport:</p>
-
+        <p class="soc_name">Поделись проектом с друзьями и участвуй в розыгрыше призов. Удачи!</p>
         <div class="social_block">
             <a class="social_1" href="https://vk.com/rittersportru" target="_blank">
                 <i class="fa fa-vk" aria-hidden="true"></i>
@@ -112,48 +112,6 @@ $this->title = 'Участвовать';
 </div>
 <!-- occupied_block -->
 
-<div class="popup_bg">
-    <div class="not_answer popup_block style_1" data-flag="not_answer">
-        <img class="close_popup" src="/img/close_middle.svg" alt="close">
-        <div class="wrap_inner_border">
-            <div class="inner_border">
-                <span class="top"></span>
-                <span class="bottom"></span>
-            </div>
-
-            <div class="not_answer_content">
-                <p class="name">Не можешь определится с ответом?</p>
-                <p class="anons">Смотри подсказку здесь!</p>
-            </div>
-            <!-- not_answer_content -->
-            <div class="not_answer_video">
-                <div class="video_wrap" style="background-image: url(../img/test_img/antalia_poster.jpg)">
-                    <!-- в data-video-id="10949751" передаем id видео с рутуба -->
-                    <span class="play" data-video-id="10949751"><i class="fa fa-play" aria-hidden="true"></i></span>
-                </div>
-                <div class="video_info">
-                    <div class="video_content">
-                        <p class="name">Орел и Решка: Перезагрузка</p>
-                        <p class="desc"><span>США, Лос-Анджелес</span> 14 сезон</p>
-                        <div class="video_img">
-                            <img src="/img/chocolate_1.png" alt="img">
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            <!-- not_answer_video -->
-            
-        </div>
-        <!-- wrap_inner_border -->
-
-    </div>
-    <!-- popup_block -->
-
-</div>
-<!-- popup_bg -->
-
-
 
 <div class="alert_block two body_chocolate_inner" id="congratulation_block_2" <?=($userAnswer !== null && $userAnswer->is_finished && !$userAnswer->is_shared) ? 'style="display: block;"' : '';?>>
     <!-- рамка -->
@@ -169,8 +127,8 @@ $this->title = 'Участвовать';
         </div>
         <p class="name_block"><span>Поздравляем!</span> Ты прошел все вопросы викторины!</p>
 
-        <p class="light_text">У нас отличная новость: здесь скучно тебе точно не будет! Смело планируй маршрут и открывай море новых впечатлений вместе с Ritter Sport. Поделись проектом с друзьями и участвуй в розыгрыше призов. Удачи!</p>
-
+        <p class="light_text"></p>
+        <p class="soc_name">Поделись проектом с друзьями и участвуй в розыгрыше призов. Удачи!</p>
         <div class="social_block">
             <?=\frontend\widgets\share\ShareWidget::widget(['addClass' => 'result', 'image' => $location->image_share]);?>
         </div>
@@ -180,6 +138,15 @@ $this->title = 'Участвовать';
         <a class="button_2" href="<?=Url::toRoute(['site/index', '#' => 'video_section']);?>">Смотреть другие серии “Орла и Решки”</a>
     </div>
 </div>
+
+<div class="popup_bg">
+    <div class="not_answer popup_block style_1" data-flag="not_answer">
+        <?=$this->render('_not_answer');?>
+    </div>
+    <!-- popup_block -->
+</div>
+<!-- popup_bg -->
+
 
 <?php $script = "
     $(document).on('click', '.quest', function() {
@@ -224,14 +191,45 @@ if(Yii::$app->user->isGuest) {
             $.ajax({
                 data: {next: 1},
                 success: function(data) {
-                    if(data.length) {
-                        $('.content_test').html(data);
-                    } else {
+                    if(typeof data.score !== 'undefined') {
+                        var texts = [
+                            'У нас отличная новость: здесь скучно тебе точно не будет! Смело планируй маршрут и открывай море новых впечатлений вместе с Ritter Sport. Поделись проектом с друзьями и участвуй в розыгрыше призов. Удачи!',
+                            'Поздравляем! Жажда приключений в тебе неистребима! Ты как настоящий Дон Кихот, готов бороться за любую возможность оказаться в новом месте и получить максимум от путешествия. Поделись проектом с друзьями и участвуй в розыгрыше призов. Удачи!',
+                            'Признайся, ты здесь уже был, и не раз :) Мы подозреваем, что ты уже стал местной легендой ведь ты знаешь здесь лучшие кафе, бары, улицы и рестораны и готов возвращаться сюда с удовольствием еще не раз. Прими наши аплодисменты! Поделись проектом с друзьями и участвуй в розыгрыше призов. Удачи!',
+                        ];
+
+                        $('#congratulation_block_2 .light_text').html(texts[data.score]);
                         change_block('congratulation_block_2');
+                    } else {
+                        $('.content_test').html(data);
+                        showHelpVideo();
                     }
                 }
             });
         });
+
+        $(document).ready(function() {
+            showHelpVideo();
+        });
+
+        function showHelpVideo() {
+            setTimeout(function() {
+                $.ajax({
+                    url: '/site/show-help-video',
+                    data: {id: $location->id},
+                    success: function(data) {
+                        if(data) {
+                            $('.not_answer .video_wrap').css({'background-image': 'url('+data.video_image+')'});
+                            $('.not_answer .popup_play').attr('data-video-iframe', data.video);
+                            $('.not_answer .name').html(data.video_title);
+                            $('.not_answer .desc').html(data.place);
+                            $('.not_answer .video_img img').attr('src', data.image);
+                            show_popup('not_answer');
+                        }
+                    }
+                });
+            }, 30000);
+        }
     ";
 }
 
