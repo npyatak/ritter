@@ -33,8 +33,6 @@ class ShareWidget extends \yii\base\Widget
 
         $this->share['url'] = Url::current([], $scheme);
         $this->share['imageUrl'] = isset($this->share['image']) ? Url::to([$this->share['image']], $scheme) : null;
-        $this->share['imageUrlVk'] = isset($this->share['image_vk']) ? Url::to([$this->share['image_vk']], $scheme) : null;
-        $this->share['imageUrlOk'] = isset($this->share['image_ok']) ? Url::to([$this->share['image_ok']], $scheme) : null;
 
         $view = $this->getView();
 		$view->registerMetaTag(['property' => 'og:description', 'content' => $this->share['text']], 'og:description');
@@ -60,7 +58,7 @@ class ShareWidget extends \yii\base\Widget
 		        'data-soc' => 'vk',
 		        'data-url' => $this->share['url'],
 		        'data-title' => $this->share['title'],
-		        'data-image' => $this->share['imageUrlVk'],
+		        'data-image' => $this->share['imageUrl'],
 		        'data-text' => $this->share['text'],
 		    ]);
 			echo Html::a('<i class="fa fa-facebook" aria-hidden="true"></i>', '', [
@@ -77,7 +75,7 @@ class ShareWidget extends \yii\base\Widget
 		        'data-url' => $this->share['url'],
 		        'data-title' => $this->share['title'],
 		        'data-text' => $this->share['text'],
-		        'data-image' => $this->share['imageUrlOk'],
+		        'data-image' => $this->share['imageUrl'],
 		    ]);
 		}
     }
