@@ -467,7 +467,7 @@ class SiteController extends Controller
 
     public function actionRules() 
     {
-        $filename = 'rules_ritter.pdf';
+        $filename = 'rules.pdf';
         $completePath = __DIR__.'/../web/files/'.$filename;
         if(!is_file($completePath)) {
             throw new NotFoundHttpException('The requested page does not exist.');
