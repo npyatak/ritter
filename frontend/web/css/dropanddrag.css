@@ -260,6 +260,7 @@
 /*}*/
 .drwrap .dritems .dritem:nth-child(1n):hover .choco_wrapp {
   /*transform: scale(2) !important;*/
-  background-size: cover;
+    transition: all .2s linear;
+    background-size: cover;
   /*z-index: 5;*/
 }

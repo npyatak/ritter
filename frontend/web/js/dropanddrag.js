@@ -262,8 +262,9 @@ $( function() {
                         $(".dritems .dritem").each(function (index){
                             $(this).css({"transform": "translate3d("
                                     + (event.clientX - $(this).attr("data-offsetLeftStart") + parseInt($(this).attr("data-stapLeft")) ) +"px, "
-                                    + (event.clientY - $(this).attr("data-offsetTopStart") + parseInt($(this).attr("data-stapTop"))) + "px, 0px) "});
-
+                                    + (event.clientY - $(this).attr("data-offsetTopStart") + parseInt($(this).attr("data-stapTop"))) + "px, 0px) " + scale})
+                            .attr("data-nowLeft", (event.clientX - $(this).attr("data-offsetLeftStart") + parseInt($(this).attr("data-stapLeft")) ))
+                            .attr("data-nowTop", (event.clientY - $(this).attr("data-offsetTopStart") + parseInt($(this).attr("data-stapTop"))));
                         })
                     } else {
                         $(".dritems .dritem").each(function (index){
@@ -304,7 +305,9 @@ $( function() {
                 $(".dritems .dritem").each(function (index){
                     $(this).css({"transform": "translate3d("
                             + (event.clientX - $(this).attr("data-offsetLeftStart") + parseInt($(this).attr("data-stapLeft")) ) +"px, "
-                            + (event.clientY - $(this).attr("data-offsetTopStart") + parseInt($(this).attr("data-stapTop"))) + "px, 0px) "});
+                            + (event.clientY - $(this).attr("data-offsetTopStart") + parseInt($(this).attr("data-stapTop"))) + "px, 0px) " + scale})
+                        .attr("data-nowLeft", (event.clientX - $(this).attr("data-offsetLeftStart") + parseInt($(this).attr("data-stapLeft")) ))
+                        .attr("data-nowTop", (event.clientY - $(this).attr("data-offsetTopStart") + parseInt($(this).attr("data-stapTop"))));
 
                 })
             }
