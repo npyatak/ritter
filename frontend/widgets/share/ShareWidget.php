@@ -11,7 +11,7 @@ class ShareWidget extends \yii\base\Widget
 	public $share = [
 		'title' => 'Калейдоскоп вкусов и призов от Ritter Sport!',
         'text' => 'Пройди тест и выиграй дорожный рюкзак и другие призы от Ritter Sport!',
-		'image' => '/img/01_kagocel_studia_souz_sharing_fb.jpg',
+		'image' => '/img/share/share_4.png',
 	];
 	public $showButtons = true;
 	public $addClass = '';
