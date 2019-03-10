@@ -233,3 +233,13 @@
         background: url("../img/chocolate/rs-15.png") center center; }
       .drwrap .dritems .dritem:nth-child(45):hover .choco_wrapp {
         background: url("../img/chocolate/hover/rs-15-hov.png") center center; }
+
+
+/*.drwrap .dritems .dritem:hover{*/
+/*z-index: 5;*/
+/*}*/
+.drwrap .dritems .dritem:nth-child(1n):hover .choco_wrapp {
+  /*transform: scale(2) !important;*/
+  background-size: cover;
+  /*z-index: 5;*/
+}
