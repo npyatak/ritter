@@ -122,10 +122,12 @@ AppAsset::register($this);
             <div class="contain">
                 <div class="footer_items">
 
+                    <?php if(Yii::$app->controller->action->id != 'test') {
+                        echo \frontend\widgets\share\ShareWidget::widget(['showButtons' => false]);
+                    }?>
                    <!--  <div class="item one">
                         <p>Поделиться проектом</p>
                         <div class="social_block">
-                            <?=\frontend\widgets\share\ShareWidget::widget();?>
                         </div>
                     </div> -->
                     <!-- item -->
