@@ -19,9 +19,22 @@ AppAsset::register($this);
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <?php // if($_SERVER['HTTP_HOST'] != 'ritter.local'):?>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135974038-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-135974038-1');
+        </script>
+
+    <?php //endif;?>
 </head>
 <body>
 <?php $this->beginBody() ?>
+    <img src="//ads.adfox.ru/240113/getCode?p1=bztph&p2=frfe&pfc=cejcp&pfb=giymp&pr=%random%&ptrc=b" alt=""/>
 
     <div class="wrapper">
 
@@ -41,11 +54,11 @@ AppAsset::register($this);
                     <nav class="header_nav">
                         <ul>
                             <li class="menu_li"><a <?=Yii::$app->controller->action->id == 'index' ? 'class="active"' : '';?> href="<?=Url::toRoute(['site/index']);?>">Участвуй</a></li>
-                            <li class="menu_li"><a href="<?=Url::toRoute(['site/rule']);?>" target="_blank">Полные правила</a></li>
+                            <li class="menu_li"><a href="<?=Url::toRoute(['site/rules']);?>" target="_blank">Полные правила</a></li>
                             <li class="menu_li"><a <?=Yii::$app->controller->action->id == 'winners' ? 'class="active"' : '';?> href="<?=Url::toRoute(['site/winners']);?>">Призы и победители</a></li>
                         </ul>
                     </nav>
-                    <a href="https://www.karta-vkusov-ritter-sport.ru/?utm_source=Friday.ru&utm_medium=display_CPM&utm_content=Contest_page&utm_campaign=0267-19-MS_Ritter" target="_blank" class="header_logo_2">
+                    <a href="//ads.adfox.ru/240113/goLink?p1=bztph&p2=frfe&p5=giymp&pr=%random%" target="_blank" class="header_logo_2">
                         <img src="/img/logo_2.png" alt="logo">
                     </a>
 
@@ -70,7 +83,7 @@ AppAsset::register($this);
                 <img class="close_burger" src="/img/close_middle.svg" alt="close">
                 <ul class="burger_ul">
                     <li class="burger_li"><a <?=Yii::$app->controller->action->id == 'index' ? 'class="active"' : '';?> href="<?=Url::toRoute(['site/index']);?>">Участвуй</a></li>
-                    <li class="burger_li"><a href="<?=Url::toRoute(['site/rule']);?>" target="_blank">Полные правила</a></li>
+                    <li class="burger_li"><a href="<?=Url::toRoute(['site/rules']);?>" target="_blank">Полные правила</a></li>
                     <li class="burger_li"><a <?=Yii::$app->controller->action->id == 'winners' ? 'class="active"' : '';?> href="<?=Url::toRoute(['site/winners']);?>">Призы и победители</a></li>
                 </ul>
             </div>
