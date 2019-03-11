@@ -106,6 +106,7 @@ AppAsset::register($this);
             <div class="body_chocolate">    
                 <?= $content ?>
 
+                <?= Alert::widget() ?>
 
         <?php if(Yii::$app->controller->action->id == 'index'):?>
            
@@ -156,7 +157,6 @@ AppAsset::register($this);
             </div>
         </footer>
     </div>
-    <?= Alert::widget() ?>
 <?php $this->endBody() ?>
 </body>
 </html>

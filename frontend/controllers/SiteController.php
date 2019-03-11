@@ -437,7 +437,6 @@ class SiteController extends Controller
      */
     public function actionContact()
     {
-                Yii::$app->session->setFlash('success', 'Спасибо, ваша заявка отправлена!');
         $model = new ContactForm();
         if(!Yii::$app->user->isGuest) {
             $model->email = Yii::$app->user->identity->email;
