@@ -182,7 +182,7 @@ use yii\helpers\Url;
 <!-- body_chocolate_wrap -->
 
 <div class="infinite_section section_scroll" id="locations" data-section="2">
-	<?/*php if($locations):?>
+	<?php /* if($locations):?>
 		<?php foreach ($locations as $location):?>
 			<a href="<?=Url::toRoute(['site/test', 'id' => $location->id]);?>"><?=$location->name;?></a>
 			<br>

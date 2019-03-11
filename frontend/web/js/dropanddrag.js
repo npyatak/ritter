@@ -2,68 +2,73 @@ $( function() {
     let stopLeft = 0;
     var finishinterval;
     var stopclick = "no";
+    var scale = " scale(0.8)";
+    var scale_hover = " scale(1.2)";
+    // $(".drwrap .dritems .dritem").each(function(){
+    //     $(this).wrap("<div class='wrap_scale'></div>");
+    // })
     let items = $.trim($(".drwrap .dritems").html())
     $(".drwrap .dritems").html(items+items+items);
 
 
     var array = [];
-    array[1] = { 
+    array[1] = {
         'text': 'Если ты фанат Турции, то должен знать, что в самом сердце страны находятся удивительные марсианские пейзажи Каппадокии. А ценителям истинных напитков рекомендуем настоящий кофе по-турецки. Проверь, готов ли ты к путешествиям? Ответь на 3 вопроса и выиграй призы от Ritter Sport и телеканала «Пятница!»',
         'img': '/img/ritter/rs-1-hov.png'
     };
-    array[2] = { 
+    array[2] = {
         'text': 'Чтобы побывать в Испании, необязательно ехать в Европу, так как данная страна имеет территории на Канарских островах и в двух городах африканского континента. А любителям десертов-пудингов стоит попробовать испанский горячий шоколад. Проверь, готов ли ты к путешествиям? Ответь на 3 вопроса и выиграй призы от Ritter Sport и телеканала «Пятница!»',
         'img': '/img/ritter/rs-2-hov.png'
     };
-    array[3] = { 
+    array[3] = {
         'text': 'Если ты фанат Сингапура, то наверняка знаешь, что символом страны является лев, который представляет силу, превосходство и мужество. И, не случайно, ведь каждый житель Сингапура является долларовым миллионером. Проверь, готов ли ты к путешествиям? Ответь на 3 вопроса и выиграй призы от Ritter Sport и телеканала «Пятница!»',
         'img': '/img/ritter/rs-3-hov.png'
     };
-    array[4] = { 
+    array[4] = {
         'text': 'Если ты фанат США, то наверняка знаешь, что там был представлен первый в мире фильм в 1894 г. А любителям спорта предлагаем заняться американским футболом. Проверь, готов ли ты к путешествиям? Ответь на 3 вопроса и выиграй призы от Ritter Sport и телеканала «Пятница!»',
         'img': '/img/ritter/rs-4-hov.png'
     };
-    array[5] = { 
+    array[5] = {
         'text': 'Прекрасный выбор! Если ты любитель Австралии, то наверняка знаешь, что в этой стране в 3,3 раза больше овец, чем людей. Однако, в качестве символов австралийского герба были выбраны кенгуру и эму. Проверь, готов ли ты к путешествиям? Ответь на 3 вопроса и выиграй призы от Ritter Sport и телеканала «Пятница!»',
         'img': '/img/ritter/rs-5-hov.png'
     };
-    array[6] = { 
+    array[6] = {
         'text': 'Если ты фанат Мексики, то наверняка знаешь, что национальный вид спорта там – бой быков. А любителям острых ощущений рекомендуем попробовать блюда мексиканской кухни. Проверь, готов ли ты к путешествиям? Ответь на 3 вопроса и выиграй призы от Ritter Sport и телеканала «Пятница!»',
         'img': '/img/ritter/rs-6-hov.png'
     };
-    array[7] = { 
+    array[7] = {
         'text': 'Если ты интересуешься Францией, то знаешь, что все настоящее шампанское произведено во французской области Шампань. А ценителям истории стоит отправиться на экскурсии в замки, которых во Франции 4969 штук. Проверь, готов ли ты к путешествиям? Ответь на 3 вопроса и выиграй призы от Ritter Sport и телеканала «Пятница!»',
         'img': '/img/ritter/rs-7-hov.png'
     };
-    array[8] = { 
+    array[8] = {
         'text': 'Если ты интересуешься историей Германии, то наверняка знаешь, что эта страна дала миру величайших физиков-теоретиков в новейшей истории: Альберта Эйнштейна, Макса Планка, Вернера Гейзенберга. А любителям воздушных десертов рекомендуем попробовать суфле «Шоколадные поцелуи». Проверь, готов ли ты к путешествиям? Ответь на 3 вопроса и выиграй призы от Ritter Sport и телеканала «Пятница!»',
         'img': '/img/ritter/rs-8-hov.png'
     };
-    array[9] = { 
+    array[9] = {
         'text': 'Если ты фанат Индии, то наверняка знаешь, что в этой стране можно найти удивительные мосты, сделанные из деревьев, которые создавались природой более 500 лет. А любителям сладкого рекомендуем попробовать индийские десерты, которые в изобилии есть в каждом регионе. Проверь, готов ли ты к путешествиям? Ответь на 3 вопроса и выиграй призы от Ritter Sport и телеканала «Пятница!»',
         'img': '/img/ritter/rs-9-hov.png'
     };
-    array[10] = { 
+    array[10] = {
         'text': 'Если ты фанат Танзании, то наверняка знаешь, что на ее территории находится гора Килиманджаро. А любителям дикой природы рекомендуем отправиться к кратеру Нгоронгоро, на склонах которого пасутся редкие черные носороги. Проверь, готов ли ты к путешествиям? Ответь на 3 вопроса и выиграй призы от Ritter Sport и телеканала «Пятница!»',
         'img': '/img/ritter/rs-10-hov.png'
     };
-    array[11] = { 
+    array[11] = {
         'text': 'Если ты фанат Индонезии, то наверняка знаешь, что главная достопримечательность страны – буддистский храм Боробудур на острове Ява. А вторая достопримечательность – храмовый комплекс Прамбанан у склона вулкана Мерапи. Проверь, готов ли ты к путешествиям? Ответь на 3 вопроса и выиграй призы от Ritter Sport и телеканала «Пятница!»',
         'img': '/img/ritter/rs-11-hov.png'
     };
-    array[12] = { 
+    array[12] = {
         'text': 'Прекрасный выбор! Если ты фанат Шри-Ланки, то знаешь, что символом данной страны является слон. А любителям драгоценных камней особенно стоит посетить остров, являющийся крупным экспортером в этой области. Проверь, готов ли ты к путешествиям? Ответь на 3 вопроса и выиграй призы от Ritter Sport и телеканала «Пятница!»',
         'img': '/img/ritter/rs-12-hov.png'
     };
-    array[13] = { 
+    array[13] = {
         'text': 'Всем известном и Великой китайской стене – главной достопримечательности страны. А гурманам стоит отправиться в Китай, чтобы отведать сладкий суп из черепахи. Проверь, готов ли ты к путешествиям? Ответь на 3 вопроса и выиграй призы от Ritter Sport и телеканала «Пятница!»',
         'img': '/img/ritter/rs-13-hov.png'
     };
-    array[14] = { 
+    array[14] = {
         'text': 'В Бразилии расположено сразу два из современных 7 чудес света –статуя Христа и река Амазонка. А любителям зрелищ рекомендуем отправиться в эту страну, чтобы насладиться карнавальным шоу. Проверь, готов ли ты к путешествиям? Ответь на 3 вопроса и стань участником конкурса от Ritter Sport и телеканала «Пятница!»',
         'img': '/img/ritter/rs-14-hov.png'
     };
-    array[15] = { 
+    array[15] = {
         'text': 'Если ты фанат Италии, то наверняка знаешь, что в этой стране самое большое количество всемирно известных модельеров. Особенно рекомендуем посетить Италию любителям спортивных автомобилей, так как страна является их родиной. Проверь, готов ли ты к путешествиям? Ответь на 3 вопроса и выиграй призы от Ritter Sport и телеканала «Пятница!»',
         'img': '/img/ritter/rs-15-hov.png'
     };
@@ -77,7 +82,7 @@ $( function() {
         }
     })
     function choco_popup_show(id) {
-        
+
         $(".choco_popup_inner .choco_popup_content .text").html(array[id].text);
         $(".choco_popup_inner .choco_circle img").attr("src", array[id].img);
         $(".choco_popup_inner .bold_refer").attr("href", '/test/'+id);
@@ -95,11 +100,16 @@ $( function() {
         .attr("data-stapLeft", 0)
         .attr("data-stapTop", 0)
         .attr("data-horizontCountOffsets", 1)
-        .attr("data-verticalCountOffsets", 1);
-    $(".dritems .dritem").attr("data-translate3dX", -260);
+        .attr("data-verticalCountOffsets", 1)
+        .attr("data-nowLeft", -360)
+        .attr("data-nowTop", -360);
+
+    $(".dritems .dritem").attr("data-translate3dX", -360);
     $(".dritems .dritem").attr("data-translate3dY", -360);
+
     $(".dritems .dritem")
-        .css({"transform": "translate3d("+$(".dritems .dritem").attr("data-translate3dX")+"px, "+$(".dritems .dritem").attr("data-translate3dY")+"px, 0px) "});
+        .css({"transform": "translate3d("+$(".dritems .dritem").attr("data-translate3dX")+"px, "+$(".dritems .dritem").attr("data-translate3dY")+"px, 0px) "+scale});
+
 
     function calc_position(status, event){
         /**
@@ -252,8 +262,9 @@ $( function() {
                         $(".dritems .dritem").each(function (index){
                             $(this).css({"transform": "translate3d("
                                     + (event.clientX - $(this).attr("data-offsetLeftStart") + parseInt($(this).attr("data-stapLeft")) ) +"px, "
-                                    + (event.clientY - $(this).attr("data-offsetTopStart") + parseInt($(this).attr("data-stapTop"))) + "px, 0px) "});
-
+                                    + (event.clientY - $(this).attr("data-offsetTopStart") + parseInt($(this).attr("data-stapTop"))) + "px, 0px) " + scale})
+                            .attr("data-nowLeft", (event.clientX - $(this).attr("data-offsetLeftStart") + parseInt($(this).attr("data-stapLeft")) ))
+                            .attr("data-nowTop", (event.clientY - $(this).attr("data-offsetTopStart") + parseInt($(this).attr("data-stapTop"))));
                         })
                     } else {
                         $(".dritems .dritem").each(function (index){
@@ -294,7 +305,9 @@ $( function() {
                 $(".dritems .dritem").each(function (index){
                     $(this).css({"transform": "translate3d("
                             + (event.clientX - $(this).attr("data-offsetLeftStart") + parseInt($(this).attr("data-stapLeft")) ) +"px, "
-                            + (event.clientY - $(this).attr("data-offsetTopStart") + parseInt($(this).attr("data-stapTop"))) + "px, 0px) "});
+                            + (event.clientY - $(this).attr("data-offsetTopStart") + parseInt($(this).attr("data-stapTop"))) + "px, 0px) " + scale})
+                        .attr("data-nowLeft", (event.clientX - $(this).attr("data-offsetLeftStart") + parseInt($(this).attr("data-stapLeft")) ))
+                        .attr("data-nowTop", (event.clientY - $(this).attr("data-offsetTopStart") + parseInt($(this).attr("data-stapTop"))));
 
                 })
             }
@@ -327,11 +340,11 @@ $( function() {
             setTimeout(function(){
                 stopclick = "no";
             }, 100)
-    
+
             $(".dritems .dritem").css("transition", "transform .0s linear");
-            finishinterval = setInterval(function () {
-                calc_position("collback", event)
-            }, 10)
+            // finishinterval = setInterval(function () {
+            //     calc_position("collback", event)
+            // }, 10)
 
             // $(".dritems .dritem").each(function (index){
             //     $(this).attr("data-translate3dX", ( $(this).attr("data-translate3dX") ))
@@ -344,6 +357,21 @@ $( function() {
             // console.log(event.clientY);
         }
     });
+
+
+    $(".dritems").addClass("not-move");
+
+    $(".dritems .dritem").hover(function () {
+        // console.log("t");
+        if($(".dritems").hasClass("not-move")){
+            $(this)
+                .css({"transform": "translate3d("+($(this).attr("data-nowLeft"))+"px, "+$(this).attr("data-nowTop")+"px, 0px) "+scale_hover});
+        }
+    }, function () {
+        $(this)
+            .css({"transform": "translate3d("+($(this).attr("data-nowLeft"))+"px, "+$(this).attr("data-nowTop")+"px, 0px) "+scale});
+    })
+
 
 
 } );
