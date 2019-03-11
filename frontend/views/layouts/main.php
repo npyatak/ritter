@@ -34,7 +34,7 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-    <img src="//ads.adfox.ru/240113/getCode?p1=bztph&p2=frfe&pfc=cejcp&pfb=giymp&pr=%random%&ptrc=b" alt=""/>
+    <img src="//ads.adfox.ru/240113/getCode?p1=bztph&p2=frfe&pfc=cejdf&pfb=giyke&pr=%random%&ptrc=b" alt=""/>
     <img src="//ad.adriver.ru/cgi-bin/rle.cgi?sid=1&bt=21&ad=675881&pid=2863911&bid=6029760&bn=6029760&rnd=%random%" alt=""/>
     <img src="//ar.tns-counter.ru/V13a****ar_ru/ru/CP1251/tmsec=38279_675881-2863911" alt=""/>
     
