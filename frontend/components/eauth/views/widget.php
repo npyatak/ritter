@@ -10,7 +10,7 @@ use yii\web\View;
 /** @var $popup bool */
 /** @var $assetBundle string Alias to AssetBundle */
 
-Yii::createObject(['class' => $assetBundle])->register($this);
+Yii::createBaseObject(['class' => $assetBundle])->register($this);
 
 // Open the authorization dilalog in popup window.
 if ($popup) {
