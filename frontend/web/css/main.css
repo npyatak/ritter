@@ -1235,6 +1235,14 @@ img {
   opacity: .5;
 }
 
+.duble_refer{
+  display: none;
+  text-transform: uppercase;
+  position: relative;
+  top: -12px;
+  margin-bottom: 10px;
+}
+
 .popup_bg {
   display: none;
   opacity: 0;
@@ -2976,11 +2984,9 @@ img {
   .capcha_block_1 .form-group{
     margin-bottom: 30px;
   }
-
-
-
-
-
+  .duble_refer{
+    display: inline-block;
+  }
 
 
 

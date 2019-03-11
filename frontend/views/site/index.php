@@ -211,6 +211,7 @@ use yii\helpers\Url;
 							<img src="/img/chocolate_1.png" alt="img">
 						</div>
 					</div>
+					<a href="#" class="duble_refer bold_refer">Участвовать</a>
 					<div class="left_popup">
 						<div class="choco_popup_content">
 							<p class="name">Прекрасный выбор!</p>
