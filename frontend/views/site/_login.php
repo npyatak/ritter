@@ -5,6 +5,7 @@ use yii\bootstrap\ActiveForm;
 ?>
 
 <div class="social_block">
+    <?=\frontend\widgets\social\SocialWidget::widget(['action' => 'site/login']);?>
 </div>
 
 <p class="bold_text"><!-- Или в -->Войди с помощью почты</p>

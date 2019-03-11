@@ -1,7 +1,7 @@
 <?php
 namespace frontend\models\social;
 
-class GpOAuth2Service extends \nodge\eauth\services\GoogleOAuth2Service
+class GpOAuth2Service extends \frontend\components\eauth\services\GoogleOAuth2Service
 {
 
     protected $scopes = [self::SCOPE_USERINFO_PROFILE, self::SCOPE_USERINFO_EMAIL];

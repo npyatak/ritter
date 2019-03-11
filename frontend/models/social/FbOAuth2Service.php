@@ -9,7 +9,7 @@
 
 namespace frontend\models\social;
 
-class FbOAuth2Service extends \nodge\eauth\services\FacebookOAuth2Service
+class FbOAuth2Service extends \frontend\components\eauth\services\FacebookOAuth2Service
 {
     const SCOPE_USER_ABOUT_ME = 'user_about_me';
 

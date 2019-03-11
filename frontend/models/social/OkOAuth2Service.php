@@ -9,7 +9,7 @@
 
 namespace frontend\models\social;
 
-class OkOAuth2Service extends \nodge\eauth\services\OdnoklassnikiOAuth2Service
+class OkOAuth2Service extends \frontend\components\eauth\services\OdnoklassnikiOAuth2Service
 {
 	const SCOPE_GET_EMAIL = 'GET_EMAIL';
 

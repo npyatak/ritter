@@ -9,7 +9,7 @@
 
 namespace frontend\models\social;
 
-class VkOAuth2Service extends \nodge\eauth\services\VKontakteOAuth2Service {
+class VkOAuth2Service extends \frontend\components\eauth\services\VKontakteOAuth2Service {
 
 	const SCOPE_EMAIL = 'email';
 	const SCOPE_VIDEO = 'video';

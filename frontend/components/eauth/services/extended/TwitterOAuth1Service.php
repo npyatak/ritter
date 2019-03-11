@@ -7,9 +7,9 @@
  * @license http://www.opensource.org/licenses/bsd-license.php
  */
 
-namespace frontend\models\social;
+namespace frontend\components\eauth\services\extended;
 
-class TwOAuth1Service extends \frontend\components\eauth\services\TwitterOAuth1Service
+class TwitterOAuth1Service extends \frontend\components\eauth\services\TwitterOAuth1Service
 {
 
 	protected function fetchAttributes()
@@ -21,23 +21,10 @@ class TwOAuth1Service extends \frontend\components\eauth\services\TwitterOAuth1S
 		$this->attributes['url'] = 'http://twitter.com/account/redirect_by_id?id=' . $info['id_str'];
 
 		$this->attributes['username'] = $info['screen_name'];
-		$exp = explode(' ', $info['name']);
-		$this->attributes['first_name'] = $exp[0];
-		if(isset($exp[1])) $this->attributes['last_name'] = $exp[1];
+		$this->attributes['language'] = $info['lang'];
+		$this->attributes['timezone'] = timezone_name_from_abbr('', $info['utc_offset'], date('I'));
+		$this->attributes['photo'] = $info['profile_image_url'];
 
-		if(isset($info['location'])) {
-			$exp = explode(', ', $info['location']);
-			if(isset($exp[1])) {
-				$this->attributes['city'] = $exp[0];
-				$this->attributes['country'] = $exp[1];
-			} else {
-				$this->attributes['country'] = $exp[0];
-			}
-		}
-
-		$this->attributes['sex'] = 0;
-		$this->attributes['photo_url'] = $info['profile_image_url'];
-		
 		return true;
 	}
 
