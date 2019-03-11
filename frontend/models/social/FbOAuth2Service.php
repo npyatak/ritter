@@ -51,7 +51,7 @@ class FbOAuth2Service extends \frontend\components\eauth\services\FacebookOAuth2
         
         $this->attributes = $info;
         $this->attributes['photo_url'] = $this->baseApiUrl.$this->getId().'/picture?width=100&height=100';
-        $this->attributes['sex'] = $info['gender'] == 'male' ? 2 : 1;
+        $this->attributes['sex'] = isset($info['sex']) && $info['gender'] == 'male' ? 2 : 1;
 
         if(isset($info['birthday'])) {
             $exp=explode('/',$info['birthday']);

@@ -47,7 +47,7 @@ class VkOAuth2Service extends \frontend\components\eauth\services\VKontakteOAuth
 			$this->attributes['username'] = 'id' . $info['id'];
 		}
 
-		$this->attributes['gender'] = $info['sex'] == 1 ? 'F' : 'M';
+		$this->attributes['gender'] = isset($info['sex']) && $info['sex'] == 1 ? 'F' : 'M';
 
 		if (!empty($info['timezone'])) {
 			$this->attributes['timezone'] = timezone_name_from_abbr('', $info['timezone'] * 3600, date('I'));
