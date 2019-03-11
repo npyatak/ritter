@@ -34,7 +34,7 @@ return [
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
         'eauth' => [
-            'class' => 'nodge\eauth\EAuth',
+            'class' => 'frontend\components\eauth\EAuth',
             'popup' => true, // Use the popup window instead of redirecting.
             'cache' => false, // Cache component name or false to disable cache. Defaults to 'cache' on production environments.
             'cacheExpire' => 0, // Cache lifetime. Defaults to 0 - means unlimited.
