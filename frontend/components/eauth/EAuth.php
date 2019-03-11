@@ -260,7 +260,7 @@ class EAuth extends BaseObject
 		$service['component'] = $this;
 
 		/** @var $identity IAuthService */
-		$identity = Yii::createBaseObject($service);
+		$identity = Yii::createObject($service);
 		return $identity;
 	}
 
@@ -276,7 +276,7 @@ class EAuth extends BaseObject
 	public function redirect($url, $jsRedirect = true, $params = [])
 	{
 		/** @var RedirectWidget $widget */
-		$widget = Yii::createBaseObject([
+		$widget = Yii::createObject([
 			'class' => $this->redirectWidget,
 			'url' => Url::to($url),
 			'redirect' => $jsRedirect,

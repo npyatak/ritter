@@ -380,7 +380,7 @@ abstract class ServiceBase extends BaseObject implements IAuthService
             if (!isset($config)) {
                 $config = $this->getComponent()->getHttpClient();
             }
-            $this->_httpClient = Yii::createBaseObject($config);
+            $this->_httpClient = Yii::createObject($config);
         }
         return $this->_httpClient;
     }
