@@ -35,7 +35,9 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
     <img src="//ads.adfox.ru/240113/getCode?p1=bztph&p2=frfe&pfc=cejcp&pfb=giymp&pr=%random%&ptrc=b" alt=""/>
-
+    <img src="//ad.adriver.ru/cgi-bin/rle.cgi?sid=1&bt=21&ad=675881&pid=2863911&bid=6029760&bn=6029760&rnd=%random%" alt=""/>
+    <img src="//ar.tns-counter.ru/V13a****ar_ru/ru/CP1251/tmsec=38279_675881-2863911" alt=""/>
+    
     <div class="wrapper">
 
         <?php if(Yii::$app->controller->action->id == 'index'):?>
@@ -58,7 +60,7 @@ AppAsset::register($this);
                             <li class="menu_li"><a <?=Yii::$app->controller->action->id == 'winners' ? 'class="active"' : '';?> href="<?=Url::toRoute(['site/winners']);?>">Призы и победители</a></li>
                         </ul>
                     </nav>
-                    <a href="//ads.adfox.ru/240113/goLink?p1=bztph&p2=frfe&p5=giymp&pr=%random%" target="_blank" class="header_logo_2">
+                    <a href="//ads.adfox.ru/240113/goLink?p1=bztph&p2=frfe&p5=giyke&pr=%random%" target="_blank" class="header_logo_2">
                         <img src="/img/logo_2.png" alt="logo">
                     </a>
 
