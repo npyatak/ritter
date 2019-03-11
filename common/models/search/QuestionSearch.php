@@ -18,7 +18,7 @@ class QuestionSearch extends Question
     public function rules()
     {
         return [
-            [['id', 'status'], 'integer'],
+            [['id', 'status', 'stage_id', 'location_id'], 'integer'],
             [['text'], 'safe'],
         ];
     }
@@ -61,6 +61,8 @@ class QuestionSearch extends Question
         $query->andFilterWhere([
             'id' => $this->id,
             'status' => $this->status,
+            'stage_id' => $this->stage_id,
+            'location_id' => $this->location_id,
         ]);
 
         $query->andFilterWhere(['like', 'text', $this->text]);
