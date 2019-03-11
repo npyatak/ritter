@@ -1,12 +1,12 @@
 <?php 
 return [
-    'fb' => [
+    /*'fb' => [
         // register your app here: https://developers.facebook.com/apps/
         'class' => 'frontend\models\social\FbOAuth2Service',
         'clientId' => '502516763613354',
         'clientSecret' => 'b4cbc20cef191563f0c1e1c5d0450cad',
         'title' => 'Facebook',
-    ],
+    ],*/
     'vk' => [
         // register your app here: https://vk.com/editapp?act=create&site=1
         'class' => 'frontend\models\social\VkOAuth2Service',
