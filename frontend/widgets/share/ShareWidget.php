@@ -31,7 +31,8 @@ class ShareWidget extends \yii\base\Widget
     		$this->share['image'] = $this->image;
     	}
 
-        $this->share['url'] = Url::current([], $scheme);
+        //$this->share['url'] = Url::current([], $scheme);
+        $this->share['url'] = Url::toRoute(['site/index'], $scheme);
         $this->share['imageUrl'] = isset($this->share['image']) ? Url::to([$this->share['image']], $scheme) : null;
 
         $view = $this->getView();
