@@ -5,10 +5,10 @@ use yii\bootstrap\ActiveForm;
 ?>
 
 <div class="social_block">
-    <?=\frontend\widgets\social\SocialWidget::widget(['action' => 'site/login']);?>
+    <?php \frontend\widgets\social\SocialWidget::widget(['action' => 'site/login']);?>
 </div>
 
-<p class="bold_text">Или войди с помощью почты</p>
+<p class="bold_text"><!-- Или в -->Войди с помощью почты</p>
 
 <?php $form = ActiveForm::begin([
     'id' => 'login-form',
@@ -26,7 +26,7 @@ use yii\bootstrap\ActiveForm;
     <div class="center">
         <?= Html::submitButton('<span>Войти с помощью почты</span>', ['class' => 'button_1', 'name' => 'login-button']) ?>
         <br>
-        <a class="bold_refer mt_15" href="<?=Url::toRoute(['site/register', 'location_id' => $location->id]);?>">Регистрация</a>
+        <a class="bold_refer mt_15" href="<?=Url::toRoute(['site/register', 'location_id' => isset($location) ? $location->id : null]);?>">Регистрация</a>
         <br>
         <a class="bold_refer mt_15" href="<?=Url::toRoute(['site/request-password-reset']);?>">Забыли пароль?</a>
     </div>
