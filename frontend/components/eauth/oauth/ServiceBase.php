@@ -106,7 +106,7 @@ abstract class ServiceBase extends \frontend\components\eauth\ServiceBase implem
 			if (!isset($config)) {
 				$config = $this->getComponent()->getTokenStorage();
 			}
-			$this->_tokenStorage = Yii::createObject($config);
+			$this->_tokenStorage = Yii::createBaseObject($config);
 		}
 		return $this->_tokenStorage;
 	}

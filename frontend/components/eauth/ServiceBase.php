@@ -10,7 +10,7 @@
 namespace frontend\components\eauth;
 
 use Yii;
-use yii\base\Object;
+use yii\base\BaseObject;
 use yii\helpers\Url;
 use yii\helpers\ArrayHelper;
 use OAuth\Common\Http\Uri\Uri;
@@ -21,7 +21,7 @@ use OAuth\Common\Http\Client\ClientInterface;
  *
  * @package application.extensions.eauth
  */
-abstract class ServiceBase extends Object implements IAuthService
+abstract class ServiceBase extends BaseObject implements IAuthService
 {
 
 	/**
@@ -380,7 +380,7 @@ abstract class ServiceBase extends Object implements IAuthService
             if (!isset($config)) {
                 $config = $this->getComponent()->getHttpClient();
             }
-            $this->_httpClient = Yii::createObject($config);
+            $this->_httpClient = Yii::createBaseObject($config);
         }
         return $this->_httpClient;
     }

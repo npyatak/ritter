@@ -10,7 +10,7 @@
 namespace frontend\components\eauth;
 
 use Yii;
-use yii\base\Object;
+use yii\base\BaseObject;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 
@@ -19,7 +19,7 @@ use yii\helpers\Url;
  *
  * @package application.extensions.eauth
  */
-class EAuth extends Object
+class EAuth extends BaseObject
 {
 
 	/**
@@ -260,7 +260,7 @@ class EAuth extends Object
 		$service['component'] = $this;
 
 		/** @var $identity IAuthService */
-		$identity = Yii::createObject($service);
+		$identity = Yii::createBaseObject($service);
 		return $identity;
 	}
 
@@ -276,7 +276,7 @@ class EAuth extends Object
 	public function redirect($url, $jsRedirect = true, $params = [])
 	{
 		/** @var RedirectWidget $widget */
-		$widget = Yii::createObject([
+		$widget = Yii::createBaseObject([
 			'class' => $this->redirectWidget,
 			'url' => Url::to($url),
 			'redirect' => $jsRedirect,
