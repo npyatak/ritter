@@ -29,6 +29,7 @@ use common\models\Contact;
  */
 class SiteController extends Controller
 {
+    public $location;
     /**
      * {@inheritdoc}
      */
@@ -75,9 +76,11 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($location_id = null)
     {
-        $locations = Location::find()->all();
+        $locations = Location::find()->indexBy('id')->all();
+
+        $this->location = $location_id && isset($locations[$location_id]) ? $locations[$location_id] : null;
 
         return $this->render('index', [
             'locations' => $locations,

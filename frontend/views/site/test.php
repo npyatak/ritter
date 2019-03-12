@@ -30,7 +30,7 @@ $this->title = 'Участвовать';
 
             <p class="bold_text">Поделиться проектом:</p>
             <div class="social_block">
-                <?=\frontend\widgets\share\ShareWidget::widget(['image' => $location->image_share]);?>
+                <?=\frontend\widgets\share\ShareWidget::widget(['location' => $location]);?>
             </div>
         </div>
         <!-- wrap_inner_border -->
@@ -106,7 +106,7 @@ $this->title = 'Участвовать';
         </div>
         <p class="soc_name">Поделись проектом с друзьями:</p>
         <div class="social_block">
-            <?=\frontend\widgets\share\ShareWidget::widget(['addClass' => 'result', 'image' => $location->image_share]);?>
+            <?=\frontend\widgets\share\ShareWidget::widget(['addClass' => 'result', 'location' => $location]);?>
         </div>
     </div>
     <!-- wrap_inner_border -->
@@ -134,7 +134,7 @@ $this->title = 'Участвовать';
         <p class="light_text"></p>
         <p class="soc_name">Поделись проектом с друзьями и участвуй в розыгрыше призов. Удачи!</p>
         <div class="social_block">
-            <?=\frontend\widgets\share\ShareWidget::widget(['addClass' => 'result', 'image' => $location->image_share]);?>
+            <?=\frontend\widgets\share\ShareWidget::widget(['addClass' => 'result', 'location' => $location]);?>
         </div>
     </div>
     <!-- wrap_inner_border -->
