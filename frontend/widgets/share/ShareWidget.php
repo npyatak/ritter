@@ -61,6 +61,7 @@ class ShareWidget extends \yii\base\Widget
 		        'data-title' => $this->share['title'],
 		        'data-image' => $this->share['imageUrl'],
 		        'data-text' => $this->share['text'],
+		        'data-ga-click' => 'click_share_vk',
 		    ]);
 			echo Html::a('<i class="fa fa-facebook" aria-hidden="true"></i>', '', [
 		        'class' => 'social_1 share '.$this->addClass,
@@ -69,6 +70,7 @@ class ShareWidget extends \yii\base\Widget
 		        'data-title' => $this->share['title'],
 		        'data-image' => $this->share['imageUrl'],
 		        'data-text' => $this->share['text'],
+		        'data-ga-click' => 'click_share_fb',
 		    ]);
 		    echo Html::a('<i class="fa fa-odnoklassniki" aria-hidden="true"></i>', '#', [
 		        'class' => 'social_1 share '.$this->addClass,
@@ -77,6 +79,7 @@ class ShareWidget extends \yii\base\Widget
 		        'data-title' => $this->share['title'],
 		        'data-text' => $this->share['text'],
 		        'data-image' => $this->share['imageUrl'],
+		        'data-ga-click' => 'click_share_ok',
 		    ]);
 		}
     }

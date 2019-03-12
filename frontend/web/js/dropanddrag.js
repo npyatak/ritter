@@ -76,7 +76,7 @@ $( function() {
     $(".drwrap .dritems .dritem").click(function () {
         var id = $(this).index()-Math.floor($(this).index()/15)*15+1;
         // window.location.href = '/test/'+id;
-        console.log(stopclick)
+        ga('send', 'event', 'click', 'click_ritter_'+id);
         if(stopclick == "no") {
             choco_popup_show(id);
         }

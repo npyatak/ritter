@@ -13,7 +13,7 @@ $this->title = 'Участвовать';
         </div>
 
         <div class="center">
-            <a class="button_2" href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>">Вернуться к выбору вкуса</a>
+            <a class="button_2" href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>" data-ga-click="click_participate">Вернуться к выбору вкуса</a>
         </div>
     </div>
     <!-- test_block -->
@@ -35,7 +35,7 @@ $this->title = 'Участвовать';
         </div>
         <!-- wrap_inner_border -->
         <div class="center">
-            <a class="button_2" href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>">Вернуться к выбору вкуса</a>
+            <a class="button_2" href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>" data-ga-click="click_participate">Вернуться к выбору вкуса</a>
         </div>
     </div>
     <!-- occupied_block -->
@@ -77,7 +77,7 @@ $this->title = 'Участвовать';
         </div>
         <!-- wrap_inner_border -->
         <div class="center">
-            <a class="button_2" href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>">Вернуться к выбору вкуса</a>
+            <a class="button_2" href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>" data-ga-click="click_participate">Вернуться к выбору вкуса</a>
         </div>
     </div>
     <!-- autorization_block -->
@@ -97,10 +97,10 @@ $this->title = 'Участвовать';
         <p class="light_text">Оставайся с нами на связи и узнай больше о других конкурсах Ritter Sport:</p>
         
         <div class="social_block">
-            <a class="social_1" href="https://vk.com/rittersportru" target="_blank">
+            <a class="social_1" href="https://vk.com/rittersportru" target="_blank" data-ga-click="click_social_fb">
                 <i class="fa fa-vk" aria-hidden="true"></i>
             </a>
-            <a class="social_1" href="https://www.instagram.com/rittersportru/?hl=ru" target="_blank">
+            <a class="social_1" href="https://www.instagram.com/rittersportru/?hl=ru" target="_blank" data-ga-click="click_social_ig">
                 <img src="/img/insta_icon.svg" alt="img">
             </a>
         </div>
@@ -162,6 +162,7 @@ $this->title = 'Участвовать';
 if(Yii::$app->user->isGuest) {
     $script .= "
         $('#answerButton').click(function() {
+            ga('send', 'event', 'click', 'show_authorization');
             change_block('autorization_block');
         });
     ";
@@ -171,6 +172,8 @@ if(Yii::$app->user->isGuest) {
     ";
 } else {
     $script .= "
+        var questionNumber = 1;
+
         $(document).on('click', '#answerButton', function() {
             var answer = $('.quest.active');
             if(answer.length) {
@@ -186,6 +189,9 @@ if(Yii::$app->user->isGuest) {
                             answer.addClass('error');
                             $('.quest[data-id=\"'+data.right+'\"]').addClass('true');
                         }
+
+                        ga('send', 'event', 'click', 'answer_question_'+questionNumber);
+                        questionNumber++;
                     }
                 });
             }
@@ -229,6 +235,7 @@ if(Yii::$app->user->isGuest) {
                             $('.not_answer .desc').html(data.place);
                             $('.not_answer .video_img img').attr('src', data.image);
                             show_popup('not_answer');
+                            ga('send', 'event', 'click', 'show_test_video');
                         }
                     }
                 });

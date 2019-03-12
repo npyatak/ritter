@@ -13,14 +13,14 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/libs.min.css',
-        'css/main.css?v=2',
+        'css/main.css?v=3',
         'css/dropanddrag.css',
     ];
     public $js = [
         'js/libs.min.js',
         'js/jquery.touchSwipe.min.js',
-        'js/common.js',
-        'js/dropanddrag.js',
+        'js/common.js?v=1',
+        'js/dropanddrag.js?v=1',
     ];
     public $depends = [
         'yii\web\YiiAsset',

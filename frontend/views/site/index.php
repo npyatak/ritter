@@ -22,7 +22,7 @@ use yii\helpers\Url;
 								</p>
 							</div>
 
-							<a href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>" class="button_1 scroll_refer"><span>Участвовать</span></a>
+							<a href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>" class="button_1 scroll_refer" data-ga-click="click_participate"><span>Участвовать</span></a>
 						</div>
 						<!-- item_inner -->
 					</div>
@@ -70,7 +70,7 @@ use yii\helpers\Url;
 								</p>
 							</div>
 
-							<a href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>" class="button_1"><span>Участвовать</span></a>
+							<a href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>" class="button_1" data-ga-click="click_participate"><span>Участвовать</span></a>
 						</div>
 						<!-- item_inner -->
 					</div>
@@ -111,7 +111,7 @@ use yii\helpers\Url;
 								</p>
 							</div>
 
-							<a href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>" class="button_1"><span>Участвовать</span></a>
+							<a href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>" class="button_1" data-ga-click="click_participate"><span>Участвовать</span></a>
 						</div>
 						<!-- item_inner -->
 					</div>
@@ -161,7 +161,7 @@ use yii\helpers\Url;
 								</p>
 							</div>
 
-							<a href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>" class="button_1"><span>Участвовать</span></a>
+							<a href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>" class="button_1" data-ga-click="click_participate"><span>Участвовать</span></a>
 						</div>
 						<!-- item_inner -->
 					</div>
@@ -211,7 +211,7 @@ use yii\helpers\Url;
 							<img src="/img/chocolate_1.png" alt="img">
 						</div>
 					</div>
-					<a href="#" class="duble_refer bold_refer">Участвовать</a>
+					<a href="#" class="duble_refer bold_refer" data-ga-click="click_participate">Участвовать</a>
 					<div class="left_popup">
 						<div class="choco_popup_content">
 							<p class="name">Прекрасный выбор!</p>
@@ -223,7 +223,7 @@ use yii\helpers\Url;
 							<p class="bold_text">
 								Ответь на 3 вопроса и выиграй призы от <a href="/winners">Ritter Sport</a> и <a href="/winners">телеканала «Пятница!»</a>
 							</p>
-							<a href="#" class="bold_refer">Участвовать</a>
+							<a href="#" class="bold_refer" data-ga-click="click_participate">Участвовать</a>
 						</div>
 					</div>
 				</div>

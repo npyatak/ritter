@@ -28,6 +28,15 @@ AppAsset::register($this);
             gtag('js', new Date());
 
             gtag('config', 'UA-135974038-1');
+        </script>        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-135974038-1', 'auto');
+            ga('send', 'pageview');
         </script>
 
     <?php //endif;?>
@@ -37,7 +46,7 @@ AppAsset::register($this);
     <img src="//ads.adfox.ru/240113/getCode?p1=bztph&p2=frfe&pfc=cejdf&pfb=giyke&pr=%random%&ptrc=b" alt=""/>
     <img src="//ad.adriver.ru/cgi-bin/rle.cgi?sid=1&bt=21&ad=675881&pid=2863911&bid=6029760&bn=6029760&rnd=%random%" alt=""/>
     <img src="//ar.tns-counter.ru/V13a****ar_ru/ru/CP1251/tmsec=38279_675881-2863911" alt=""/>
-    
+
     <div class="wrapper">
 
         <?php if(Yii::$app->controller->action->id == 'index'):?>
@@ -60,7 +69,7 @@ AppAsset::register($this);
                             <li class="menu_li"><a <?=Yii::$app->controller->action->id == 'winners' ? 'class="active"' : '';?> href="<?=Url::toRoute(['site/winners']);?>">Призы и победители</a></li>
                         </ul>
                     </nav>
-                    <a href="//ads.adfox.ru/240113/goLink?p1=bztph&p2=frfe&p5=giyke&pr=%random%" target="_blank" class="header_logo_2">
+                    <a href="//ads.adfox.ru/240113/goLink?p1=bztph&p2=frfe&p5=giyke&pr=%random%" data-ga-click="click_ritter_logo" target="_blank" class="header_logo_2">
                         <img src="/img/logo_2.png" alt="logo">
                     </a>
 
@@ -139,10 +148,10 @@ AppAsset::register($this);
                         <p>Оставайтесь с нами: <span>Наши группы</span></p>
                     
                         <div class="social_block">
-                            <a class="social_1" href="https://vk.com/rittersportru" target="_blank">
+                            <a class="social_1" href="https://vk.com/rittersportru" target="_blank" data-ga-click="click_social_fb">
                                 <i class="fa fa-vk" aria-hidden="true"></i>
                             </a>
-                            <a class="social_1" href="https://www.facebook.com/RitterSport/?brand_redir=136684793051581" target="_blank">
+                            <a class="social_1" href="https://www.facebook.com/RitterSport/?brand_redir=136684793051581" target="_blank" data-ga-click="click_social_fb">
                                 <i class="fa fa-facebook" aria-hidden="true"></i>
                             </a>
                         </div>

@@ -177,6 +177,7 @@ $(".video_wrap .play").on("click", function(){
 	var el = $(this);
 	var iframe_code = el.data("video-iframe");
 	
+	ga('send', 'event', 'click', 'play_video');
 
 	if(el.hasClass("popup_play")){
 		el.after('<iframe width="720" height="405" src="'+ iframe_code +'" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow="autoplay"></iframe>');
@@ -286,4 +287,11 @@ $(".scroll_refer").on("click",function() {
 	var href = $(this).attr("href");
 	$("html, body").animate({ scrollTop: $(href).offset().top}, "slow");
 	return false;
+});
+
+
+$(document).on('click', 'a, button', function(e) {
+    if(typeof $(this).attr('data-ga-click') !== 'undefined') {
+        ga('send', 'event', 'click', $(this).attr('data-ga-click'));
+    }
 });
