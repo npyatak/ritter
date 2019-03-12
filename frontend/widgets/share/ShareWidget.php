@@ -30,6 +30,8 @@ class ShareWidget extends \yii\base\Widget
 
     	if($this->image) {
     		$this->share['image'] = $this->image;
+    	} elseif ($this->location) {
+    		$this->share['image'] = $this->location->image_share;
     	}
 
         $this->share['url'] = Url::current(['location_id' => $this->location ? $this->location->id : null], $scheme);
