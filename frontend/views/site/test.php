@@ -244,4 +244,8 @@ if(Yii::$app->user->isGuest) {
     ";
 }
 
+if($location_id) {
+    $script .= "window.location.href = '/'";
+}
+
 $this->registerJs($script, yii\web\View::POS_END);?>

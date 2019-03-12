@@ -152,7 +152,7 @@ AppAsset::register($this);
                 <div class="footer_items">
 
                     <?php if(Yii::$app->controller->action->id != 'test') {
-                        echo \frontend\widgets\share\ShareWidget::widget(['showButtons' => false, 'image' => Yii::$app->controller->location ? Yii::$app->controller->location->image_share : null]);
+                        echo \frontend\widgets\share\ShareWidget::widget(['showButtons' => false]);
                     }?>
                    <!--  <div class="item one">
                         <p>Поделиться проектом</p>

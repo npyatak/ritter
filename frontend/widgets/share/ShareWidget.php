@@ -15,8 +15,8 @@ class ShareWidget extends \yii\base\Widget
 	];
 	public $showButtons = true;
 	public $addClass = '';
-	public $location = null;
 	public $image;
+	public $location;
 
     public function init()
     {
@@ -32,8 +32,8 @@ class ShareWidget extends \yii\base\Widget
     		$this->share['image'] = $this->image;
     	}
 
-        //$this->share['url'] = Url::current([], $scheme);
-        $this->share['url'] = Url::toRoute(['site/index', 'location' => $this->location ? $this->location->id : null], $scheme);
+        $this->share['url'] = Url::current(['location_id' => $this->location ? $this->location->id : null], $scheme);
+        //$this->share['url'] = Url::toRoute(['site/index'], $scheme);
         $this->share['imageUrl'] = isset($this->share['image']) ? Url::to([$this->share['image']], $scheme) : null;
 
         $view = $this->getView();

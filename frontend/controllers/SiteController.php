@@ -29,7 +29,6 @@ use common\models\Contact;
  */
 class SiteController extends Controller
 {
-    public $location;
     /**
      * {@inheritdoc}
      */
@@ -76,18 +75,16 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionIndex($location_id = null)
+    public function actionIndex()
     {
         $locations = Location::find()->indexBy('id')->all();
-
-        $this->location = $location_id && isset($locations[$location_id]) ? $locations[$location_id] : null;
 
         return $this->render('index', [
             'locations' => $locations,
         ]);
     }
 
-    public function actionTest($id, $answerId = null, $next = null)
+    public function actionTest($id, $answerId = null, $next = null, $location_id = null)
     {
         $stage = Stage::getCurrent();
         $location = Location::findOne($id);
@@ -164,6 +161,7 @@ class SiteController extends Controller
             'question' => $question,
             'location' => $location,
             'loginForm' => new LoginForm,
+            'location_id' => $location_id,
         ]);
     }
 
