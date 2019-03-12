@@ -49,10 +49,13 @@ class UserAnswer extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'stage_id' => 'Stage ID',
-            'user_id' => 'User ID',
+            'stage_id' => 'Этап',
+            'user_id' => 'Пользователь',
             'answers' => 'Answers',
-            'score' => 'Score',
+            'location_id' => 'Локация',
+            'score' => 'Баллы',
+            'is_finished' => 'Окончен?',
+            'is_shared' => 'Поделился?',
         ];
     }
 
@@ -82,5 +85,10 @@ class UserAnswer extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+    public function getLocation()
+    {
+        return $this->hasOne(Location::className(), ['id' => 'location_id']);
     }
 }

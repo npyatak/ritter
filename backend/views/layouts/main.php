@@ -39,6 +39,7 @@ AppAsset::register($this);
         ['label' => 'Конкурс', 'items' => [
                 ['label' => 'Вопросы', 'url' => ['/question']],
                 ['label' => 'Этапы', 'url' => ['/stage']],
+                ['label' => 'Результаты', 'url' => ['/user-answer']],
                 ['label' => 'Правила', 'url' => ['/site/load-rules']],
             ]
         ],
