@@ -165,7 +165,7 @@ AppAsset::register($this);
                         <p>Оставайтесь с нами: <span>Наши группы</span></p>
                     
                         <div class="social_block">
-                            <a class="social_1" href="https://vk.com/rittersportru" target="_blank" data-ga-click="click_social_fb">
+                            <a class="social_1" href="https://vk.com/rittersportru" target="_blank" data-ga-click="click_social_vk">
                                 <i class="fa fa-vk" aria-hidden="true"></i>
                             </a>
                             <a class="social_1" href="https://www.facebook.com/RitterSport/?brand_redir=136684793051581" target="_blank" data-ga-click="click_social_fb">

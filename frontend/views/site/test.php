@@ -97,7 +97,7 @@ $this->title = 'Участвовать';
         <p class="light_text">Оставайся с нами на связи и узнай больше о других конкурсах Ritter Sport:</p>
         
         <div class="social_block">
-            <a class="social_1" href="https://vk.com/rittersportru" target="_blank" data-ga-click="click_social_fb">
+            <a class="social_1" href="https://vk.com/rittersportru" target="_blank" data-ga-click="click_social_vk">
                 <i class="fa fa-vk" aria-hidden="true"></i>
             </a>
             <a class="social_1" href="https://www.instagram.com/rittersportru/?hl=ru" target="_blank" data-ga-click="click_social_ig">
@@ -192,6 +192,9 @@ if(Yii::$app->user->isGuest) {
 
                         ga('send', 'event', 'click', 'answer_question_'+questionNumber);
                         questionNumber++;
+                        if(questionNumber > 3) {
+                            questionNumber = 1;
+                        }
                     }
                 });
             }
