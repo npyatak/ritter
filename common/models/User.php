@@ -358,4 +358,9 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
 
         return $date->format('U') < $this->birthdate ? true : false;
     }
+
+    public function getFullName()
+    {
+        return $this->name.' '.$this->surname;
+    }
 }

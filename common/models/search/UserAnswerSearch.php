@@ -18,7 +18,7 @@ class UserAnswerSearch extends UserAnswer
     public function rules()
     {
         return [
-            [['id', 'stage_id', 'location_id', 'user_id', 'score', 'is_finished', 'is_shared'], 'integer'],
+            [['id', 'stage_id', 'location_id', 'user_id', 'score', 'is_finished', 'is_shared', 'status'], 'integer'],
             [['answers'], 'safe'],
         ];
     }
@@ -66,6 +66,7 @@ class UserAnswerSearch extends UserAnswer
             'score' => $this->score,
             'is_finished' => $this->is_finished,
             'is_shared' => $this->is_shared,
+            'user_answer.status' => $this->status,
         ]);
 
         return $dataProvider;

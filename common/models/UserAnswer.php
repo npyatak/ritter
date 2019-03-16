@@ -18,6 +18,9 @@ use Yii;
  */
 class UserAnswer extends \yii\db\ActiveRecord
 {
+    const STATUS_INACTIVE = 0;
+    const STATUS_ACTIVE = 1;
+
     public $answersArray = [];
     /**
      * {@inheritdoc}
@@ -34,7 +37,7 @@ class UserAnswer extends \yii\db\ActiveRecord
     {
         return [
             [['stage_id', 'user_id'], 'required'],
-            [['stage_id', 'user_id', 'score', 'is_finished', 'is_shared', 'location_id'], 'integer'],
+            [['stage_id', 'user_id', 'score', 'is_finished', 'is_shared', 'location_id', 'status'], 'integer'],
             [['answers'], 'string'],
             [['stage_id'], 'exist', 'skipOnError' => true, 'targetClass' => Stage::className(), 'targetAttribute' => ['stage_id' => 'id']],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
@@ -56,6 +59,7 @@ class UserAnswer extends \yii\db\ActiveRecord
             'score' => 'Баллы',
             'is_finished' => 'Окончен?',
             'is_shared' => 'Поделился?',
+            'status' => 'Статус',
         ];
     }
 
@@ -90,5 +94,12 @@ class UserAnswer extends \yii\db\ActiveRecord
     public function getLocation()
     {
         return $this->hasOne(Location::className(), ['id' => 'location_id']);
+    }
+
+    public function getStatusArray() {
+        return [
+            self::STATUS_ACTIVE => 'Участвует',
+            self::STATUS_INACTIVE => 'Не участвует',
+        ];
     }
 }
