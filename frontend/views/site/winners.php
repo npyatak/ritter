@@ -3,9 +3,7 @@ use yii\helpers\Url;
 ?>
 
 <div class="prizes_and_winners body_chocolate_inner">
-
 	<div class="prizes">
-
 		<p class="name_block">Путешествуй ярко с <span>Ritter Sport</span></p>
 		<!-- рамка -->
 		<div class="prize_content wrap_inner_border">
@@ -52,8 +50,6 @@ use yii\helpers\Url;
 					</p>
 				</div>
 				<!-- item_prize -->
-				
-
 			</div>
 			<!-- wrap_items_prizes -->
 
@@ -61,114 +57,38 @@ use yii\helpers\Url;
 				<a class="button_1" href="<?=Url::toRoute(['site/index', '#' => 'locations']);?>" data-ga-click="click_participate"><span>Участвовать</span></a>
 				<p class="prize_alert">Реальные призы могут отличаться от их изображения</p>
 			</div>
-
-
-			
-
 		</div>
 		<!-- wrap_inner_border -->
-		
-
 	</div>
 	<!-- prizes -->
 
+	<?php foreach ($finishedStages as $finishedStage):?>
+		<?php if($finishedStage->winners):?>
+			<div class="winners">
+				<div class="wrap_inner_border">
+					<div class="inner_border">
+						<span class="top"></span>
+						<span class="bottom"></span>
+					</div>
+					<p class="name_block">Победители <span>этапа <?=$finishedStage->number;?></span>:</p>
 
-<?/*
-	<div class="winners">
-
-		<!-- рамка -->
-		<div class="wrap_inner_border">
-			<div class="inner_border">
-				<span class="top"></span>
-				<span class="bottom"></span>
+					<div class="winners_wrap_items">
+						<?php foreach ($finishedStage->winners as $winner):?>
+							<div class="winner_item">
+								<div class="wreath">
+									<p class="num"><?=$winner->place;?></p>
+									<p class="position">место</p>
+								</div>
+								<p class="name"><?=$winner->user->fullName;?></p>
+							</div>
+						<?php endforeach;?>
+					</div>
+					<!-- winners_wrap_items -->
+				</div>
+				<!-- wrap_inner_border -->
 			</div>
-			<p class="name_block">Победители <span>этапа 1</span>:</p>
-
-			<div class="winners_wrap_items">
-				
-				<div class="winner_item">
-					<div class="wreath">
-						<p class="num">1</p>
-						<p class="position">место</p>
-					</div>
-					<p class="name">Радионов Валерий</p>
-				</div>
-
-				<div class="winner_item">
-					<div class="wreath">
-						<p class="num">2</p>
-						<p class="position">место</p>
-					</div>
-					<p class="name">Радионов Валерий</p>
-				</div>
-
-				<div class="winner_item">
-					<div class="wreath">
-						<p class="num">3</p>
-						<p class="position">место</p>
-					</div>
-					<p class="name">Радионов Валерий</p>
-				</div>
-
-			</div>
-			<!-- winners_wrap_items -->
-		</div>
-		<!-- wrap_inner_border -->
-		
-
-	</div>
-	<!-- winners -->
-
-
-<!-- ========================================= -->
-<!-- ========================================= -->
-
-	<div class="winners">
-
-		<!-- рамка -->
-		<div class="wrap_inner_border">
-			<div class="inner_border">
-				<span class="top"></span>
-				<span class="bottom"></span>
-			</div>
-			<p class="name_block">Победители <span>этапа 2</span>:</p>
-
-			<div class="winners_wrap_items">
-				
-				<div class="winner_item">
-					<div class="wreath">
-						<p class="num">1</p>
-						<p class="position">место</p>
-					</div>
-					<p class="name">Радионов Валерий</p>
-				</div>
-
-				<div class="winner_item">
-					<div class="wreath">
-						<p class="num">2</p>
-						<p class="position">место</p>
-					</div>
-					<p class="name">Радионов Валерий</p>
-				</div>
-
-				<div class="winner_item">
-					<div class="wreath">
-						<p class="num">3</p>
-						<p class="position">место</p>
-					</div>
-					<p class="name">Радионов Валерий</p>
-				</div>
-
-			</div>
-			<!-- winners_wrap_items -->
-		</div>
-		<!-- wrap_inner_border -->
-		
-
-	</div>
-	<!-- winners -->
-	*/?>
-
-
+			<!-- winners -->
+		<?php endif;?>
+	<?php endforeach;?>
 </div>
 <!-- prizes_and_winners -->

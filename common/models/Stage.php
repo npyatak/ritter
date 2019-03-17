@@ -64,6 +64,16 @@ class Stage extends \yii\db\ActiveRecord
         return parent::afterFind();
     }
 
+    public function getWinners()
+    {
+        return $this->hasMany(Winner::className(), ['stage_id' => 'id']);
+    }
+
+    public function getWinnerUsers()
+    {
+        return $this->hasMany(User::className(), ['id' => 'user_id'])->viaTable(Winner::tableName(), ['stage_id' => 'id']);
+    }
+
     public function getStatus() {
         if($this->date_start < time() && $this->date_end > time()) {
             return self::STATUS_ACTIVE;

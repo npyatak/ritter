@@ -224,8 +224,10 @@ class SiteController extends Controller
 
     public function actionWinners()
     {
+        $finishedStages = Stage::find()->where(['<', 'date_end', time()])->joinWith(['winners'])->all();
 
         return $this->render('winners', [
+            'finishedStages' => $finishedStages,
         ]);
     }
 
