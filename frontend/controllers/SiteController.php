@@ -178,7 +178,8 @@ class SiteController extends Controller
             $userAnswer = UserAnswer::find()->where(['stage_id' => $stage->id, 'user_id' => Yii::$app->user->id])->one();
             if($userAnswer !== null && $userAnswer->is_finished) {
                 $userAnswer->is_shared = 1;
-                $userAnswer->save(false, ['is_shared']);
+                $userAnswer->status = UserAnswer::STATUS_ACTIVE;
+                $userAnswer->save(false, ['is_shared', 'status']);
             
                 return ['status' => 'success'];
             }

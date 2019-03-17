@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use common\models\User;
 use common\models\UserAnswer;
 
-$userAnswers = UserAnswer::find()->where(['stage_id' => $stage->id, 'is_shared' => 1, 'user_answer.status' => UserAnswer::STATUS_ACTIVE])->joinWith('user')->all();
+$userAnswers = UserAnswer::find()->where(['stage_id' => $stage->id, 'user_answer.status' => UserAnswer::STATUS_ACTIVE])->joinWith('user')->all();
 
 $userArray = [];
 foreach ($userAnswers as $userAnswer) {

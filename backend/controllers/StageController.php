@@ -61,7 +61,7 @@ class StageController extends CController
         if(Yii::$app->request->isAjax && $place) {
             $indexes = explode(',', $indexes);
         
-            $userAnswers = UserAnswer::find()->where(['stage_id' => $id, 'is_shared' => 1, 'status' => UserAnswer::STATUS_ACTIVE])->all();
+            $userAnswers = UserAnswer::find()->where(['stage_id' => $id, 'status' => UserAnswer::STATUS_ACTIVE])->all();
 
             foreach ($indexes as $index) {
                 unset($userAnswers[$index]);
