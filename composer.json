@@ -24,7 +24,8 @@
         "kartik-v/yii2-widget-datetimepicker": "*",
         "nodge/yii2-eauth": "~2.0",
         "kartik-v/yii2-editable": "1.7.6",
-        "kartik-v/yii2-grid": "@dev"
+        "kartik-v/yii2-grid": "@dev",
+        "kartik-v/yii2-widget-switchinput": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

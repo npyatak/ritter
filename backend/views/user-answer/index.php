@@ -69,21 +69,31 @@ $this->params['breadcrumbs'][] = $this->title;
                     'filter' => Html::activeDropDownList($searchModel, 'is_shared', [0 => 'Нет', 1 => 'Да'], ['prompt'=>'']),
                 ],
                 [
-                    'class' => 'kartik\grid\EditableColumn',
                     'attribute' => 'status',
-                    'headerOptions'=>['class'=>'kv-sticky-column'],
-                    'contentOptions'=>['class'=>'kv-sticky-column'],
+                    'format' => 'raw',
                     'value' => function($data) {
-                        return $data->statusArray[$data->status];
+                        return Html::a($data->statusArray[$data->status], '', ['class' => 'switch-status', 'data-id' => $data->id]);
                     },
                     'filter' => Html::activeDropDownList($searchModel, 'status', UserAnswer::getStatusArray(), ['prompt'=>'']),
-                    'editableOptions' => [
-                        'inputType' => kartik\editable\Editable::INPUT_DROPDOWN_LIST,
-                        'data' => UserAnswer::getStatusArray(),
-                        'displayValueConfig' => UserAnswer::getStatusArray(),
-                    ],
                 ],
             ],
         ]); ?>
     <?php Pjax::end(); ?>
 </div>
+
+<?php $script = "
+    $(document).on('click', '.switch-status', function(e) {
+        var obj = $(this);
+        $.ajax({
+            data: 'id='+obj.data('id'),
+            type: 'post',
+            success: function (data) {
+                obj.html(data.label);
+            }
+        });
+
+        return false;
+    });
+";
+
+$this->registerJs($script, yii\web\View::POS_END);?>

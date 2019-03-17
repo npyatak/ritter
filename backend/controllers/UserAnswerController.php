@@ -7,7 +7,6 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
-use kartik\grid\EditableColumnAction;
 
 use common\models\UserAnswer;
 use common\models\search\UserAnswerSearch;
@@ -16,15 +15,6 @@ use common\models\search\UserAnswerSearch;
  */
 class UserAnswerController extends Controller
 {
-    public function actions()
-    {
-        return ArrayHelper::merge(parent::actions(), [
-            'editable' => [                                       // identifier for your editable action
-                'class' => EditableColumnAction::className(),     // action class name
-                'modelClass' => UserAnswer::className(),                // the update model class
-            ]
-        ]);
-    }
     /**
      * @inheritdoc
      */
@@ -51,17 +41,14 @@ class UserAnswerController extends Controller
         $dataProvider->query->joinWith(['user', 'stage', 'location']);
         $dataProvider->pagination->pageSize = 100;
 
-        if (Yii::$app->request->post('hasEditable')) {
-            $post = Yii::$app->request->post();
-            $model = $this->findModel($post['editableKey']);
-            $model[$post['editableAttribute']] = $post['UserAnswer'][$post['editableIndex']][$post['editableAttribute']];
-            $out = json_encode(['output'=>'', 'message'=>'']);
-            if ($model->save(false, [$post['editableAttribute']])) {
-                $output = '';
-                $out = json_encode(['output'=>$output, 'message'=>'']); 
-            }
-            echo $out;
-            return;
+        if (Yii::$app->request->isAjax) {
+            $id = $_POST['id'];
+            $model = $this->findModel($id);
+            $model->status = $model->status == UserAnswer::STATUS_ACTIVE ? UserAnswer::STATUS_INACTIVE : UserAnswer::STATUS_ACTIVE;
+            $model->save(false, ['status']);
+
+            Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+            return ['label' => UserAnswer::getStatusArray()[$model->status]];
         }
 
         return $this->render('index', [
