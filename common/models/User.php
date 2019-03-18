@@ -43,7 +43,16 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
             ['rulesCheckbox', 'compare', 'compareValue' => 1, 'operator' => '==', 'on' => ['missing_fields', 'register'], 'message' => 'Необходимо согласиться с правилами'],
             [$this->semiRequiredFields, 'required', 'on'=>'missing_fields'],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_BANNED]],
-            ['password', 'required', 'on' => 'reset-password'],
+            ['password', 'required', 'on' => 'reset-password'],            
+            [['birthdateFormatted'], function($attribute, $params) {
+                    if($this->$attribute == 0) {
+                        $this->addError('birthdateFormatted', 'Необходимо заполнить дату рождения');
+                    }
+                    if($this->isUnder18()) {
+                        $this->addError('birthdateFormatted', 'Участвовать в конкурсе могут лица достигшие 18 лет.');
+                    }
+                },
+            ],
         ];
     }
 
