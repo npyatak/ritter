@@ -74,8 +74,8 @@ AppAsset::register($this);
 
        
             <div class="contain">
-                <div href="https://friday.ru/" target="_blank" class="header_wrap_items">
-                    <a class="header_logo_1">
+                <div class="header_wrap_items">
+                    <a href="https://friday.ru/" target="_blank" class="header_logo_1">
                         <!-- <img src="/img/logo.png" alt="logo"> -->
                         <img src="/img/logo_text.png" alt="logo">
                     </a>
