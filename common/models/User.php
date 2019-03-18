@@ -10,7 +10,6 @@ use yii\base\NotSupportedException;
 class User extends \yii\db\ActiveRecord implements IdentityInterface
 {
     const STATUS_ACTIVE = 1;
-    const STATUS_BAN_WITH_HISTORY_SAVE = 5;
     const STATUS_BANNED = 9;
 
     public $new_email;
@@ -35,7 +34,7 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
         return [
             [['password', 'phone', 'name', 'login', 'image', 'ip', 'browser', 'birthdateFormatted'], 'string', 'max' => 255],
             ['login', 'unique'],
-            [['rulesCheckbox', 'spam_subscribe', 'birthdate', 'referrer_id', 'email_subscribe'], 'integer'],
+            [['rulesCheckbox', 'spam_subscribe', 'birthdate'], 'integer'],
             [['soc'], 'string', 'max' => 2],
             //[['email'], 'unique'],
             [['email', 'new_email'], 'email', 'checkDNS' => true],
@@ -63,6 +62,7 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
         $scenarios['missing_fields'] = $this->semiRequiredFields;
         $scenarios['register'] = $this->registerFields;
         $scenarios['reset-password'] = ['password'];
+        $scenarios['update'] = ['name', 'login', 'status'];
 
         return $scenarios;
     }
@@ -91,33 +91,11 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
 
     public function beforeSave($insert) 
     {
-        if($this->isNewRecord && Yii::$app->session->has('referrer_id')) {
-            if(self::find()->where(['id' => Yii::$app->session->get('referrer_id')])->exists()) {
-                $this->referrer_id = Yii::$app->session->get('referrer_id');
-            }
-        }
-
         return parent::beforeSave($insert);
     }
 
     public function afterSave($insert, $changedAttributes) 
     {
-        /*if($insert && $this->referrer_id) {
-            $count = UserAction::find()->where(['type' => UserAction::TYPE_REFERRER_REGISTER, 'user_id' => $this->referrer_id])->count();
-
-            if($count < 100) {
-                $stage = Stage::getCurrent(Stage::TYPE_MAIN);
-                $userAction = new UserAction;
-                $userAction->user_id = $this->referrer_id;
-                $userAction->type = UserAction::TYPE_REFERRER_REGISTER;
-                $userAction->stage_id = $stage->id;
-                $userAction->score = UserAction::getScoreArray()[$userAction->type];
-                $userAction->params = json_encode(['user_id' => $this->id]);
-
-                $userAction->save();
-            }
-        }*/
-
         parent::afterSave($insert, $changedAttributes);
     }
 
@@ -153,8 +131,8 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
             'spam_subscribe' => 'Я согласен на обработку моих персональных данных.',
             'birthdate' => 'Дата рождения',
             'birthdateFormatted' => 'Дата рождения',
-            'email_subscribe' => 'Подписка на рассылку',
             'userStageScores' => 'Баллы за этапы',
+            'login' => 'Логин',
         ];
     }
 
@@ -266,7 +244,6 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
     {
         return [
             self::STATUS_ACTIVE => 'Активен',
-            self::STATUS_BAN_WITH_HISTORY_SAVE => 'Забанен с сохранением истории',
             self::STATUS_BANNED => 'Забанен',
         ];
     }

@@ -12,6 +12,9 @@ use common\components\ElfinderInput;
         <div class="col-md-6">
             <?= $form->field($model, 'name')->textInput();?>
         </div>
+        <div class="col-md-6">
+            <?= $form->field($model, 'login')->textInput();?>
+        </div>
     </div>
 
     <div class="row">

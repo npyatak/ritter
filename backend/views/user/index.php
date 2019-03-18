@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'login',
                 'name',
                 'email',
-                'phone',
+                /*'phone',*/
                 [
                     'attribute' => 'image',
                     'format' => 'raw',
