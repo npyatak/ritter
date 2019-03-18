@@ -6,19 +6,20 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Восстановление пароля';
 ?>
 
-<?php $form = ActiveForm::begin([
-    'id' => 'reset-password-form',
-    'options' => [
-        'class' => 'registration_form',
-    ],
-]); ?>
+<div class="autorization_block body_chocolate_inner" style="display: inline-block;" id="autorization_block">
+    <!-- рамка -->
+    <div class="wrap_inner_border padding_type_1">
 
-    <h1 class="name_type_1"><?=$this->title;?></h1>
+        <?php $form = ActiveForm::begin([
+    		'id' => 'reset-password-form',
+        ]); ?>
 
-    <div class="registration_inputs">
-        <?= $form->field($user, 'password')->passwordInput(['class' => 'input_type_1', 'placeholder' => 'Новый пароль*', 'autofocus' => true])->label(false) ?>
+            
+            <div class="center">
+            	<?= $form->field($user, 'password', ['options' => ['class' => 'input_wrap_1 man']])->passwordInput(['placeholder' => 'Пароль *'])->label(false) ?>
+                <?= Html::submitButton('<span>Изменить</span>', ['class' => 'button_1', 'name' => 'register-button']) ?>
+            </div>
+        <?php ActiveForm::end(); ?>
     </div>
+</div>
 
-    <?= Html::submitButton('<span>Изменить</span>', ['class' => 'button_1']) ?>
-
-<?php ActiveForm::end(); ?>

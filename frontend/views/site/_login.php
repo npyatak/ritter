@@ -28,6 +28,6 @@ use yii\bootstrap\ActiveForm;
         <br>
         <a class="bold_refer mt_15" href="<?=Url::toRoute(['site/register', 'location_id' => isset($location) ? $location->id : null]);?>">Регистрация</a>
         <br>
-        <a class="bold_refer mt_15" href="<?=Url::toRoute(['site/request-password-reset']);?>">Забыли пароль?</a>
+        <a class="bold_refer mt_15" href="<?=Url::toRoute(['site/restore-password']);?>">Забыли пароль?</a>
     </div>
 <?php ActiveForm::end(); ?>
