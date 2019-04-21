@@ -85,10 +85,14 @@ class SiteController extends Controller
 
     public function actionTest($id, $answerId = null, $next = null, $location_id = null)
     {
+        $contestFinished = false;
         $stage = Stage::getCurrent();
         $location = Location::findOne($id);
-        if($location === null || $stage === null) {
+        if($location === null) {
             throw new NotFoundHttpException('The requested page does not exist.');
+        } elseif ($stage === null) {
+            $stage = Stage::find()->where(['number' => 1])->one();
+            $contestFinished = true;
         }
 
         $userAnswer = UserAnswer::find()->where(['stage_id' => $stage->id, 'user_id' => Yii::$app->user->id])->one();
@@ -161,6 +165,7 @@ class SiteController extends Controller
             'location' => $location,
             'loginForm' => new LoginForm,
             'location_id' => $location_id,
+            'contestFinished' => $contestFinished,
         ]);
     }
 

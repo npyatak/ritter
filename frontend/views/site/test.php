@@ -28,10 +28,14 @@ $this->title = 'Участвовать';
 
             <p class="name_block"><span>К сожалению,</span> этот аккаунт уже участвует в этапе. Зови друзей участвовать в проекте</p>
 
-            <p class="bold_text">Поделиться проектом:</p>
-            <div class="social_block">
-                <?=\frontend\widgets\share\ShareWidget::widget(['location' => $location]);?>
-            </div>
+            <?php if(!$contestFinished):?>
+                <p class="bold_text">Поделиться проектом:</p>
+                <div class="social_block">
+                    <?=\frontend\widgets\share\ShareWidget::widget(['location' => $location]);?>
+                </div>
+            <?php else:?>
+                <p class="name_block"><span>Конкурс завершен!</span></p>
+            <?php endif;?>
         </div>
         <!-- wrap_inner_border -->
         <div class="center">
@@ -104,10 +108,14 @@ $this->title = 'Участвовать';
                 <img src="/img/insta_icon.svg" alt="img">
             </a>
         </div>
-        <p class="soc_name">Поделись проектом с друзьями:</p>
-        <div class="social_block">
-            <?=\frontend\widgets\share\ShareWidget::widget(['addClass' => 'result', 'location' => $location]);?>
-        </div>
+        <?php if(!$contestFinished):?>
+            <p class="soc_name">Поделись проектом с друзьями:</p>
+            <div class="social_block">
+                <?=\frontend\widgets\share\ShareWidget::widget(['addClass' => 'result', 'location' => $location]);?>
+            </div>
+        <?php else:?>
+            <p class="name_block"><span>Конкурс завершен!</span></p>
+        <?php endif;?>
     </div>
     <!-- wrap_inner_border -->
     <div class="center">
@@ -132,10 +140,15 @@ $this->title = 'Участвовать';
         <p class="name_block"><span>Поздравляем!</span> Ты прошел все вопросы викторины!</p>
 
         <p class="light_text"></p>
-        <p class="soc_name">Поделись проектом с друзьями и участвуй в розыгрыше призов. Удачи!</p>
-        <div class="social_block">
-            <?=\frontend\widgets\share\ShareWidget::widget(['addClass' => 'result', 'location' => $location]);?>
-        </div>
+
+        <?php if(!$contestFinished):?>
+            <p class="soc_name">Поделись проектом с друзьями и участвуй в розыгрыше призов. Удачи!</p>
+            <div class="social_block">
+                <?=\frontend\widgets\share\ShareWidget::widget(['addClass' => 'result', 'location' => $location]);?>
+            </div>
+        <?php else:?>
+            <p class="name_block"><span>Конкурс завершен!</span></p>
+        <?php endif;?>
     </div>
     <!-- wrap_inner_border -->
     <div class="center">
